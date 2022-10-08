@@ -1,2 +1,47 @@
 # Spectral Timing Analysis Repo (STAR)
-STAR-package: Spectral Timing Analysis Repo. 
+Spectral Timing Analysis Software Package.
+
+## Installation and setup
+
+Clone repository using the green Code-button and then install all dependencies using conda via:
+
+```bash
+cd star
+conda env create -f environment.yml
+```
+
+Activate the environment by invoking:
+
+```bash
+conda activate star
+```
+
+Next, to initialize the correct paths for the scripts in this project run the setup tools using
+
+```bash
+pip install -e .
+```
+
+Or if you don't intend to modify the source code, just run pip without the `-e` flag.
+
+## Documentation
+
+Find the path to the repository on your local machine, e.g. path-to-repo = /Users/XX/Documents/Projects/star and go to the following link in your broswer:
+
+```bash
+file:///**path-to-repo**/doc/index.html
+```
+
+To understand what the code does, please have a look at the summary notes: "SpectralTimingAnalysis_Summary.pdf", e.g.
+
+```bash
+file:///**path-to-repo**/doc/SpectralTimingAnalysis_Summary.pdf
+```
+
+## Installation of other softwares
+
+Notes on how to work with HeaSoft, XSPEC, XSELECT, nicerl2, setting up CALDB etc:
+
+```bash
+file:///**path-to-repo**/doc/HeaSoft/README.md
+```
