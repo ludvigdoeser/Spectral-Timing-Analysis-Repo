@@ -28,7 +28,7 @@ Or if you don't intend to modify the source code, just run pip without the `-e` 
 
 Find the path to the repository on your local machine and click on `open with` and choose your browser of preference. If that does not work, you can try accessing my [documentation page](https://ludvigdoeser.github.io/stasp/index.html).
 
-To understand what the code does, please have a look at the summary notes: "SpectralTimingAnalysis_Summary.pdf", which can be found at:
+To understand what the code does, please have a look at the summary notes at:
 
 ```bash
 doc/SpectralTimingAnalysis_Summary.pdf
