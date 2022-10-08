@@ -43,5 +43,5 @@ file:///*path-to-repo*/doc/SpectralTimingAnalysis_Summary.pdf
 Notes on how to work with HeaSoft, XSPEC, XSELECT, nicerl2, setting up CALDB etc:
 
 ```bash
-file:///**path-to-repo**/doc/HeaSoft/README.md
+file:///*path-to-repo*/doc/HeaSoft/README.md
 ```
