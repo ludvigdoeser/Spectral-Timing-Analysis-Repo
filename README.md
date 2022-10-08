@@ -26,16 +26,16 @@ Or if you don't intend to modify the source code, just run pip without the `-e` 
 
 ## Documentation
 
-Find the path to the repository on your local machine, e.g. path-to-repo = /Users/XX/Documents/Projects/star and go to the following link in your broswer:
+Find the path to the repository on your local machine, e.g. `path-to-repo = /Users/XX/Documents/Projects/star` and go to the following link in your broswer:
 
 ```bash
-file:///**path-to-repo**/doc/index.html
+file:///*path-to-repo*/doc/index.html
 ```
 
 To understand what the code does, please have a look at the summary notes: "SpectralTimingAnalysis_Summary.pdf", e.g.
 
 ```bash
-file:///**path-to-repo**/doc/SpectralTimingAnalysis_Summary.pdf
+file:///*path-to-repo*/doc/SpectralTimingAnalysis_Summary.pdf
 ```
 
 ## Installation of other softwares
