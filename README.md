@@ -26,17 +26,25 @@ Or if you don't intend to modify the source code, just run pip without the `-e` 
 
 ## Documentation
 
-Find the path to the repository on your local machine, e.g. `path-to-repo = /Users/XX/Documents/Projects/star` and go to the following link in your broswer:
+Find the path to the repository on your local machine and click on `open with` and choose your browser of preference. If that does not work, you can try accessing the page:
 
 ```bash
-file:///*path-to-repo*/doc/index.html
+https://ludvigdoeser.github.io/stasp/index.html
 ```
 
-To understand what the code does, please have a look at the summary notes: "SpectralTimingAnalysis_Summary.pdf", e.g.
+To understand what the code does, please have a look at the summary notes: "SpectralTimingAnalysis_Summary.pdf", which can be found at:
+
+```bash
+doc/SpectralTimingAnalysis_Summary.pdf
+```
+
+It can also be opened in your browser using:
 
 ```bash
 file:///*path-to-repo*/doc/SpectralTimingAnalysis_Summary.pdf
 ```
+
+If it complains about it not being readable, you might have to manually go to finder (on Mac), locate the repository and the .pdf, then click on `open with` and choose your browser of preference.
 
 ## Installation of other softwares
 
