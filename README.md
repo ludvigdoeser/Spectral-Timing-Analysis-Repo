@@ -1,2 +1,2 @@
-# Spectral-Timing-Analysis-Repo (STAR)
+# Spectral Timing Analysis Repo (STAR)
 STAR-package: Spectral Timing Analysis Repo. 
