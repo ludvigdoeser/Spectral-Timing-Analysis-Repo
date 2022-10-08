@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>star.Lightcurve API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>star.Lightcurve</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class lightcurve:
+    &#34;&#34;&#34;
+    Make a light curve object from fits-file.
+    
+    **Parameters**:
+
+    `filename`: string 
+        The path to the .fits-file. If an empty string is given, a lightcurve object will 
+        be initiated without values for its attributes.
+        
+    `keywords`: list of strings    
+        Keywords (and corresponding values) apart from the ones mentioned below to return.    
+        All data-keys are always automatically returned (for a lightcurve, these are: {&#34;TIME&#34;, &#34;RATE&#34;, &#34;ERROR&#34;,&#34;FRACEXP&#34;}).   
+        Note also that the header-keys {&#34;CONTENT&#34;,&#34;OBJECT&#34;} are returned if they exist.    
+    
+    `p`: boolean    
+        If True, print the headers of the fits-file.
+        
+    **Attributes**:
+
+    `t`: np.ndarray    
+        Time vector (in seconds).
+        
+    `rate`: np.ndarray    
+        Rate vector (in counts/s).
+        
+    `err`: np.ndarray    
+        Error vector in rate (in counts/s).
+        
+    `fracexp`: np.ndarray    
+        Fractional exposure for each bin (in percent).
+    
+    `object`: string    
+        Object for which we have constructed the lightcurve object.
+        
+    `dt`: float    
+        Time resolution (in seconds).
+        
+    `R`: np.float    
+        Mean count rate.
+        
+    `N`: int    
+        Number of data points in observation.
+    
+    `Fvar`: float    
+        Fractional variance amplitude (=rms) computed from the light curve.
+        
+    `Emin, Emax`: floats    
+        Min and max energies of used energy band.
+        
+    `deltaE`: float    
+        Energy range between min and max channels used.
+    
+    `E_mean`: float    
+        Energy mean over the range between min and max channels used.
+    &#34;&#34;&#34;
+      
+    def __init__(self, filename, keywords=[], p=0):
+        if isinstance(filename,str):
+            
+            if len(filename) != 0:
+                # Initiate light curve object from .fits-file
+                self.t, self.rate, self.err, self.fracexp, self.object = self.extract_lc(filename, keywords, p) #self.channels, self.minchan, self.maxchan
+                self.dt = self.t[1]-self.t[0] # should not (but could) be a gap here... 
+                self.R = np.mean(self.rate)
+                self.N = len(self.t)  
+                self.Emin, self.Emax = self.find_energyband(filename)
+                self.deltaE = (self.Emax-self.Emin)/2
+                self.Emean = (self.Emax+self.Emin)/2
+                self.Fvar = self.Fvar_from_lc(m=self.N//100) #use 100 segments as default; can be changed.
+                print(&#39;Light curve object for {} in Eband = {}-{} keV created.&#39;.format(self.object,self.Emin,self.Emax))
+                print(&#39;With parameters: N = {}, dt = {:.2}, R = {:.4}, and Fvar = {:.4}.&#39;.format(self.N,self.dt,self.R,self.Fvar))
+                print(&#39;-----------------------------------------------------------------------------------------------------------\n&#39;)
+           
+            else:
+                # Initiate light curve object without any attribute values&#39;
+                self.t, self.rate, self.err, self.object = [], [], [], &#39;&#39;
+                self.R, self.dt, self.N, self.Emin, self.Emax, self.deltaE, self.Emean, self.Fvar = 0,0,0,0,0,0,0,0
+            
+    def extract_lc(self, filename, keywords, p):
+        &#34;&#34;&#34;
+        Extract light curve from .fits-file. For more info, see class doc.
+        &#34;&#34;&#34;
+        
+        print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+        print(&#39;               Importing lightcurve from f = {}&#39;.format(filename))
+        print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+        data = extract_fits(filename, keywords, p=p)
+
+        t = np.array(data[&#39;TIME&#39;])
+        t -= t[0] #so that it starts from 0 
+        rate = np.array(data[&#39;RATE&#39;])
+        err = np.array(data[&#39;ERROR&#39;])
+        fracexp = np.array(data[&#39;FRACEXP&#39;])
+        
+        # Check for NaN in rate and remove such elements
+        if len(np.argwhere(np.isnan(rate))) &gt; 0:
+            t = t[np.isfinite(rate)]
+            err = err[np.isfinite(rate)]
+            fracexp = fracexp[np.isfinite(rate)]
+            rate = rate[np.isfinite(rate)]
+        
+        obj = data[&#39;OBJECT&#39;].replace(&#39;_&#39;,&#39;&#39;)
+        
+        if len(data) &gt; 5:
+            keys = [key for key,val in data.items()]   
+            for i in range(5,len(data)):
+                setattr(self, keys[i].replace(&#39;-&#39;,&#39;&#39;), data[keys[i]])
+        
+        return t, rate, err, fracexp, obj #, channels, minchan, maxchan
+    
+    def plot(self,m=0,n=0):
+        &#34;&#34;&#34;
+        Display the full lightcurve.
+
+        **Parameters**:
+
+        `m`: int, optional, default = 0    
+            Number of time bins per segment.
+ 
+        `n`: int, optional, default: 0    
+            The n:th segment will be displayed in the full light curve.
+        &#34;&#34;&#34;
+        
+        # Parameters 
+        if m!=0:
+            K = int(np.floor(self.N/m))
+            print(r&#34;Number of line segments of \approx {:.0f}s will be: &#34;.format((self.t[1]-self.t[0])*m),K)
+        else: 
+            K = 1
+
+        # Plot 
+        ax = standard_plot()
+        #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+        plt.plot(self.t,self.rate,&#39;-&#39;)
+        ax.axhline(self.R,color=&#39;r&#39;,label=&#39;R = {:.0f}&#39;.format(self.R))
+        if m &gt; 0:
+            ax.axvline(self.t[n*m],color=&#39;k&#39;)
+            ax.axvline(self.t[(n+1)*m],color=&#39;k&#39;)
+            ax.axvspan(self.t[n*m], self.t[(n+1)*m], alpha=0.4, color=&#39;k&#39;,label=&#39;Line segment&#39;)
+
+        plt.legend(loc=&#39;upper right&#39;)
+        plt.xlabel(&#39;Time [$s$]&#39;)
+        plt.ylabel(&#39;Rate [$c/s$]&#39;)
+        plt.title(&#39;{} in {}-{} keV&#39;.format(self.object,self.Emin,self.Emax))
+        plt.show()
+        
+    def rebin(self,dt=1,force=False):
+        &#34;&#34;&#34;
+        Rebin light curve into new time resolution. Note: inefficient... 
+        Better to extract new light curves using XSELECT.
+
+        **Parameters**:
+        
+        `dt`: float, optional, default: 1 (sec)    
+            New time resolution.
+            
+        `force`: boolean, optional, default: False    
+            If True, don&#39;t ask for permission to make time resolution changes
+        &#34;&#34;&#34;
+
+        # New time vector
+        eps = 10e-15 #to include the final point
+        t = np.arange(self.t[0], self.t[-1]+eps,dt)
+        self.N = len(t)
+        s = self.dt/dt #scale factor
+
+        if not force:
+            still_update = input(&#39;You want to change the time resolution from dt = {:.3} (with N = {}) to dt = {:.3}. This will lead to a loss of information. \n Continue [y/n]? &#39;.format(self.dt,self.N,float(dt)))
+        else:
+            still_update = &#39;y&#39;
+        
+        if still_update == &#39;y&#39;:
+
+            # Mid-points
+            t_mid = [np.mean([t[i],t[i+1]]) for i in range(0,len(t)-1)]
+
+            # Determine what old t-values goes into what new t-bin
+            digitized = np.digitize(self.t, t)
+            # New t, rate, err and fracexp vectors 
+
+            rate, err, fracexp, t = [], [], [], []
+            for i in range(1,self.N):
+                if len(self.t[digitized == i])!=0:
+                    rate.append(s*self.rate[digitized == i].sum())
+                    err.append(s*np.sqrt(np.sum((self.err[digitized == i])**2)))
+                    t.append(t_mid[i-1])
+
+            # Update 
+            self.t = np.array(t)
+            self.rate = np.array(rate)
+            self.err = np.array(err)
+            self.dt = dt
+            self.N = len(t)
+            self.R = np.mean(self.rate)
+            self.Fvar = self.Fvar_from_lc(m=self.N//100) #use 100 segments as default; can be changed.
+            print(&#39;Time resolution has been changed.&#39;)
+        else:
+            print(&#39;Did not change the time resolution.&#39;)
+        
+        return self
+        
+    def extract_seg(self,m,n=0,bins_back=0,to_print=False,to_plot=False):
+        &#34;&#34;&#34;
+        Extract (and potentially display) a light curve segment.
+
+        **Parameters**:
+        
+        `m`: int    
+            Number of time bins per segment. 
+
+        `n`: int, optional, default: 0    
+            The start (end) of the segment will be bin number m*n (m*(n+1)) 
+            
+        `bins_back`: int, optional, default: 0 
+            Number of bins the segment will be moved backwards in the light curve. 
+            
+        `to_print`: boolean, optional, default: False 
+            If True, prints out average count rate, totalt counts, and total time of segment. 
+            
+        `to_plot`: boolean, optional, default: False 
+            If True, plot the segment. 
+
+        **Returns**: 
+        
+        `t_seg, rate_seg, err_seg`: np.ndarrays    
+            Time, rate, and error vectors for the segment.
+
+        `N_gamma, R, T`: floats    
+            Number of photons (in counts), mean count rate (in counts/s) and length (in seconds) respectively. 
+        &#34;&#34;&#34;
+
+        # Pick out segment
+        start = m*n - bins_back
+        stop = m*(n+1) - bins_back
+        
+        t_seg = self.t[start:stop]
+        rate_seg = self.rate[start:stop]
+        err_seg = self.err[start:stop]
+
+        # Relevant parameters
+        T = t_seg[-1]-t_seg[0]
+        R = np.mean(rate_seg)
+        N_gamma = T*R
+
+        # Print
+        if to_print:
+            print(&#39;R = average count rate = &#39;,R)
+            print(&#39;N_\gamma = total counts = &#39;,N_gamma)
+            print(&#39;T = total time = &#39;,T) 
+
+        # Plot
+        if to_plot:
+            ax = standard_plot()
+            #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+            plt.plot(t_seg,rate_seg,&#39;-&#39;)
+            ax.axhline(np.mean(rate_seg),color=&#39;r&#39;,label=&#39;R = {}&#39;.format(R))
+            plt.legend(loc=&#39;upper right&#39;)
+            plt.xlabel(&#39;Time [$s$]&#39;)
+            plt.ylabel(&#39;Rate [$c/s$]&#39;)
+            plt.title(&#39;{} - light curve segment {}&#39;.format(self.object,n+1))
+            plt.show()
+        else:
+            return t_seg, rate_seg, err_seg, N_gamma, R, T
+        
+    def channel_to_energy_XTE(self, channel_to_kev):
+        &#34;&#34;&#34;
+        Channel to corresponding energy for XTE-data.
+        
+        **Parameters**:
+        
+        `channel_to_kev`: np.ndarray    
+            Conversion from channel (index) to energy (keV).
+        &#34;&#34;&#34;
+        try: 
+            minchan = self.MINCHAN
+            maxchan = self.MAXCHAN
+        except AttributeError: 
+            print(&#39;Used the Emin/Emax attributes as channel limits.&#39;)
+            minchan = int(self.Emin)
+            maxchan = int(self.Emax)
+
+        if minchan != 0:
+            minchan -= 1
+        minene = channel_to_kev[minchan]
+        if minchan == 0:
+            minene = 0
+        maxene = channel_to_kev[maxchan]
+        
+        print(&#39;Energy channels (keV): &#39;,minchan+1,&#39;-&#39;,maxchan,&#39;(&#39;,minene,&#39;-&#39;,maxene,&#39;)&#39;)
+
+        self.Emin = minene
+        self.Emax = maxene
+        setattr(self, &#39;deltaE&#39;, maxene-minene)
+        setattr(self, &#39;E_mean&#39;, (maxene+minene)/2)
+        # setattr(self, &#39;E_err&#39;, (maxene-minene)/2) = deltaE/2
+    
+    def find_energyband(self,f):
+        &#34;&#34;&#34;
+        Find Emin and Emax from filename f. For more info, see class doc.
+        &#34;&#34;&#34;
+
+        # -------------------- 1) Check filename f ------------------------- 
+        # Please write filename in format: &#39;[low_energy]to[high_energy]kev.lc&#39;
+        # e.g. f = &#39;1.5to2kev.lc&#39;
+        try: 
+            # Start by splitting at &#34;to&#34; or &#34;-&#34;
+            if &#39;to&#39; in f:
+                split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;to&#39;)
+            elif &#39;-&#39; in f:
+                split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;-&#39;)
+
+            # Find all Emin candidates
+            Emin_candidates = re.split(&#39;\D+[.]*\D+&#39;,split_at_to[0][-6:]) #\D = non-digits, so this splits at letters 
+
+            for minchan in Emin_candidates:
+                if &#39;_&#39; in minchan:
+                    minchan = minchan.split(&#39;_&#39;)[-1]
+                if bool(re.search(r&#39;\d&#39;, minchan)): #need to be a digit
+                    Emin = float(minchan)
+
+            # Try to split at &#39;ke&#39; or other non-digits
+            if &#39;ke&#39; in f:
+                Emax_candidates = split_at_to[1].split(&#39;k&#39;)[0]
+            else:
+                Emax_candidates = re.split(&#39;\D+[.]?\D+&#39;,split_at_to[1])
+
+            # Go over all Emax candidates
+            if isinstance(Emax_candidates,list):
+                for maxcan in Emax_candidates:
+                    if bool(re.search(r&#39;\d&#39;, maxcan)):
+                        Emax = float(maxcan)
+            else: 
+                Emax = float(Emax_candidates)
+
+        # -------------------- 2) Insert manually ------------------------- 
+        except ValueError:
+            print(&#39;Had a hard time finding Emin/Emax from filename: &#39;,f)
+            print(&#39;Insert manually:&#39;)
+            Emin = input(&#39;Emin [keV] = &#39;)
+            Emax = input(&#39;Emax [keV] = &#39;)
+
+        return Emin, Emax
+        
+    def Fvar_from_lc(self,m,percent_limit=0):
+        &#34;&#34;&#34;
+        Calculate the fractional root mean square (rms) variability amplitude from 
+        the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. 
+        &#34;&#34;&#34;
+        
+        Fvar = Fvar_from_lc(self,m,percent_limit)
+        if math.isnan(Fvar): #might help to reduce the number of segments 
+            Fvar = Fvar_from_lc(self,self.N//10,percent_limit)
+        if math.isnan(Fvar): #if still nan, take full light curve 
+            Fvar = Fvar_from_lc(self,self.N,percent_limit)
+        if math.isnan(Fvar): #if still nan, print it
+            print(&#39;NOTE: The rms cannot be computed since signal-to-noise ratio is too low; the expectation value of the Poisson variance term is larger than the \measured average variance term, producing negative average excess variances.\n&#39;)
+        
+        return Fvar </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="star.Lightcurve.lightcurve"><code class="flex name class">
+<span>class <span class="ident">lightcurve</span></span>
+<span>(</span><span>filename, keywords=[], p=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Make a light curve object from fits-file.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>filename</code>: string
+The path to the .fits-file. If an empty string is given, a lightcurve object will
+be initiated without values for its attributes.</p>
+<p><code>keywords</code>: list of strings
+<br>
+Keywords (and corresponding values) apart from the ones mentioned below to return.
+<br>
+All data-keys are always automatically returned (for a lightcurve, these are: {"TIME", "RATE", "ERROR","FRACEXP"}). <br>
+Note also that the header-keys {"CONTENT","OBJECT"} are returned if they exist.
+</p>
+<p><code>p</code>: boolean
+<br>
+If True, print the headers of the fits-file.</p>
+<p><strong>Attributes</strong>:</p>
+<p><code>t</code>: np.ndarray
+<br>
+Time vector (in seconds).</p>
+<p><code>rate</code>: np.ndarray
+<br>
+Rate vector (in counts/s).</p>
+<p><code>err</code>: np.ndarray
+<br>
+Error vector in rate (in counts/s).</p>
+<p><code>fracexp</code>: np.ndarray
+<br>
+Fractional exposure for each bin (in percent).</p>
+<p><code>object</code>: string
+<br>
+Object for which we have constructed the lightcurve object.</p>
+<p><code>dt</code>: float
+<br>
+Time resolution (in seconds).</p>
+<p><code>R</code>: np.float
+<br>
+Mean count rate.</p>
+<p><code>N</code>: int
+<br>
+Number of data points in observation.</p>
+<p><code>Fvar</code>: float
+<br>
+Fractional variance amplitude (=rms) computed from the light curve.</p>
+<p><code>Emin, Emax</code>: floats
+<br>
+Min and max energies of used energy band.</p>
+<p><code>deltaE</code>: float
+<br>
+Energy range between min and max channels used.</p>
+<p><code>E_mean</code>: float
+<br>
+Energy mean over the range between min and max channels used.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class lightcurve:
+    &#34;&#34;&#34;
+    Make a light curve object from fits-file.
+    
+    **Parameters**:
+
+    `filename`: string 
+        The path to the .fits-file. If an empty string is given, a lightcurve object will 
+        be initiated without values for its attributes.
+        
+    `keywords`: list of strings    
+        Keywords (and corresponding values) apart from the ones mentioned below to return.    
+        All data-keys are always automatically returned (for a lightcurve, these are: {&#34;TIME&#34;, &#34;RATE&#34;, &#34;ERROR&#34;,&#34;FRACEXP&#34;}).   
+        Note also that the header-keys {&#34;CONTENT&#34;,&#34;OBJECT&#34;} are returned if they exist.    
+    
+    `p`: boolean    
+        If True, print the headers of the fits-file.
+        
+    **Attributes**:
+
+    `t`: np.ndarray    
+        Time vector (in seconds).
+        
+    `rate`: np.ndarray    
+        Rate vector (in counts/s).
+        
+    `err`: np.ndarray    
+        Error vector in rate (in counts/s).
+        
+    `fracexp`: np.ndarray    
+        Fractional exposure for each bin (in percent).
+    
+    `object`: string    
+        Object for which we have constructed the lightcurve object.
+        
+    `dt`: float    
+        Time resolution (in seconds).
+        
+    `R`: np.float    
+        Mean count rate.
+        
+    `N`: int    
+        Number of data points in observation.
+    
+    `Fvar`: float    
+        Fractional variance amplitude (=rms) computed from the light curve.
+        
+    `Emin, Emax`: floats    
+        Min and max energies of used energy band.
+        
+    `deltaE`: float    
+        Energy range between min and max channels used.
+    
+    `E_mean`: float    
+        Energy mean over the range between min and max channels used.
+    &#34;&#34;&#34;
+      
+    def __init__(self, filename, keywords=[], p=0):
+        if isinstance(filename,str):
+            
+            if len(filename) != 0:
+                # Initiate light curve object from .fits-file
+                self.t, self.rate, self.err, self.fracexp, self.object = self.extract_lc(filename, keywords, p) #self.channels, self.minchan, self.maxchan
+                self.dt = self.t[1]-self.t[0] # should not (but could) be a gap here... 
+                self.R = np.mean(self.rate)
+                self.N = len(self.t)  
+                self.Emin, self.Emax = self.find_energyband(filename)
+                self.deltaE = (self.Emax-self.Emin)/2
+                self.Emean = (self.Emax+self.Emin)/2
+                self.Fvar = self.Fvar_from_lc(m=self.N//100) #use 100 segments as default; can be changed.
+                print(&#39;Light curve object for {} in Eband = {}-{} keV created.&#39;.format(self.object,self.Emin,self.Emax))
+                print(&#39;With parameters: N = {}, dt = {:.2}, R = {:.4}, and Fvar = {:.4}.&#39;.format(self.N,self.dt,self.R,self.Fvar))
+                print(&#39;-----------------------------------------------------------------------------------------------------------\n&#39;)
+           
+            else:
+                # Initiate light curve object without any attribute values&#39;
+                self.t, self.rate, self.err, self.object = [], [], [], &#39;&#39;
+                self.R, self.dt, self.N, self.Emin, self.Emax, self.deltaE, self.Emean, self.Fvar = 0,0,0,0,0,0,0,0
+            
+    def extract_lc(self, filename, keywords, p):
+        &#34;&#34;&#34;
+        Extract light curve from .fits-file. For more info, see class doc.
+        &#34;&#34;&#34;
+        
+        print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+        print(&#39;               Importing lightcurve from f = {}&#39;.format(filename))
+        print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+        data = extract_fits(filename, keywords, p=p)
+
+        t = np.array(data[&#39;TIME&#39;])
+        t -= t[0] #so that it starts from 0 
+        rate = np.array(data[&#39;RATE&#39;])
+        err = np.array(data[&#39;ERROR&#39;])
+        fracexp = np.array(data[&#39;FRACEXP&#39;])
+        
+        # Check for NaN in rate and remove such elements
+        if len(np.argwhere(np.isnan(rate))) &gt; 0:
+            t = t[np.isfinite(rate)]
+            err = err[np.isfinite(rate)]
+            fracexp = fracexp[np.isfinite(rate)]
+            rate = rate[np.isfinite(rate)]
+        
+        obj = data[&#39;OBJECT&#39;].replace(&#39;_&#39;,&#39;&#39;)
+        
+        if len(data) &gt; 5:
+            keys = [key for key,val in data.items()]   
+            for i in range(5,len(data)):
+                setattr(self, keys[i].replace(&#39;-&#39;,&#39;&#39;), data[keys[i]])
+        
+        return t, rate, err, fracexp, obj #, channels, minchan, maxchan
+    
+    def plot(self,m=0,n=0):
+        &#34;&#34;&#34;
+        Display the full lightcurve.
+
+        **Parameters**:
+
+        `m`: int, optional, default = 0    
+            Number of time bins per segment.
+ 
+        `n`: int, optional, default: 0    
+            The n:th segment will be displayed in the full light curve.
+        &#34;&#34;&#34;
+        
+        # Parameters 
+        if m!=0:
+            K = int(np.floor(self.N/m))
+            print(r&#34;Number of line segments of \approx {:.0f}s will be: &#34;.format((self.t[1]-self.t[0])*m),K)
+        else: 
+            K = 1
+
+        # Plot 
+        ax = standard_plot()
+        #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+        plt.plot(self.t,self.rate,&#39;-&#39;)
+        ax.axhline(self.R,color=&#39;r&#39;,label=&#39;R = {:.0f}&#39;.format(self.R))
+        if m &gt; 0:
+            ax.axvline(self.t[n*m],color=&#39;k&#39;)
+            ax.axvline(self.t[(n+1)*m],color=&#39;k&#39;)
+            ax.axvspan(self.t[n*m], self.t[(n+1)*m], alpha=0.4, color=&#39;k&#39;,label=&#39;Line segment&#39;)
+
+        plt.legend(loc=&#39;upper right&#39;)
+        plt.xlabel(&#39;Time [$s$]&#39;)
+        plt.ylabel(&#39;Rate [$c/s$]&#39;)
+        plt.title(&#39;{} in {}-{} keV&#39;.format(self.object,self.Emin,self.Emax))
+        plt.show()
+        
+    def rebin(self,dt=1,force=False):
+        &#34;&#34;&#34;
+        Rebin light curve into new time resolution. Note: inefficient... 
+        Better to extract new light curves using XSELECT.
+
+        **Parameters**:
+        
+        `dt`: float, optional, default: 1 (sec)    
+            New time resolution.
+            
+        `force`: boolean, optional, default: False    
+            If True, don&#39;t ask for permission to make time resolution changes
+        &#34;&#34;&#34;
+
+        # New time vector
+        eps = 10e-15 #to include the final point
+        t = np.arange(self.t[0], self.t[-1]+eps,dt)
+        self.N = len(t)
+        s = self.dt/dt #scale factor
+
+        if not force:
+            still_update = input(&#39;You want to change the time resolution from dt = {:.3} (with N = {}) to dt = {:.3}. This will lead to a loss of information. \n Continue [y/n]? &#39;.format(self.dt,self.N,float(dt)))
+        else:
+            still_update = &#39;y&#39;
+        
+        if still_update == &#39;y&#39;:
+
+            # Mid-points
+            t_mid = [np.mean([t[i],t[i+1]]) for i in range(0,len(t)-1)]
+
+            # Determine what old t-values goes into what new t-bin
+            digitized = np.digitize(self.t, t)
+            # New t, rate, err and fracexp vectors 
+
+            rate, err, fracexp, t = [], [], [], []
+            for i in range(1,self.N):
+                if len(self.t[digitized == i])!=0:
+                    rate.append(s*self.rate[digitized == i].sum())
+                    err.append(s*np.sqrt(np.sum((self.err[digitized == i])**2)))
+                    t.append(t_mid[i-1])
+
+            # Update 
+            self.t = np.array(t)
+            self.rate = np.array(rate)
+            self.err = np.array(err)
+            self.dt = dt
+            self.N = len(t)
+            self.R = np.mean(self.rate)
+            self.Fvar = self.Fvar_from_lc(m=self.N//100) #use 100 segments as default; can be changed.
+            print(&#39;Time resolution has been changed.&#39;)
+        else:
+            print(&#39;Did not change the time resolution.&#39;)
+        
+        return self
+        
+    def extract_seg(self,m,n=0,bins_back=0,to_print=False,to_plot=False):
+        &#34;&#34;&#34;
+        Extract (and potentially display) a light curve segment.
+
+        **Parameters**:
+        
+        `m`: int    
+            Number of time bins per segment. 
+
+        `n`: int, optional, default: 0    
+            The start (end) of the segment will be bin number m*n (m*(n+1)) 
+            
+        `bins_back`: int, optional, default: 0 
+            Number of bins the segment will be moved backwards in the light curve. 
+            
+        `to_print`: boolean, optional, default: False 
+            If True, prints out average count rate, totalt counts, and total time of segment. 
+            
+        `to_plot`: boolean, optional, default: False 
+            If True, plot the segment. 
+
+        **Returns**: 
+        
+        `t_seg, rate_seg, err_seg`: np.ndarrays    
+            Time, rate, and error vectors for the segment.
+
+        `N_gamma, R, T`: floats    
+            Number of photons (in counts), mean count rate (in counts/s) and length (in seconds) respectively. 
+        &#34;&#34;&#34;
+
+        # Pick out segment
+        start = m*n - bins_back
+        stop = m*(n+1) - bins_back
+        
+        t_seg = self.t[start:stop]
+        rate_seg = self.rate[start:stop]
+        err_seg = self.err[start:stop]
+
+        # Relevant parameters
+        T = t_seg[-1]-t_seg[0]
+        R = np.mean(rate_seg)
+        N_gamma = T*R
+
+        # Print
+        if to_print:
+            print(&#39;R = average count rate = &#39;,R)
+            print(&#39;N_\gamma = total counts = &#39;,N_gamma)
+            print(&#39;T = total time = &#39;,T) 
+
+        # Plot
+        if to_plot:
+            ax = standard_plot()
+            #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+            plt.plot(t_seg,rate_seg,&#39;-&#39;)
+            ax.axhline(np.mean(rate_seg),color=&#39;r&#39;,label=&#39;R = {}&#39;.format(R))
+            plt.legend(loc=&#39;upper right&#39;)
+            plt.xlabel(&#39;Time [$s$]&#39;)
+            plt.ylabel(&#39;Rate [$c/s$]&#39;)
+            plt.title(&#39;{} - light curve segment {}&#39;.format(self.object,n+1))
+            plt.show()
+        else:
+            return t_seg, rate_seg, err_seg, N_gamma, R, T
+        
+    def channel_to_energy_XTE(self, channel_to_kev):
+        &#34;&#34;&#34;
+        Channel to corresponding energy for XTE-data.
+        
+        **Parameters**:
+        
+        `channel_to_kev`: np.ndarray    
+            Conversion from channel (index) to energy (keV).
+        &#34;&#34;&#34;
+        try: 
+            minchan = self.MINCHAN
+            maxchan = self.MAXCHAN
+        except AttributeError: 
+            print(&#39;Used the Emin/Emax attributes as channel limits.&#39;)
+            minchan = int(self.Emin)
+            maxchan = int(self.Emax)
+
+        if minchan != 0:
+            minchan -= 1
+        minene = channel_to_kev[minchan]
+        if minchan == 0:
+            minene = 0
+        maxene = channel_to_kev[maxchan]
+        
+        print(&#39;Energy channels (keV): &#39;,minchan+1,&#39;-&#39;,maxchan,&#39;(&#39;,minene,&#39;-&#39;,maxene,&#39;)&#39;)
+
+        self.Emin = minene
+        self.Emax = maxene
+        setattr(self, &#39;deltaE&#39;, maxene-minene)
+        setattr(self, &#39;E_mean&#39;, (maxene+minene)/2)
+        # setattr(self, &#39;E_err&#39;, (maxene-minene)/2) = deltaE/2
+    
+    def find_energyband(self,f):
+        &#34;&#34;&#34;
+        Find Emin and Emax from filename f. For more info, see class doc.
+        &#34;&#34;&#34;
+
+        # -------------------- 1) Check filename f ------------------------- 
+        # Please write filename in format: &#39;[low_energy]to[high_energy]kev.lc&#39;
+        # e.g. f = &#39;1.5to2kev.lc&#39;
+        try: 
+            # Start by splitting at &#34;to&#34; or &#34;-&#34;
+            if &#39;to&#39; in f:
+                split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;to&#39;)
+            elif &#39;-&#39; in f:
+                split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;-&#39;)
+
+            # Find all Emin candidates
+            Emin_candidates = re.split(&#39;\D+[.]*\D+&#39;,split_at_to[0][-6:]) #\D = non-digits, so this splits at letters 
+
+            for minchan in Emin_candidates:
+                if &#39;_&#39; in minchan:
+                    minchan = minchan.split(&#39;_&#39;)[-1]
+                if bool(re.search(r&#39;\d&#39;, minchan)): #need to be a digit
+                    Emin = float(minchan)
+
+            # Try to split at &#39;ke&#39; or other non-digits
+            if &#39;ke&#39; in f:
+                Emax_candidates = split_at_to[1].split(&#39;k&#39;)[0]
+            else:
+                Emax_candidates = re.split(&#39;\D+[.]?\D+&#39;,split_at_to[1])
+
+            # Go over all Emax candidates
+            if isinstance(Emax_candidates,list):
+                for maxcan in Emax_candidates:
+                    if bool(re.search(r&#39;\d&#39;, maxcan)):
+                        Emax = float(maxcan)
+            else: 
+                Emax = float(Emax_candidates)
+
+        # -------------------- 2) Insert manually ------------------------- 
+        except ValueError:
+            print(&#39;Had a hard time finding Emin/Emax from filename: &#39;,f)
+            print(&#39;Insert manually:&#39;)
+            Emin = input(&#39;Emin [keV] = &#39;)
+            Emax = input(&#39;Emax [keV] = &#39;)
+
+        return Emin, Emax
+        
+    def Fvar_from_lc(self,m,percent_limit=0):
+        &#34;&#34;&#34;
+        Calculate the fractional root mean square (rms) variability amplitude from 
+        the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. 
+        &#34;&#34;&#34;
+        
+        Fvar = Fvar_from_lc(self,m,percent_limit)
+        if math.isnan(Fvar): #might help to reduce the number of segments 
+            Fvar = Fvar_from_lc(self,self.N//10,percent_limit)
+        if math.isnan(Fvar): #if still nan, take full light curve 
+            Fvar = Fvar_from_lc(self,self.N,percent_limit)
+        if math.isnan(Fvar): #if still nan, print it
+            print(&#39;NOTE: The rms cannot be computed since signal-to-noise ratio is too low; the expectation value of the Poisson variance term is larger than the \measured average variance term, producing negative average excess variances.\n&#39;)
+        
+        return Fvar </code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="star.Lightcurve.lightcurve.Fvar_from_lc"><code class="name flex">
+<span>def <span class="ident">Fvar_from_lc</span></span>(<span>self, m, percent_limit=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the fractional root mean square (rms) variability amplitude from
+the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Fvar_from_lc(self,m,percent_limit=0):
+    &#34;&#34;&#34;
+    Calculate the fractional root mean square (rms) variability amplitude from 
+    the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. 
+    &#34;&#34;&#34;
+    
+    Fvar = Fvar_from_lc(self,m,percent_limit)
+    if math.isnan(Fvar): #might help to reduce the number of segments 
+        Fvar = Fvar_from_lc(self,self.N//10,percent_limit)
+    if math.isnan(Fvar): #if still nan, take full light curve 
+        Fvar = Fvar_from_lc(self,self.N,percent_limit)
+    if math.isnan(Fvar): #if still nan, print it
+        print(&#39;NOTE: The rms cannot be computed since signal-to-noise ratio is too low; the expectation value of the Poisson variance term is larger than the \measured average variance term, producing negative average excess variances.\n&#39;)
+    
+    return Fvar </code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.channel_to_energy_XTE"><code class="name flex">
+<span>def <span class="ident">channel_to_energy_XTE</span></span>(<span>self, channel_to_kev)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Channel to corresponding energy for XTE-data.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>channel_to_kev</code>: np.ndarray
+<br>
+Conversion from channel (index) to energy (keV).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def channel_to_energy_XTE(self, channel_to_kev):
+    &#34;&#34;&#34;
+    Channel to corresponding energy for XTE-data.
+    
+    **Parameters**:
+    
+    `channel_to_kev`: np.ndarray    
+        Conversion from channel (index) to energy (keV).
+    &#34;&#34;&#34;
+    try: 
+        minchan = self.MINCHAN
+        maxchan = self.MAXCHAN
+    except AttributeError: 
+        print(&#39;Used the Emin/Emax attributes as channel limits.&#39;)
+        minchan = int(self.Emin)
+        maxchan = int(self.Emax)
+
+    if minchan != 0:
+        minchan -= 1
+    minene = channel_to_kev[minchan]
+    if minchan == 0:
+        minene = 0
+    maxene = channel_to_kev[maxchan]
+    
+    print(&#39;Energy channels (keV): &#39;,minchan+1,&#39;-&#39;,maxchan,&#39;(&#39;,minene,&#39;-&#39;,maxene,&#39;)&#39;)
+
+    self.Emin = minene
+    self.Emax = maxene
+    setattr(self, &#39;deltaE&#39;, maxene-minene)
+    setattr(self, &#39;E_mean&#39;, (maxene+minene)/2)</code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.extract_lc"><code class="name flex">
+<span>def <span class="ident">extract_lc</span></span>(<span>self, filename, keywords, p)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract light curve from .fits-file. For more info, see class doc.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_lc(self, filename, keywords, p):
+    &#34;&#34;&#34;
+    Extract light curve from .fits-file. For more info, see class doc.
+    &#34;&#34;&#34;
+    
+    print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+    print(&#39;               Importing lightcurve from f = {}&#39;.format(filename))
+    print(&#39;-----------------------------------------------------------------------------------------------------------&#39;)
+    data = extract_fits(filename, keywords, p=p)
+
+    t = np.array(data[&#39;TIME&#39;])
+    t -= t[0] #so that it starts from 0 
+    rate = np.array(data[&#39;RATE&#39;])
+    err = np.array(data[&#39;ERROR&#39;])
+    fracexp = np.array(data[&#39;FRACEXP&#39;])
+    
+    # Check for NaN in rate and remove such elements
+    if len(np.argwhere(np.isnan(rate))) &gt; 0:
+        t = t[np.isfinite(rate)]
+        err = err[np.isfinite(rate)]
+        fracexp = fracexp[np.isfinite(rate)]
+        rate = rate[np.isfinite(rate)]
+    
+    obj = data[&#39;OBJECT&#39;].replace(&#39;_&#39;,&#39;&#39;)
+    
+    if len(data) &gt; 5:
+        keys = [key for key,val in data.items()]   
+        for i in range(5,len(data)):
+            setattr(self, keys[i].replace(&#39;-&#39;,&#39;&#39;), data[keys[i]])
+    
+    return t, rate, err, fracexp, obj #, channels, minchan, maxchan</code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.extract_seg"><code class="name flex">
+<span>def <span class="ident">extract_seg</span></span>(<span>self, m, n=0, bins_back=0, to_print=False, to_plot=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract (and potentially display) a light curve segment.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>m</code>: int
+<br>
+Number of time bins per segment. </p>
+<p><code>n</code>: int, optional, default: 0
+<br>
+The start (end) of the segment will be bin number m<em>n (m</em>(n+1)) </p>
+<p><code>bins_back</code>: int, optional, default: 0
+Number of bins the segment will be moved backwards in the light curve. </p>
+<p><code>to_print</code>: boolean, optional, default: False
+If True, prints out average count rate, totalt counts, and total time of segment. </p>
+<p><code>to_plot</code>: boolean, optional, default: False
+If True, plot the segment. </p>
+<p><strong>Returns</strong>: </p>
+<p><code>t_seg, rate_seg, err_seg</code>: np.ndarrays
+<br>
+Time, rate, and error vectors for the segment.</p>
+<p><code>N_gamma, R, T</code>: floats
+<br>
+Number of photons (in counts), mean count rate (in counts/s) and length (in seconds) respectively.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_seg(self,m,n=0,bins_back=0,to_print=False,to_plot=False):
+    &#34;&#34;&#34;
+    Extract (and potentially display) a light curve segment.
+
+    **Parameters**:
+    
+    `m`: int    
+        Number of time bins per segment. 
+
+    `n`: int, optional, default: 0    
+        The start (end) of the segment will be bin number m*n (m*(n+1)) 
+        
+    `bins_back`: int, optional, default: 0 
+        Number of bins the segment will be moved backwards in the light curve. 
+        
+    `to_print`: boolean, optional, default: False 
+        If True, prints out average count rate, totalt counts, and total time of segment. 
+        
+    `to_plot`: boolean, optional, default: False 
+        If True, plot the segment. 
+
+    **Returns**: 
+    
+    `t_seg, rate_seg, err_seg`: np.ndarrays    
+        Time, rate, and error vectors for the segment.
+
+    `N_gamma, R, T`: floats    
+        Number of photons (in counts), mean count rate (in counts/s) and length (in seconds) respectively. 
+    &#34;&#34;&#34;
+
+    # Pick out segment
+    start = m*n - bins_back
+    stop = m*(n+1) - bins_back
+    
+    t_seg = self.t[start:stop]
+    rate_seg = self.rate[start:stop]
+    err_seg = self.err[start:stop]
+
+    # Relevant parameters
+    T = t_seg[-1]-t_seg[0]
+    R = np.mean(rate_seg)
+    N_gamma = T*R
+
+    # Print
+    if to_print:
+        print(&#39;R = average count rate = &#39;,R)
+        print(&#39;N_\gamma = total counts = &#39;,N_gamma)
+        print(&#39;T = total time = &#39;,T) 
+
+    # Plot
+    if to_plot:
+        ax = standard_plot()
+        #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+        plt.plot(t_seg,rate_seg,&#39;-&#39;)
+        ax.axhline(np.mean(rate_seg),color=&#39;r&#39;,label=&#39;R = {}&#39;.format(R))
+        plt.legend(loc=&#39;upper right&#39;)
+        plt.xlabel(&#39;Time [$s$]&#39;)
+        plt.ylabel(&#39;Rate [$c/s$]&#39;)
+        plt.title(&#39;{} - light curve segment {}&#39;.format(self.object,n+1))
+        plt.show()
+    else:
+        return t_seg, rate_seg, err_seg, N_gamma, R, T</code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.find_energyband"><code class="name flex">
+<span>def <span class="ident">find_energyband</span></span>(<span>self, f)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find Emin and Emax from filename f. For more info, see class doc.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_energyband(self,f):
+    &#34;&#34;&#34;
+    Find Emin and Emax from filename f. For more info, see class doc.
+    &#34;&#34;&#34;
+
+    # -------------------- 1) Check filename f ------------------------- 
+    # Please write filename in format: &#39;[low_energy]to[high_energy]kev.lc&#39;
+    # e.g. f = &#39;1.5to2kev.lc&#39;
+    try: 
+        # Start by splitting at &#34;to&#34; or &#34;-&#34;
+        if &#39;to&#39; in f:
+            split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;to&#39;)
+        elif &#39;-&#39; in f:
+            split_at_to = f.split(&#39;/&#39;)[-1].split(&#39;-&#39;)
+
+        # Find all Emin candidates
+        Emin_candidates = re.split(&#39;\D+[.]*\D+&#39;,split_at_to[0][-6:]) #\D = non-digits, so this splits at letters 
+
+        for minchan in Emin_candidates:
+            if &#39;_&#39; in minchan:
+                minchan = minchan.split(&#39;_&#39;)[-1]
+            if bool(re.search(r&#39;\d&#39;, minchan)): #need to be a digit
+                Emin = float(minchan)
+
+        # Try to split at &#39;ke&#39; or other non-digits
+        if &#39;ke&#39; in f:
+            Emax_candidates = split_at_to[1].split(&#39;k&#39;)[0]
+        else:
+            Emax_candidates = re.split(&#39;\D+[.]?\D+&#39;,split_at_to[1])
+
+        # Go over all Emax candidates
+        if isinstance(Emax_candidates,list):
+            for maxcan in Emax_candidates:
+                if bool(re.search(r&#39;\d&#39;, maxcan)):
+                    Emax = float(maxcan)
+        else: 
+            Emax = float(Emax_candidates)
+
+    # -------------------- 2) Insert manually ------------------------- 
+    except ValueError:
+        print(&#39;Had a hard time finding Emin/Emax from filename: &#39;,f)
+        print(&#39;Insert manually:&#39;)
+        Emin = input(&#39;Emin [keV] = &#39;)
+        Emax = input(&#39;Emax [keV] = &#39;)
+
+    return Emin, Emax</code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.plot"><code class="name flex">
+<span>def <span class="ident">plot</span></span>(<span>self, m=0, n=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Display the full lightcurve.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>m</code>: int, optional, default = 0
+<br>
+Number of time bins per segment.</p>
+<p><code>n</code>: int, optional, default: 0
+<br>
+The n:th segment will be displayed in the full light curve.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot(self,m=0,n=0):
+    &#34;&#34;&#34;
+    Display the full lightcurve.
+
+    **Parameters**:
+
+    `m`: int, optional, default = 0    
+        Number of time bins per segment.
+
+    `n`: int, optional, default: 0    
+        The n:th segment will be displayed in the full light curve.
+    &#34;&#34;&#34;
+    
+    # Parameters 
+    if m!=0:
+        K = int(np.floor(self.N/m))
+        print(r&#34;Number of line segments of \approx {:.0f}s will be: &#34;.format((self.t[1]-self.t[0])*m),K)
+    else: 
+        K = 1
+
+    # Plot 
+    ax = standard_plot()
+    #plt.errorbar(t_seg,rate_seg,err_seg,fmt=&#39;o&#39;,markersize=2)
+    plt.plot(self.t,self.rate,&#39;-&#39;)
+    ax.axhline(self.R,color=&#39;r&#39;,label=&#39;R = {:.0f}&#39;.format(self.R))
+    if m &gt; 0:
+        ax.axvline(self.t[n*m],color=&#39;k&#39;)
+        ax.axvline(self.t[(n+1)*m],color=&#39;k&#39;)
+        ax.axvspan(self.t[n*m], self.t[(n+1)*m], alpha=0.4, color=&#39;k&#39;,label=&#39;Line segment&#39;)
+
+    plt.legend(loc=&#39;upper right&#39;)
+    plt.xlabel(&#39;Time [$s$]&#39;)
+    plt.ylabel(&#39;Rate [$c/s$]&#39;)
+    plt.title(&#39;{} in {}-{} keV&#39;.format(self.object,self.Emin,self.Emax))
+    plt.show()</code></pre>
+</details>
+</dd>
+<dt id="star.Lightcurve.lightcurve.rebin"><code class="name flex">
+<span>def <span class="ident">rebin</span></span>(<span>self, dt=1, force=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rebin light curve into new time resolution. Note: inefficient&hellip;
+Better to extract new light curves using XSELECT.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>dt</code>: float, optional, default: 1 (sec)
+<br>
+New time resolution.</p>
+<p><code>force</code>: boolean, optional, default: False
+<br>
+If True, don't ask for permission to make time resolution changes</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rebin(self,dt=1,force=False):
+    &#34;&#34;&#34;
+    Rebin light curve into new time resolution. Note: inefficient... 
+    Better to extract new light curves using XSELECT.
+
+    **Parameters**:
+    
+    `dt`: float, optional, default: 1 (sec)    
+        New time resolution.
+        
+    `force`: boolean, optional, default: False    
+        If True, don&#39;t ask for permission to make time resolution changes
+    &#34;&#34;&#34;
+
+    # New time vector
+    eps = 10e-15 #to include the final point
+    t = np.arange(self.t[0], self.t[-1]+eps,dt)
+    self.N = len(t)
+    s = self.dt/dt #scale factor
+
+    if not force:
+        still_update = input(&#39;You want to change the time resolution from dt = {:.3} (with N = {}) to dt = {:.3}. This will lead to a loss of information. \n Continue [y/n]? &#39;.format(self.dt,self.N,float(dt)))
+    else:
+        still_update = &#39;y&#39;
+    
+    if still_update == &#39;y&#39;:
+
+        # Mid-points
+        t_mid = [np.mean([t[i],t[i+1]]) for i in range(0,len(t)-1)]
+
+        # Determine what old t-values goes into what new t-bin
+        digitized = np.digitize(self.t, t)
+        # New t, rate, err and fracexp vectors 
+
+        rate, err, fracexp, t = [], [], [], []
+        for i in range(1,self.N):
+            if len(self.t[digitized == i])!=0:
+                rate.append(s*self.rate[digitized == i].sum())
+                err.append(s*np.sqrt(np.sum((self.err[digitized == i])**2)))
+                t.append(t_mid[i-1])
+
+        # Update 
+        self.t = np.array(t)
+        self.rate = np.array(rate)
+        self.err = np.array(err)
+        self.dt = dt
+        self.N = len(t)
+        self.R = np.mean(self.rate)
+        self.Fvar = self.Fvar_from_lc(m=self.N//100) #use 100 segments as default; can be changed.
+        print(&#39;Time resolution has been changed.&#39;)
+    else:
+        print(&#39;Did not change the time resolution.&#39;)
+    
+    return self</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="star" href="index.html">star</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="star.Lightcurve.lightcurve" href="#star.Lightcurve.lightcurve">lightcurve</a></code></h4>
+<ul class="">
+<li><code><a title="star.Lightcurve.lightcurve.Fvar_from_lc" href="#star.Lightcurve.lightcurve.Fvar_from_lc">Fvar_from_lc</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.channel_to_energy_XTE" href="#star.Lightcurve.lightcurve.channel_to_energy_XTE">channel_to_energy_XTE</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.extract_lc" href="#star.Lightcurve.lightcurve.extract_lc">extract_lc</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.extract_seg" href="#star.Lightcurve.lightcurve.extract_seg">extract_seg</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.find_energyband" href="#star.Lightcurve.lightcurve.find_energyband">find_energyband</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.plot" href="#star.Lightcurve.lightcurve.plot">plot</a></code></li>
+<li><code><a title="star.Lightcurve.lightcurve.rebin" href="#star.Lightcurve.lightcurve.rebin">rebin</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>star.Coherence API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>star.Coherence</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cross_spec(data,m,percent_limit=90,noise=None,return_noise_wo_sub=False):
+    &#34;&#34;&#34;
+    Compute the cross spectrum.
+    
+    **Parameters**:
+
+    `data`: Either lc (1) or ps (2).    
+        (1) class: list of two &#39;Lightcurve&#39;-objects; the light curves to be used in the coherence computation. &lt;br&gt;
+        (2) class: list of two &#39;PowerSpectrum&#39;-objects; the power spectras to be used in the coherence computation.
+        
+    `m`: int    
+        Number of time bins per segment.
+        
+    `percent_limit`: float, optional, default: 90    
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}, optional, default: None.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors.
+        
+    `return_noise_wo_sub`: boolean, optional, default: False    
+        If True, noise is returned but not subtracted from powspec.
+        If False, returned and subtracted.
+    
+    **Returns**:
+
+    `ps_v`: class: list of two &#39;PowerSpectrum&#39;-objects    
+        The power spectra used in the coherence computation.
+    
+    `C_v`: np.ndarray    
+        The cross-spectrum (see e.g. section 3 of Epitropakis, A. (2017)) after averaging over K segments.
+    &#34;&#34;&#34;
+    
+    print(&#39;Computing the cross spectrum...\n&#39;)
+
+    if isinstance(data[0], lightcurve) and isinstance(data[1], lightcurve):
+    
+        # Segment-wise: 
+        ps_v = [PowerSpectrum(lc, m=m, normalization=None, noise=noise, percent_limit=percent_limit,                               timer_on=False, return_noise_wo_sub=return_noise_wo_sub) for lc in data]
+
+    if isinstance(data[0], PowerSpectrum) and isinstance(data[1], PowerSpectrum):
+        ps_v = data
+        
+    S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+    C_v = np.array([np.conjugate(S1)*S2 for S1,S2 in zip(S_v[0],S_v[1])])
+
+    print(&#39;Cross spectrum computed.&#39;)    
+    
+    return ps_v, C_v
+
+def coherence_noiseless(data,m,percent_limit=90,C_v=None):
+    &#34;&#34;&#34;
+    Compute the coherence function when noise is not present in the signals.
+    
+    **Parameters**:
+
+    `data`: Either lc (1) or ps (2).    
+        (1) class: list of two &#39;Lightcurve&#39;-objects; the light curves to be used in the coherence computation. &lt;br&gt;
+        (2) class: list of two &#39;PowerSpectrum&#39;-objects; the power spectras to be used in the coherence computation.
+        
+    `m`: int    
+        Number of time bins per segment.
+    
+    `percent_limit`: float, optional, default: 90    
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `C_v`: np.ndarray    
+        If the cross spectrum has already been found, it can be used. In this case, we require data to be a list of PowerSpectrum-object.
+    
+    **Returns**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (with the current binning).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+     
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+    &#34;&#34;&#34;
+
+    start = timeit.default_timer()
+    print(&#39;Computing the noiseless coherence...&#39;)
+    
+    if isinstance(data[0], lightcurve) and isinstance(data[1], lightcurve):
+        # Need to subtract if one lightcurve lies within the other
+        lc_v = subtract_overlapping_energybands(data)
+    
+    # Find the Cross Spectrum
+    if not isinstance(C_v, np.ndarray):
+        ps_v, C_v = cross_spec(data, m=m, percent_limit=percent_limit)
+        S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+        xf = ps_v[0].xf
+    
+    # Have already found the Cross Spectrum
+    elif isinstance(C_v, np.ndarray):
+        print(&#39;Cross spectra already found.&#39;)
+        if isinstance(data[0], PowerSpectrum) and isinstance(data[1], PowerSpectrum):
+            xf = data[0].xf
+            S_v = np.array([data[0].fft_rate_v,data[1].fft_rate_v])
+        else:
+            print(&#39;If you provide me with the cross spectra C_v, the input data need to be a list of PowerSpectrum-objects.&#39;)
+    
+    # The Periodograms w/o normalization
+    P1_v = [np.abs(x)**2 for x in S_v[0]]
+    P2_v = [np.abs(x)**2 for x in S_v[1]]
+
+    # The Coherence and its error
+    K = np.size(C_v,axis=0) #number of segments
+    gamma2 = abs(np.mean(C_v,axis=0))**2/(np.mean(P1_v,axis=0)*np.mean(P2_v,axis=0))
+    delta_gamma2 = np.sqrt(2)*(1-gamma2)/(np.sqrt(abs(gamma2))*np.sqrt(K))
+    
+    time_taken = timeit.default_timer()-start
+    print(&#39;Noiseless coherence found (in {:.2f} sec).&#39;.format(time_taken))
+    
+    return xf, gamma2, delta_gamma2, C_v
+
+# See Appendix A of (Epitropakis,2017)
+
+def compute_coherence_intrinsic(lc_v,m,noise,percent_limit,output=False):
+    &#34;&#34;&#34;
+    Compute the intrinsic coherence for a given number of bins per segment (m).
+    
+    **Parameters**:
+ 
+    `lc_v`: class: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the coherence computation.
+        
+    `m`: int    
+        Number of bins per segment.
+    
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors. 
+    
+    `percent_limit`: float
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `output`: boolean    
+        If True, plot the whole light curve as well as the &#34;conditions_for_useful_est_int_coh met&#34;-figures. Also, helpful statements are printed.
+    
+    **Returns**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (which depends on m).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+    
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+        
+    `C_mean`: np.ndarray    
+        The cross spectra, can be used for time lag estimations.
+    &#34;&#34;&#34;
+    
+    # Compute power spectra, cross spectra, and signal powers
+    ps_v, C_v = cross_spec(lc_v,m,percent_limit,noise=noise,return_noise_wo_sub=True)
+    S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+
+    # Need to extract freq.vector (same for ps_v[0] and ps_v[1]), number of segments K and mean cross spectra
+    xf = ps_v[0].xf 
+    K = len(C_v)
+    C2_mean = np.array(np.abs(np.mean(C_v,axis=0))**2 )
+    
+    # Compute average for all power terms over all segments and then calculate n2 once
+    P1_mean = np.mean(np.abs(S_v[0])**2,axis=0) #power of signal: |S|^2
+    P2_mean = np.mean(np.abs(S_v[1])**2,axis=0)
+    N1_mean = np.mean(ps_v[0].Pnoise_v,axis=0) #power of noise
+    N2_mean = np.mean(ps_v[1].Pnoise_v,axis=0)
+    n2 = (P1_mean*N2_mean + P2_mean*N1_mean - N1_mean*N2_mean)/(K)
+    
+    # Compute coherence
+    gamma2 = comp_gamma2(C2_mean,n2,P1_mean,N1_mean,P2_mean,N2_mean)
+    
+    # Compute coherence error
+    delta_gamma2_int = compute_delta_gamma2_int(gamma2,C2_mean,n2,P1_mean,N1_mean,P2_mean,N2_mean,K)
+    
+    # Check for what frequencies the intrinsic coherence can be usefully estimaed.
+    upper_freq_lim = conditions_for_useful_est_int_coh(xf,gamma2,C2_mean,P1_mean,P2_mean,N1_mean,N2_mean,n2,K,output)
+    
+    return xf, gamma2, delta_gamma2_int, upper_freq_lim
+    
+def comp_gamma2(C2,n2,P1,N1,P2,N2):    
+    &#34;&#34;&#34;
+    Compute gamma2. See: Epitropakis, A. (2017), Eq. (A1). Compare with Eq. (3) (the noiseless case).
+    &#34;&#34;&#34;
+    
+    return (C2-n2)/((P1-N1)*(P2-N2))
+    
+    
+def compute_delta_gamma2_int(gamma2,C2,n2,P1,N1,P2,N2,K):
+    &#34;&#34;&#34;
+    Compute the error delta_gamma2_int. See: Epitropakis, A. (2017), Eq. (A3)
+    &#34;&#34;&#34;
+    
+    delta_gamma2 = np.sqrt(2/K)*(1-gamma2)/(np.sqrt(abs(gamma2)))
+    term1 = 2*K*(n2/(C2-n2))**2 #2*n2**2*K/(C2-n2)**2
+    term2 = (N1/(P1-N1))**2 #N1**2/(P1-N1)**2
+    term3 = (N2/(P2-N2))**2 #N2**2/(P2-N2)**2
+    term4 = K*(delta_gamma2/gamma2)**2 #K*delta_gamma2**2/gamma2**2
+    
+    return gamma2/np.sqrt(K)*(term1+term2+term3+term4)**(1/2)
+    
+    
+def coherence_intrinsic(lc_v,m_init,noise=&#39;Poisson&#39;,return_jointly=True,percent_limit=90,output=False,k_lowlim=8):
+    &#34;&#34;&#34;
+    Compute the coherence function (Cf) when noise is present in the signals. The Cf is computed at least
+    twice, once for m (number of bins per segment) being very high to cover low frequencies and 
+    once for m very small (256 as smallest) to cover high frequencies. 
+    
+    **Parameters**:
+
+    `lc_v`: class: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the coherence computation.
+        
+    `m_init`: int    
+        Number of bins per segment to start with. m_init will be lowered during each interation. 
+        The higher m, the less number of segments. The fewer segments, the lower frequencies will 
+        be considered, as f_min = 1/(m_init*dt).
+       
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}, optional, default: &#39;Poisson&#39;.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors. 
+       
+    `return_jointly`: boolean    
+        If True, the coherence computed for different m:s are merged. If False, the coherence 
+        is returned as a list of np.ndarrays, so that the computation for different m:s can be compared.
+        
+    `percent_limit`: float, optional, default: 90    
+        Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `output`: boolean    
+        If True, plot the whole light curve as well as the &#34;conditions_for_useful_est_int_coh met&#34;-figures. Also, helpful statements are printed.
+    
+    `k_lowlim`: int, optional, default: 8    
+        The lowest permitted m is 2**k_lowlim. 
+    
+    **Returns**:
+
+    `xf_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        The frequency-vector.
+        
+    `gamma2_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        The coherence function.
+    
+    `delta_gamma2_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        One sigma uncertainty in the coherence function. 
+    &#34;&#34;&#34;
+    
+    assert isinstance(lc_v[0], lightcurve) and isinstance(lc_v[1], lightcurve), &#39;The data-input does not contain two light curve objects.&#39;
+    assert len(lc_v)==2, &#39;Coherence should be computed with 2 light curves, not {}&#39;.format(len(lc_v))
+    
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    print(&#39;                           Computing the intrinsic coherence...&#39;)
+    print(&#39;---------------------------------------------------------------------------------------------------\n&#39;)
+    start = timeit.default_timer()
+    
+    # Need to subtract if one lightcurve lies within the other
+    lc_v = subtract_overlapping_energybands(lc_v)
+    
+    # Needed parameters
+    m = m_init
+    k = int(np.log2(m))
+    dt = lc_v[0].dt
+    find_again = True
+    xf_v, gamma2_v, delta_gamma2_int_v, upper_freq_lim_v = [], [], [], []
+    
+    # Find intrinsic coherence for current m
+    i=0
+    while find_again:
+        i+=1
+        print(&#39;Iteration {}) Computing using m = {} bins per segment, i.e. f in [{:.3f},{:.3f}]&#39;.format(i,m,1/(m*dt),1/(2*dt)))
+        print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+        xf, gamma2, delta_gamma2_int, upper_freq_lim = compute_coherence_intrinsic(lc_v,m,noise,percent_limit,output=output)
+    
+        if return_jointly: 
+            # Don&#39;t use the full freq band found; only use freq up to multi_factor*upper_freq_lim, 
+            # i.e. slightly under uppper freq lim.
+            if k!=k_lowlim:
+                multi_factor = 0.9
+                if upper_freq_lim != -1:
+                    lim = upper_freq_lim*multi_factor
+                else:
+                    lim = xf[-1]
+            else:
+                lim = xf[-1]
+                
+            gamma2 = gamma2[xf &lt; lim]
+            delta_gamma2_int = delta_gamma2_int[xf &lt; lim]
+            xf = xf[xf &lt; lim]
+        
+            # Append to lists
+            xf_v = np.append(xf_v,xf)
+            gamma2_v = np.append(gamma2_v,gamma2) 
+            delta_gamma2_int_v = np.append(delta_gamma2_int_v,delta_gamma2_int) 
+            upper_freq_lim_v = np.append(upper_freq_lim_v,upper_freq_lim)
+        
+        # If not return_jointly; can see what freq-range the different m caught.
+        else:
+            # Rebin directly; only want to get a feeling for the different m
+            num = 50
+            lim = xf[-1]
+            xf,gamma2,delta_gamma2_int = log_rebin(xf,gamma2,delta_gamma2_int,num=num)
+            delta_gamma2_int = error_change(delta_gamma2_int)
+            
+            # Append to lists
+            xf_v.append(xf)
+            gamma2_v.append(gamma2) 
+            delta_gamma2_int_v.append(delta_gamma2_int) 
+            upper_freq_lim_v.append(upper_freq_lim)
+    
+        print(&#39;Intrinsic coherence found for f in [{:.3f},{:.3f}] \n&#39;.format(1/(m*dt),lim))
+        
+        # Change number of bins / segment until next time
+        if k == k_lowlim:
+            find_again = False
+        else:
+            k_temp = np.copy(k)
+            multi_factor = 10 #discuss what this is... 
+            while 2**(k-1) &gt; multi_factor/(dt*upper_freq_lim):
+                k -= 1
+                if k == k_lowlim:
+                    break 
+            if k_temp == k: #to make sure we always make k smaller
+                k -= 1
+            m = 2**k
+    
+    time_taken = timeit.default_timer()-start
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    print(&#39;             Intrinsic coherence found (in {:.2f} sec). return_jointly = {}&#39;.format(time_taken,return_jointly))
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    
+    while True:
+        to_clear = input(&#34;Do you want to clear the standard out from prints [y/n]? &#34;)
+        if to_clear not in (&#34;n&#34;, &#34;y&#34;):
+            print(&#34;Not an appropriate choice.&#34;)
+        else:
+            break
+    
+    if to_clear == &#39;y&#39;:
+        clear_output(True)
+        
+    while True:
+        to_plot = input(&#34;Do you want to plot the intrinsic coherence [y/n]? &#34;)
+        if to_plot not in (&#34;n&#34;, &#34;y&#34;):
+            print(&#34;Not an appropriate choice.&#34;)
+        else:
+            break
+        
+    if to_plot == &#39;y&#39;: 
+        Ebands = (&#39;{}-{}&#39;.format(lc_v[0].Emin,lc_v[0].Emax),&#39;{}-{}&#39;.format(lc_v[1].Emin,lc_v[1].Emax))
+        plot_coherence(xf_v, gamma2_v, delta_gamma2_int_v,Ebands=Ebands)
+    
+    return xf_v, gamma2_v, delta_gamma2_int_v
+
+def conditions_for_useful_est_int_coh(xf,gamma2,C2,P1,P2,N1,N2,n2,K,output):
+    &#34;&#34;&#34;
+    The intrinsic coherence can be usefully estimated when the following conditions_for_useful_est_int_coh are met: 
+    1) sqrt(C2) &gt; sqrt(n2)
+    2) |S_1|^2/|N_1|^2 &gt; 1/\sqrt{m}
+    3) |S_2|^2/|N_2|^2 &gt; 1/\sqrt{m}
+    &#34;&#34;&#34;
+    
+    upper_freq_lim = []
+    
+    C = np.sqrt(np.abs(C2))
+    n = np.sqrt(np.abs(n2))
+    
+    if output:
+        standard_plot(h=8)
+        plt.subplot(3,1,1)
+
+        plt.loglog(xf,C,label=r&#34;$|&lt;C(f)&gt;|^2$&#34;)
+        plt.loglog(xf,n,label=r&#34;$n^2$&#34;)
+    
+    try:
+        # Condition 1
+        idx = np.argwhere(np.diff(np.sign(C-n))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], n[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+        plt.title(&#39;Conditions to be met for useful estimation of $\gamma_I^2$&#39;)
+
+        plt.subplot(3,2,3)
+        plt.title(r&#39;High Power (Term 2 of $\delta \gamma^2_{int}$)&#39;)
+        plt.loglog(xf,(P1-N1),label=r&#39;$|S_1|^2$&#39;)
+        plt.loglog(xf,N1*np.ones(np.size(xf))/np.sqrt(K),label=r&#39;$N_1/\sqrt{m}$&#39;)
+    
+    try:
+        # Condition 2
+        temp = N1*np.ones(np.size(xf))/np.sqrt(K)
+        idx = np.argwhere(np.diff(np.sign(temp-(P1-N1)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        
+        if output:
+            plt.plot(upper_freq_lim[-1], temp[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+
+        plt.subplot(3,2,4)
+        plt.title(r&#39;High Power (Term 3 of $\delta \gamma^2_{int}$)&#39;)
+        plt.loglog(xf,(P2-N2),label=r&#39;$|S_2|^2$&#39;)
+        plt.loglog(xf,N2*np.ones(np.size(xf))/np.sqrt(K),label=r&#39;$N_2/\sqrt{m}$&#39;)
+        
+    try:
+        # Condition 3
+        temp = N2*np.ones(np.size(xf))/np.sqrt(K)
+        idx = np.argwhere(np.diff(np.sign(temp-(P2-N2)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], temp[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+
+        plt.subplot(3,1,3)
+        plt.title(&#39;High Coherence&#39;)
+        plt.loglog(xf,gamma2,label=r&#39;$\gamma^2_{int}$&#39;)
+        plt.loglog(xf,n**2/(P1*P2),label=r&#39;$n^2/(P_1P_2)$&#39;)
+    try:
+        idx = np.argwhere(np.diff(np.sign(gamma2-n**2/(P1*P2)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], gamma2[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+    
+    if len(upper_freq_lim) == 0:
+        return -1
+    else:
+        return np.amin(upper_freq_lim)
+    
+def plot_coherence(xf,gamma2,delta_gamma2_int,Ebands=None,err_lim=1,num=75,save_fig = False):
+    &#34;&#34;&#34;
+    Plot the coherence.
+    
+    **Parameters**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (which depends on m).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+    
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+     
+    `Ebands`: tuple of strings, (Eband1,Eband2), optional, default: None    
+        The energy bands of the two light curves compared.
+    
+    `err_lim`: float, optional, default: 1    
+        Error limit. If an error element is larger than err_lim, it is set to zero. 
+    
+    `num`: int, optional, default: 75    
+        The number of logarithmic frequency bins to create before plotting.
+        
+    `save_fig`: boolean, optional, default: False    
+         If True, asks for path to location to save plot.
+    &#34;&#34;&#34;
+    
+    standard_plot()
+    ax = plt.gca()
+
+    if Ebands == None:
+        Eband1 = input(&#39;First energyband in keV [?-?]): &#39;)
+        Eband2 = input(&#39;Second energyband in keV [?-?]: &#39;)
+    else:
+        Eband1, Eband2 = Ebands[0], Ebands[1]
+    ax.text(0.3,0.1,&#39;({} keV) vs. ({} keV)&#39;.format(Eband1,Eband2),fontsize=14,horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+    
+    if len(xf) &lt;= 3:
+        for i in range(0,len(xf)):
+            ax.errorbar(xf[i],gamma2[i],yerr=delta_gamma2_int[i], fmt = &#39;.&#39;,mfc=&#39;w&#39;,capsize=2, elinewidth=1, markeredgewidth=1,label=r&#39;$N=2^6$&#39;)
+    else:
+        xf, gamma2, error = log_rebin(xf,gamma2,delta_gamma2_int,num=num)
+        error = error_change(error,err_lim)
+        ax.errorbar(xf,gamma2,yerr=error, fmt = &#39;.k&#39;,mfc=&#39;w&#39;,capsize=2, elinewidth=1, markeredgewidth=1,label=r&#39;$N=2^6$&#39;)
+    
+    ax.set_ylim([0,1.4])
+    ax.axhline(1,color=&#39;k&#39;,linewidth=1,alpha=0.7)
+    ax.set_xscale(&#34;log&#34;)
+    plt.xlabel(&#39;Frequency [Hz]&#39;)
+
+    plt.ylabel(&#39;$\gamma_{int}^2$&#39;)
+    if save_fig:
+        path = input(&#39;Path to location to save plot [end with .png]: &#39;) 
+        plt.savefig(path,bbox_inches=&#39;tight&#39;)
+    plt.show()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="star.Coherence.coherence_intrinsic"><code class="name flex">
+<span>def <span class="ident">coherence_intrinsic</span></span>(<span>lc_v, m_init, noise='Poisson', return_jointly=True, percent_limit=90, output=False, k_lowlim=8)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the coherence function (Cf) when noise is present in the signals. The Cf is computed at least
+twice, once for m (number of bins per segment) being very high to cover low frequencies and
+once for m very small (256 as smallest) to cover high frequencies. </p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: class: list of two 'Lightcurve'-objects
+<br>
+The light curves to be used in the coherence computation.</p>
+<p><code>m_init</code>: int
+<br>
+Number of bins per segment to start with. m_init will be lowered during each interation.
+The higher m, the less number of segments. The fewer segments, the lower frequencies will
+be considered, as f_min = 1/(m_init*dt).</p>
+<p><code>noise</code>: {'Poisson','Gaussian'}, optional, default: 'Poisson'.
+<br>
+For a light curve with 'Poisson'/'Gaussian' errors. </p>
+<p><code>return_jointly</code>: boolean
+<br>
+If True, the coherence computed for different m:s are merged. If False, the coherence
+is returned as a list of np.ndarrays, so that the computation for different m:s can be compared.</p>
+<p><code>percent_limit</code>: float, optional, default: 90
+<br>
+Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.</p>
+<p><code>output</code>: boolean
+<br>
+If True, plot the whole light curve as well as the "conditions_for_useful_est_int_coh met"-figures. Also, helpful statements are printed.</p>
+<p><code>k_lowlim</code>: int, optional, default: 8
+<br>
+The lowest permitted m is 2**k_lowlim. </p>
+<p><strong>Returns</strong>:</p>
+<p><code>xf_v</code>: np.ndarray (or a list of np.ndarrays if return_jointly is False)
+<br>
+The frequency-vector.</p>
+<p><code>gamma2_v</code>: np.ndarray (or a list of np.ndarrays if return_jointly is False)
+<br>
+The coherence function.</p>
+<p><code>delta_gamma2_v</code>: np.ndarray (or a list of np.ndarrays if return_jointly is False)
+<br>
+One sigma uncertainty in the coherence function.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def coherence_intrinsic(lc_v,m_init,noise=&#39;Poisson&#39;,return_jointly=True,percent_limit=90,output=False,k_lowlim=8):
+    &#34;&#34;&#34;
+    Compute the coherence function (Cf) when noise is present in the signals. The Cf is computed at least
+    twice, once for m (number of bins per segment) being very high to cover low frequencies and 
+    once for m very small (256 as smallest) to cover high frequencies. 
+    
+    **Parameters**:
+
+    `lc_v`: class: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the coherence computation.
+        
+    `m_init`: int    
+        Number of bins per segment to start with. m_init will be lowered during each interation. 
+        The higher m, the less number of segments. The fewer segments, the lower frequencies will 
+        be considered, as f_min = 1/(m_init*dt).
+       
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}, optional, default: &#39;Poisson&#39;.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors. 
+       
+    `return_jointly`: boolean    
+        If True, the coherence computed for different m:s are merged. If False, the coherence 
+        is returned as a list of np.ndarrays, so that the computation for different m:s can be compared.
+        
+    `percent_limit`: float, optional, default: 90    
+        Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `output`: boolean    
+        If True, plot the whole light curve as well as the &#34;conditions_for_useful_est_int_coh met&#34;-figures. Also, helpful statements are printed.
+    
+    `k_lowlim`: int, optional, default: 8    
+        The lowest permitted m is 2**k_lowlim. 
+    
+    **Returns**:
+
+    `xf_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        The frequency-vector.
+        
+    `gamma2_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        The coherence function.
+    
+    `delta_gamma2_v`: np.ndarray (or a list of np.ndarrays if return_jointly is False)    
+        One sigma uncertainty in the coherence function. 
+    &#34;&#34;&#34;
+    
+    assert isinstance(lc_v[0], lightcurve) and isinstance(lc_v[1], lightcurve), &#39;The data-input does not contain two light curve objects.&#39;
+    assert len(lc_v)==2, &#39;Coherence should be computed with 2 light curves, not {}&#39;.format(len(lc_v))
+    
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    print(&#39;                           Computing the intrinsic coherence...&#39;)
+    print(&#39;---------------------------------------------------------------------------------------------------\n&#39;)
+    start = timeit.default_timer()
+    
+    # Need to subtract if one lightcurve lies within the other
+    lc_v = subtract_overlapping_energybands(lc_v)
+    
+    # Needed parameters
+    m = m_init
+    k = int(np.log2(m))
+    dt = lc_v[0].dt
+    find_again = True
+    xf_v, gamma2_v, delta_gamma2_int_v, upper_freq_lim_v = [], [], [], []
+    
+    # Find intrinsic coherence for current m
+    i=0
+    while find_again:
+        i+=1
+        print(&#39;Iteration {}) Computing using m = {} bins per segment, i.e. f in [{:.3f},{:.3f}]&#39;.format(i,m,1/(m*dt),1/(2*dt)))
+        print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+        xf, gamma2, delta_gamma2_int, upper_freq_lim = compute_coherence_intrinsic(lc_v,m,noise,percent_limit,output=output)
+    
+        if return_jointly: 
+            # Don&#39;t use the full freq band found; only use freq up to multi_factor*upper_freq_lim, 
+            # i.e. slightly under uppper freq lim.
+            if k!=k_lowlim:
+                multi_factor = 0.9
+                if upper_freq_lim != -1:
+                    lim = upper_freq_lim*multi_factor
+                else:
+                    lim = xf[-1]
+            else:
+                lim = xf[-1]
+                
+            gamma2 = gamma2[xf &lt; lim]
+            delta_gamma2_int = delta_gamma2_int[xf &lt; lim]
+            xf = xf[xf &lt; lim]
+        
+            # Append to lists
+            xf_v = np.append(xf_v,xf)
+            gamma2_v = np.append(gamma2_v,gamma2) 
+            delta_gamma2_int_v = np.append(delta_gamma2_int_v,delta_gamma2_int) 
+            upper_freq_lim_v = np.append(upper_freq_lim_v,upper_freq_lim)
+        
+        # If not return_jointly; can see what freq-range the different m caught.
+        else:
+            # Rebin directly; only want to get a feeling for the different m
+            num = 50
+            lim = xf[-1]
+            xf,gamma2,delta_gamma2_int = log_rebin(xf,gamma2,delta_gamma2_int,num=num)
+            delta_gamma2_int = error_change(delta_gamma2_int)
+            
+            # Append to lists
+            xf_v.append(xf)
+            gamma2_v.append(gamma2) 
+            delta_gamma2_int_v.append(delta_gamma2_int) 
+            upper_freq_lim_v.append(upper_freq_lim)
+    
+        print(&#39;Intrinsic coherence found for f in [{:.3f},{:.3f}] \n&#39;.format(1/(m*dt),lim))
+        
+        # Change number of bins / segment until next time
+        if k == k_lowlim:
+            find_again = False
+        else:
+            k_temp = np.copy(k)
+            multi_factor = 10 #discuss what this is... 
+            while 2**(k-1) &gt; multi_factor/(dt*upper_freq_lim):
+                k -= 1
+                if k == k_lowlim:
+                    break 
+            if k_temp == k: #to make sure we always make k smaller
+                k -= 1
+            m = 2**k
+    
+    time_taken = timeit.default_timer()-start
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    print(&#39;             Intrinsic coherence found (in {:.2f} sec). return_jointly = {}&#39;.format(time_taken,return_jointly))
+    print(&#39;---------------------------------------------------------------------------------------------------&#39;)
+    
+    while True:
+        to_clear = input(&#34;Do you want to clear the standard out from prints [y/n]? &#34;)
+        if to_clear not in (&#34;n&#34;, &#34;y&#34;):
+            print(&#34;Not an appropriate choice.&#34;)
+        else:
+            break
+    
+    if to_clear == &#39;y&#39;:
+        clear_output(True)
+        
+    while True:
+        to_plot = input(&#34;Do you want to plot the intrinsic coherence [y/n]? &#34;)
+        if to_plot not in (&#34;n&#34;, &#34;y&#34;):
+            print(&#34;Not an appropriate choice.&#34;)
+        else:
+            break
+        
+    if to_plot == &#39;y&#39;: 
+        Ebands = (&#39;{}-{}&#39;.format(lc_v[0].Emin,lc_v[0].Emax),&#39;{}-{}&#39;.format(lc_v[1].Emin,lc_v[1].Emax))
+        plot_coherence(xf_v, gamma2_v, delta_gamma2_int_v,Ebands=Ebands)
+    
+    return xf_v, gamma2_v, delta_gamma2_int_v</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.coherence_noiseless"><code class="name flex">
+<span>def <span class="ident">coherence_noiseless</span></span>(<span>data, m, percent_limit=90, C_v=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the coherence function when noise is not present in the signals.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>data</code>: Either lc (1) or ps (2).
+<br>
+(1) class: list of two 'Lightcurve'-objects; the light curves to be used in the coherence computation. <br>
+(2) class: list of two 'PowerSpectrum'-objects; the power spectras to be used in the coherence computation.</p>
+<p><code>m</code>: int
+<br>
+Number of time bins per segment.</p>
+<p><code>percent_limit</code>: float, optional, default: 90
+<br>
+Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.</p>
+<p><code>C_v</code>: np.ndarray
+<br>
+If the cross spectrum has already been found, it can be used. In this case, we require data to be a list of PowerSpectrum-object.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>xf</code>: np.ndarray
+<br>
+The frequency-vector (with the current binning).</p>
+<p><code>gamma2</code>: np.ndarray
+<br>
+The coherence function.</p>
+<p><code>delta_gamma2</code>: np.ndarray
+<br>
+One sigma uncertainty in the coherence function.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def coherence_noiseless(data,m,percent_limit=90,C_v=None):
+    &#34;&#34;&#34;
+    Compute the coherence function when noise is not present in the signals.
+    
+    **Parameters**:
+
+    `data`: Either lc (1) or ps (2).    
+        (1) class: list of two &#39;Lightcurve&#39;-objects; the light curves to be used in the coherence computation. &lt;br&gt;
+        (2) class: list of two &#39;PowerSpectrum&#39;-objects; the power spectras to be used in the coherence computation.
+        
+    `m`: int    
+        Number of time bins per segment.
+    
+    `percent_limit`: float, optional, default: 90    
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `C_v`: np.ndarray    
+        If the cross spectrum has already been found, it can be used. In this case, we require data to be a list of PowerSpectrum-object.
+    
+    **Returns**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (with the current binning).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+     
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+    &#34;&#34;&#34;
+
+    start = timeit.default_timer()
+    print(&#39;Computing the noiseless coherence...&#39;)
+    
+    if isinstance(data[0], lightcurve) and isinstance(data[1], lightcurve):
+        # Need to subtract if one lightcurve lies within the other
+        lc_v = subtract_overlapping_energybands(data)
+    
+    # Find the Cross Spectrum
+    if not isinstance(C_v, np.ndarray):
+        ps_v, C_v = cross_spec(data, m=m, percent_limit=percent_limit)
+        S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+        xf = ps_v[0].xf
+    
+    # Have already found the Cross Spectrum
+    elif isinstance(C_v, np.ndarray):
+        print(&#39;Cross spectra already found.&#39;)
+        if isinstance(data[0], PowerSpectrum) and isinstance(data[1], PowerSpectrum):
+            xf = data[0].xf
+            S_v = np.array([data[0].fft_rate_v,data[1].fft_rate_v])
+        else:
+            print(&#39;If you provide me with the cross spectra C_v, the input data need to be a list of PowerSpectrum-objects.&#39;)
+    
+    # The Periodograms w/o normalization
+    P1_v = [np.abs(x)**2 for x in S_v[0]]
+    P2_v = [np.abs(x)**2 for x in S_v[1]]
+
+    # The Coherence and its error
+    K = np.size(C_v,axis=0) #number of segments
+    gamma2 = abs(np.mean(C_v,axis=0))**2/(np.mean(P1_v,axis=0)*np.mean(P2_v,axis=0))
+    delta_gamma2 = np.sqrt(2)*(1-gamma2)/(np.sqrt(abs(gamma2))*np.sqrt(K))
+    
+    time_taken = timeit.default_timer()-start
+    print(&#39;Noiseless coherence found (in {:.2f} sec).&#39;.format(time_taken))
+    
+    return xf, gamma2, delta_gamma2, C_v</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.comp_gamma2"><code class="name flex">
+<span>def <span class="ident">comp_gamma2</span></span>(<span>C2, n2, P1, N1, P2, N2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute gamma2. See: Epitropakis, A. (2017), Eq. (A1). Compare with Eq. (3) (the noiseless case).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def comp_gamma2(C2,n2,P1,N1,P2,N2):    
+    &#34;&#34;&#34;
+    Compute gamma2. See: Epitropakis, A. (2017), Eq. (A1). Compare with Eq. (3) (the noiseless case).
+    &#34;&#34;&#34;
+    
+    return (C2-n2)/((P1-N1)*(P2-N2))</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.compute_coherence_intrinsic"><code class="name flex">
+<span>def <span class="ident">compute_coherence_intrinsic</span></span>(<span>lc_v, m, noise, percent_limit, output=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the intrinsic coherence for a given number of bins per segment (m).</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: class: list of two 'Lightcurve'-objects
+<br>
+The light curves to be used in the coherence computation.</p>
+<p><code>m</code>: int
+<br>
+Number of bins per segment.</p>
+<p><code>noise</code>: {'Poisson','Gaussian'}.
+<br>
+For a light curve with 'Poisson'/'Gaussian' errors. </p>
+<p><code>percent_limit</code>: float
+Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.</p>
+<p><code>output</code>: boolean
+<br>
+If True, plot the whole light curve as well as the "conditions_for_useful_est_int_coh met"-figures. Also, helpful statements are printed.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>xf</code>: np.ndarray
+<br>
+The frequency-vector (which depends on m).</p>
+<p><code>gamma2</code>: np.ndarray
+<br>
+The coherence function.</p>
+<p><code>delta_gamma2</code>: np.ndarray
+<br>
+One sigma uncertainty in the coherence function. </p>
+<p><code>C_mean</code>: np.ndarray
+<br>
+The cross spectra, can be used for time lag estimations.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_coherence_intrinsic(lc_v,m,noise,percent_limit,output=False):
+    &#34;&#34;&#34;
+    Compute the intrinsic coherence for a given number of bins per segment (m).
+    
+    **Parameters**:
+ 
+    `lc_v`: class: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the coherence computation.
+        
+    `m`: int    
+        Number of bins per segment.
+    
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors. 
+    
+    `percent_limit`: float
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `output`: boolean    
+        If True, plot the whole light curve as well as the &#34;conditions_for_useful_est_int_coh met&#34;-figures. Also, helpful statements are printed.
+    
+    **Returns**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (which depends on m).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+    
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+        
+    `C_mean`: np.ndarray    
+        The cross spectra, can be used for time lag estimations.
+    &#34;&#34;&#34;
+    
+    # Compute power spectra, cross spectra, and signal powers
+    ps_v, C_v = cross_spec(lc_v,m,percent_limit,noise=noise,return_noise_wo_sub=True)
+    S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+
+    # Need to extract freq.vector (same for ps_v[0] and ps_v[1]), number of segments K and mean cross spectra
+    xf = ps_v[0].xf 
+    K = len(C_v)
+    C2_mean = np.array(np.abs(np.mean(C_v,axis=0))**2 )
+    
+    # Compute average for all power terms over all segments and then calculate n2 once
+    P1_mean = np.mean(np.abs(S_v[0])**2,axis=0) #power of signal: |S|^2
+    P2_mean = np.mean(np.abs(S_v[1])**2,axis=0)
+    N1_mean = np.mean(ps_v[0].Pnoise_v,axis=0) #power of noise
+    N2_mean = np.mean(ps_v[1].Pnoise_v,axis=0)
+    n2 = (P1_mean*N2_mean + P2_mean*N1_mean - N1_mean*N2_mean)/(K)
+    
+    # Compute coherence
+    gamma2 = comp_gamma2(C2_mean,n2,P1_mean,N1_mean,P2_mean,N2_mean)
+    
+    # Compute coherence error
+    delta_gamma2_int = compute_delta_gamma2_int(gamma2,C2_mean,n2,P1_mean,N1_mean,P2_mean,N2_mean,K)
+    
+    # Check for what frequencies the intrinsic coherence can be usefully estimaed.
+    upper_freq_lim = conditions_for_useful_est_int_coh(xf,gamma2,C2_mean,P1_mean,P2_mean,N1_mean,N2_mean,n2,K,output)
+    
+    return xf, gamma2, delta_gamma2_int, upper_freq_lim</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.compute_delta_gamma2_int"><code class="name flex">
+<span>def <span class="ident">compute_delta_gamma2_int</span></span>(<span>gamma2, C2, n2, P1, N1, P2, N2, K)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the error delta_gamma2_int. See: Epitropakis, A. (2017), Eq. (A3)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_delta_gamma2_int(gamma2,C2,n2,P1,N1,P2,N2,K):
+    &#34;&#34;&#34;
+    Compute the error delta_gamma2_int. See: Epitropakis, A. (2017), Eq. (A3)
+    &#34;&#34;&#34;
+    
+    delta_gamma2 = np.sqrt(2/K)*(1-gamma2)/(np.sqrt(abs(gamma2)))
+    term1 = 2*K*(n2/(C2-n2))**2 #2*n2**2*K/(C2-n2)**2
+    term2 = (N1/(P1-N1))**2 #N1**2/(P1-N1)**2
+    term3 = (N2/(P2-N2))**2 #N2**2/(P2-N2)**2
+    term4 = K*(delta_gamma2/gamma2)**2 #K*delta_gamma2**2/gamma2**2
+    
+    return gamma2/np.sqrt(K)*(term1+term2+term3+term4)**(1/2)</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.conditions_for_useful_est_int_coh"><code class="name flex">
+<span>def <span class="ident">conditions_for_useful_est_int_coh</span></span>(<span>xf, gamma2, C2, P1, P2, N1, N2, n2, K, output)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The intrinsic coherence can be usefully estimated when the following conditions_for_useful_est_int_coh are met:
+1) sqrt(C2) &gt; sqrt(n2)
+2) |S_1|^2/|N_1|^2 &gt; 1/\sqrt{m}
+3) |S_2|^2/|N_2|^2 &gt; 1/\sqrt{m}</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def conditions_for_useful_est_int_coh(xf,gamma2,C2,P1,P2,N1,N2,n2,K,output):
+    &#34;&#34;&#34;
+    The intrinsic coherence can be usefully estimated when the following conditions_for_useful_est_int_coh are met: 
+    1) sqrt(C2) &gt; sqrt(n2)
+    2) |S_1|^2/|N_1|^2 &gt; 1/\sqrt{m}
+    3) |S_2|^2/|N_2|^2 &gt; 1/\sqrt{m}
+    &#34;&#34;&#34;
+    
+    upper_freq_lim = []
+    
+    C = np.sqrt(np.abs(C2))
+    n = np.sqrt(np.abs(n2))
+    
+    if output:
+        standard_plot(h=8)
+        plt.subplot(3,1,1)
+
+        plt.loglog(xf,C,label=r&#34;$|&lt;C(f)&gt;|^2$&#34;)
+        plt.loglog(xf,n,label=r&#34;$n^2$&#34;)
+    
+    try:
+        # Condition 1
+        idx = np.argwhere(np.diff(np.sign(C-n))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], n[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+        plt.title(&#39;Conditions to be met for useful estimation of $\gamma_I^2$&#39;)
+
+        plt.subplot(3,2,3)
+        plt.title(r&#39;High Power (Term 2 of $\delta \gamma^2_{int}$)&#39;)
+        plt.loglog(xf,(P1-N1),label=r&#39;$|S_1|^2$&#39;)
+        plt.loglog(xf,N1*np.ones(np.size(xf))/np.sqrt(K),label=r&#39;$N_1/\sqrt{m}$&#39;)
+    
+    try:
+        # Condition 2
+        temp = N1*np.ones(np.size(xf))/np.sqrt(K)
+        idx = np.argwhere(np.diff(np.sign(temp-(P1-N1)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        
+        if output:
+            plt.plot(upper_freq_lim[-1], temp[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+
+        plt.subplot(3,2,4)
+        plt.title(r&#39;High Power (Term 3 of $\delta \gamma^2_{int}$)&#39;)
+        plt.loglog(xf,(P2-N2),label=r&#39;$|S_2|^2$&#39;)
+        plt.loglog(xf,N2*np.ones(np.size(xf))/np.sqrt(K),label=r&#39;$N_2/\sqrt{m}$&#39;)
+        
+    try:
+        # Condition 3
+        temp = N2*np.ones(np.size(xf))/np.sqrt(K)
+        idx = np.argwhere(np.diff(np.sign(temp-(P2-N2)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], temp[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+
+        plt.subplot(3,1,3)
+        plt.title(&#39;High Coherence&#39;)
+        plt.loglog(xf,gamma2,label=r&#39;$\gamma^2_{int}$&#39;)
+        plt.loglog(xf,n**2/(P1*P2),label=r&#39;$n^2/(P_1P_2)$&#39;)
+    try:
+        idx = np.argwhere(np.diff(np.sign(gamma2-n**2/(P1*P2)))).flatten()
+        upper_freq_lim.append(xf[idx[0]])
+        if output:
+            plt.plot(upper_freq_lim[-1], gamma2[idx[0]], &#39;ro&#39;,label=str(xf[idx[0]]))
+    except:
+        pass
+    
+    if output:
+        plt.legend()
+        plt.tight_layout()
+        plt.show()
+    
+    if len(upper_freq_lim) == 0:
+        return -1
+    else:
+        return np.amin(upper_freq_lim)</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.cross_spec"><code class="name flex">
+<span>def <span class="ident">cross_spec</span></span>(<span>data, m, percent_limit=90, noise=None, return_noise_wo_sub=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the cross spectrum.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>data</code>: Either lc (1) or ps (2).
+<br>
+(1) class: list of two 'Lightcurve'-objects; the light curves to be used in the coherence computation. <br>
+(2) class: list of two 'PowerSpectrum'-objects; the power spectras to be used in the coherence computation.</p>
+<p><code>m</code>: int
+<br>
+Number of time bins per segment.</p>
+<p><code>percent_limit</code>: float, optional, default: 90
+<br>
+Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.</p>
+<p><code>noise</code>: {'Poisson','Gaussian'}, optional, default: None.
+<br>
+For a light curve with 'Poisson'/'Gaussian' errors.</p>
+<p><code>return_noise_wo_sub</code>: boolean, optional, default: False
+<br>
+If True, noise is returned but not subtracted from powspec.
+If False, returned and subtracted.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>ps_v</code>: class: list of two 'PowerSpectrum'-objects
+<br>
+The power spectra used in the coherence computation.</p>
+<p><code>C_v</code>: np.ndarray
+<br>
+The cross-spectrum (see e.g. section 3 of Epitropakis, A. (2017)) after averaging over K segments.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cross_spec(data,m,percent_limit=90,noise=None,return_noise_wo_sub=False):
+    &#34;&#34;&#34;
+    Compute the cross spectrum.
+    
+    **Parameters**:
+
+    `data`: Either lc (1) or ps (2).    
+        (1) class: list of two &#39;Lightcurve&#39;-objects; the light curves to be used in the coherence computation. &lt;br&gt;
+        (2) class: list of two &#39;PowerSpectrum&#39;-objects; the power spectras to be used in the coherence computation.
+        
+    `m`: int    
+        Number of time bins per segment.
+        
+    `percent_limit`: float, optional, default: 90    
+            Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+    
+    `noise`: {&#39;Poisson&#39;,&#39;Gaussian&#39;}, optional, default: None.    
+        For a light curve with &#39;Poisson&#39;/&#39;Gaussian&#39; errors.
+        
+    `return_noise_wo_sub`: boolean, optional, default: False    
+        If True, noise is returned but not subtracted from powspec.
+        If False, returned and subtracted.
+    
+    **Returns**:
+
+    `ps_v`: class: list of two &#39;PowerSpectrum&#39;-objects    
+        The power spectra used in the coherence computation.
+    
+    `C_v`: np.ndarray    
+        The cross-spectrum (see e.g. section 3 of Epitropakis, A. (2017)) after averaging over K segments.
+    &#34;&#34;&#34;
+    
+    print(&#39;Computing the cross spectrum...\n&#39;)
+
+    if isinstance(data[0], lightcurve) and isinstance(data[1], lightcurve):
+    
+        # Segment-wise: 
+        ps_v = [PowerSpectrum(lc, m=m, normalization=None, noise=noise, percent_limit=percent_limit,                               timer_on=False, return_noise_wo_sub=return_noise_wo_sub) for lc in data]
+
+    if isinstance(data[0], PowerSpectrum) and isinstance(data[1], PowerSpectrum):
+        ps_v = data
+        
+    S_v = np.array([ps_v[0].fft_rate_v,ps_v[1].fft_rate_v])
+    C_v = np.array([np.conjugate(S1)*S2 for S1,S2 in zip(S_v[0],S_v[1])])
+
+    print(&#39;Cross spectrum computed.&#39;)    
+    
+    return ps_v, C_v</code></pre>
+</details>
+</dd>
+<dt id="star.Coherence.plot_coherence"><code class="name flex">
+<span>def <span class="ident">plot_coherence</span></span>(<span>xf, gamma2, delta_gamma2_int, Ebands=None, err_lim=1, num=75, save_fig=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Plot the coherence.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>xf</code>: np.ndarray
+<br>
+The frequency-vector (which depends on m).</p>
+<p><code>gamma2</code>: np.ndarray
+<br>
+The coherence function.</p>
+<p><code>delta_gamma2</code>: np.ndarray
+<br>
+One sigma uncertainty in the coherence function. </p>
+<p><code>Ebands</code>: tuple of strings, (Eband1,Eband2), optional, default: None
+<br>
+The energy bands of the two light curves compared.</p>
+<p><code>err_lim</code>: float, optional, default: 1
+<br>
+Error limit. If an error element is larger than err_lim, it is set to zero. </p>
+<p><code>num</code>: int, optional, default: 75
+<br>
+The number of logarithmic frequency bins to create before plotting.</p>
+<p><code>save_fig</code>: boolean, optional, default: False
+<br>
+If True, asks for path to location to save plot.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def plot_coherence(xf,gamma2,delta_gamma2_int,Ebands=None,err_lim=1,num=75,save_fig = False):
+    &#34;&#34;&#34;
+    Plot the coherence.
+    
+    **Parameters**:
+
+    `xf`: np.ndarray    
+        The frequency-vector (which depends on m).
+        
+    `gamma2`: np.ndarray    
+        The coherence function.
+    
+    `delta_gamma2`: np.ndarray    
+        One sigma uncertainty in the coherence function. 
+     
+    `Ebands`: tuple of strings, (Eband1,Eband2), optional, default: None    
+        The energy bands of the two light curves compared.
+    
+    `err_lim`: float, optional, default: 1    
+        Error limit. If an error element is larger than err_lim, it is set to zero. 
+    
+    `num`: int, optional, default: 75    
+        The number of logarithmic frequency bins to create before plotting.
+        
+    `save_fig`: boolean, optional, default: False    
+         If True, asks for path to location to save plot.
+    &#34;&#34;&#34;
+    
+    standard_plot()
+    ax = plt.gca()
+
+    if Ebands == None:
+        Eband1 = input(&#39;First energyband in keV [?-?]): &#39;)
+        Eband2 = input(&#39;Second energyband in keV [?-?]: &#39;)
+    else:
+        Eband1, Eband2 = Ebands[0], Ebands[1]
+    ax.text(0.3,0.1,&#39;({} keV) vs. ({} keV)&#39;.format(Eband1,Eband2),fontsize=14,horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+    
+    if len(xf) &lt;= 3:
+        for i in range(0,len(xf)):
+            ax.errorbar(xf[i],gamma2[i],yerr=delta_gamma2_int[i], fmt = &#39;.&#39;,mfc=&#39;w&#39;,capsize=2, elinewidth=1, markeredgewidth=1,label=r&#39;$N=2^6$&#39;)
+    else:
+        xf, gamma2, error = log_rebin(xf,gamma2,delta_gamma2_int,num=num)
+        error = error_change(error,err_lim)
+        ax.errorbar(xf,gamma2,yerr=error, fmt = &#39;.k&#39;,mfc=&#39;w&#39;,capsize=2, elinewidth=1, markeredgewidth=1,label=r&#39;$N=2^6$&#39;)
+    
+    ax.set_ylim([0,1.4])
+    ax.axhline(1,color=&#39;k&#39;,linewidth=1,alpha=0.7)
+    ax.set_xscale(&#34;log&#34;)
+    plt.xlabel(&#39;Frequency [Hz]&#39;)
+
+    plt.ylabel(&#39;$\gamma_{int}^2$&#39;)
+    if save_fig:
+        path = input(&#39;Path to location to save plot [end with .png]: &#39;) 
+        plt.savefig(path,bbox_inches=&#39;tight&#39;)
+    plt.show()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="star" href="index.html">star</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="star.Coherence.coherence_intrinsic" href="#star.Coherence.coherence_intrinsic">coherence_intrinsic</a></code></li>
+<li><code><a title="star.Coherence.coherence_noiseless" href="#star.Coherence.coherence_noiseless">coherence_noiseless</a></code></li>
+<li><code><a title="star.Coherence.comp_gamma2" href="#star.Coherence.comp_gamma2">comp_gamma2</a></code></li>
+<li><code><a title="star.Coherence.compute_coherence_intrinsic" href="#star.Coherence.compute_coherence_intrinsic">compute_coherence_intrinsic</a></code></li>
+<li><code><a title="star.Coherence.compute_delta_gamma2_int" href="#star.Coherence.compute_delta_gamma2_int">compute_delta_gamma2_int</a></code></li>
+<li><code><a title="star.Coherence.conditions_for_useful_est_int_coh" href="#star.Coherence.conditions_for_useful_est_int_coh">conditions_for_useful_est_int_coh</a></code></li>
+<li><code><a title="star.Coherence.cross_spec" href="#star.Coherence.cross_spec">cross_spec</a></code></li>
+<li><code><a title="star.Coherence.plot_coherence" href="#star.Coherence.plot_coherence">plot_coherence</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

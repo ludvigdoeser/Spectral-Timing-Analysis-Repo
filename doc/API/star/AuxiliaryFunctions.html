@@ -1,0 +1,2508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>star.AuxiliaryFunctions API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>star.AuxiliaryFunctions</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def standard_plot(h=4,w=10,fontsize=16):
+    &#34;&#34;&#34;
+    Standard plot to enable use of the same figsize, fontsize and font.family in all figures.
+    
+    **Parameters**:   
+    `h,w`: (float, float), optional, default: h=4, w=10     
+        Height and width of the figure, i.e., figsize=(w,h).
+    
+    `fontsize`: int, optional, default: 16
+        Fontsize of labels in figure.
+        
+    **Returns**: 
+    
+    `ax`: Axes,     
+        Axes of the figure. 
+    &#34;&#34;&#34;
+    
+    fig = plt.figure(figsize=(w,h))
+    plt.rcParams.update(plt.rcParamsDefault)
+    plt.rcParams.update({&#39;font.size&#39;: fontsize})
+    plt.rcParams[&#39;font.family&#39;] = &#39;Times&#39;
+    plt.rc(&#39;text&#39;, usetex=True) 
+    
+    return plt.gca()
+
+def timer(i,nr,start,clear=True):
+    &#34;&#34;&#34;
+    Print out the loop progress, and try to estimate the time remaining.
+    
+    **Parameters**:
+    
+    `i, nr`: ints      
+        The current loop number, and the total number of loops.
+    
+    `start`: float      
+        Start of the loop, as given by: timeit.default_timer(). 
+    
+    `clear`: boolean      
+        Clear the output between loops. 
+    &#34;&#34;&#34;
+    
+    stop=timeit.default_timer()
+    if (i/nr*100) &lt; 10:
+        expected_time=&#34;Calculating...&#34;
+    else:
+        time_perc=timeit.default_timer()
+        expected_time=np.round(((time_perc-start)/(i/nr))/60,2)
+    if clear == True:
+        clear_output(wait=True)
+    
+    print(&#34;Calculating the power spectra...&#34;)
+    print(&#34;Current progress: {}%&#34;.format(np.round(i/nr*100,2)))
+    print(&#34;Current run time: &#34;,np.round((stop-start)/60,2),&#34; minutes&#34;)
+    print(&#34;Expected run time: &#34;,expected_time,&#34; minutes&#34;)
+    
+
+def extract_fits(filename,keywords=[],p=0):
+    &#34;&#34;&#34; 
+    Extract (and print info about) a fits-file. 
+    
+    **Parameters**:
+    
+    `filename`: string     
+        The path to the .fits-file.
+    
+    `keywords`: list of strings     
+        Keywords (and corresponding values) apart from the ones mentioned below to return. 
+        *All data-keys are always automatically returned (for a lightcurve, these are: {&#34;TIME&#34;, &#34;RATE&#34;, &#34;ERROR&#34;,&#34;FRACEXP&#34;}).
+        *Note also that the header-keys {&#34;CONTENT&#34;,&#34;OBJECT&#34;} are returned if they exist. 
+    
+    `p`: boolean, optional, default: 0     
+        If True (=1), print the headers of the fits-file.
+        
+    **Returns**:
+    
+    `data`: dictionary     
+        Keys and the corresponding data values.
+    &#34;&#34;&#34;
+    
+    print(&#39;Loading fits from filename: &#39;,filename)
+    with fits.open(filename) as hdulist: 
+    
+        # HEADER
+        header0 = hdulist[0].header
+        header1 = hdulist[1].header
+        
+        # DATA KEYS
+        binaryext = hdulist[1].data
+        binarytable = Table(binaryext)
+        keys = binarytable.keys()
+        
+        data = {}
+        for key in keys:
+            data[key] = hdulist[1].data[key]
+        
+        # HEADER KEYS
+        try:
+            data[&#39;CONTENT&#39;] = header0[&#39;CONTENT&#39;]
+            content_exist = True
+        except KeyError:
+            print(&#39;There is no content-information for this fits.&#39;)
+            content_exist = False
+        try:
+            data[&#39;OBJECT&#39;] = header0[&#39;OBJECT&#39;]
+        except KeyError:   
+            print(&#39;There is no object-information for this fits.&#39;)
+          
+        # Extract extra keyswords
+        for extra_key in keywords:  
+            try: 
+                data[extra_key] = header0[extra_key]
+                print(&#34;Found key {} in header0&#34;.format(extra_key))
+                cannot_find = False
+            except KeyError:
+                print(&#34;There is no key {} in header0, let&#39;s have a look at header1.&#34;.format(extra_key))
+            try: 
+                data[extra_key] = header1[extra_key]
+                print(&#34;Found key {} in header1.&#34;.format(extra_key))
+                cannot_find = False
+            except KeyError:
+                print(&#34;There is no key {} in header1 either, sorry...&#34;.format(extra_key))
+                cannot_find = True
+            
+            if cannot_find: 
+                matchingK0 = matchingKeys(header0, extra_key)
+                matchingK1 = matchingKeys(header1, extra_key)
+                print(&#39;Matching keys in header0 = &#39;,matchingK0)
+                print(&#39;Matching keys in header1 = &#39;,matchingK1)
+                for K in matchingK0:
+                    use = input(&#39;Do you want to extract the header0 key {}? [y/n] &#39;.format(K))
+                    if use == &#39;y&#39; or use == &#39;yes&#39; or use == &#39;Y&#39;:
+                        data[K] = header0[K]
+                for K in matchingK1:
+                    use = input(&#39;Do you want to extract the header1 key {}? [y/n] &#39;.format(K))
+                    if use == &#39;y&#39; or use == &#39;yes&#39; or use == &#39;Y&#39;:
+                        data[K] = header1[K]
+         
+        # Print out all info if true:
+        if p:
+            print(&#39;hdu.info()&#39;)
+            print(hdulist.info(),&#39;\n&#39;)
+            print(&#39;Header0:&#39;)
+            print(repr(header0),&#39;\n&#39;) #repr() prints the info into neat columns
+            print(&#39;Header1:&#39;)
+            print(repr(header1),&#39;\n&#39;) #repr() prints the info into neat columns
+            print(binarytable[0:10],&#39;\n&#39;)
+        else:
+            if content_exist:
+                print(&#39;The keys to the {} data are: {}&#39;.format(data[&#39;CONTENT&#39;],data.keys()))
+            else:
+                print(&#39;The keys to the data are: {}&#39;.format(data.keys()))
+        print(&#39;Loading fits done. \n&#39;)
+        
+        return data
+
+def matchingKeys(dictionary, searchString):
+    &#34;&#34;&#34;
+    Find if a string is contained within any of the dictionary&#39;s keys.
+    
+    **Parameters**:
+    
+    `dictionary`: dict
+        The dictionary to be searched.
+        
+    `searchString`: str
+        The string to be looked after.
+    
+    ** Returns**:
+    
+    `matches`: list
+        A list with all key-matches.
+    &#34;&#34;&#34;
+    
+    matches = [key for key,val in dictionary.items() if searchString in key]    
+    
+    return matches
+
+def log_rebin(xf,take_average_of,err=[],low_lim=None,high_lim=None,num=50):
+    &#34;&#34;&#34;
+    Distribute the data into logarithmic frequency bins and compute the bin-average of the data.
+    
+    **Parameters**:
+    
+    `xf`: np.ndarray     
+        The frequency-vector.
+    
+    `take_average_of`: np.ndarray     
+        The quantity to take average of. 
+        
+    `err`: np.ndarray, optional, default: empty list     
+        Errors corresponding to the &#34;take_average_of&#34;-quantity.     
+        If empty, compute the standard deviation of all values that end up in the same bin.
+    
+    `low_lim, high_lim`: floats, optional, default: None     
+        The interval to bin into log-bins: 10^(low_lim) to 10^(high_lim).
+        If None, limits are given by the respective end point of the frequency vector.
+    
+    `num`: int     
+        The number of logarithmic frequency bins to create.
+    
+    **Returns**:
+    
+    `middle_of_log_bins`: np.ndarray     
+        The logarithmic midpoint of each log-bin, computed as:     
+    $$10^{\\frac{1}{2}\\left(\\texttt{np.log10}(\\texttt{log_bins}[i])+\\texttt{np.log10}(\\texttt{log_bins}[i+1])\\right)}$$
+        
+    `average`: np.ndarray     
+        The average of the data within a log-bin.
+         
+    `error`: np.ndarray     
+        The propagated error, or (in case empty error-input) the standard deviation of all points within a log-bin. 
+    &#34;&#34;&#34;
+    
+    if isinstance(xf,np.ndarray) and isinstance(take_average_of,np.ndarray):
+        
+        # Find limits and make log bins
+        if low_lim == None:
+            low_lim = np.log10(np.amin(xf))
+        if high_lim == None:
+            high_lim = np.log10(np.amax(xf))
+        eps = 10e-15 #to include the final point
+        log_bins = np.logspace(low_lim, high_lim+eps, num=num)
+
+        # Find the logarithmic mid-points
+        middle_of_log_bins = []
+        for i in range(0,len(log_bins)-1):
+            middle_of_log_bins.append(10**(1/2*(np.log10(log_bins[i])+np.log10(log_bins[i+1]))))
+
+        # Determine what freq-values correspond to what bin
+        digitized = np.digitize(xf, log_bins)
+
+        # Sort into bins and make sure no bin is empty 
+        # Note that num-1 is equal to len(middle_of_log_bins)
+        # i-1 for middle_of_log_bins and i for average due to indexing.. 
+        middle_of_log_bins = [middle_of_log_bins[i-1] for i in range(1, num) if len(take_average_of[digitized == i])!=0] 
+        average = [take_average_of[digitized == i].mean() for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+        
+        # Standard deviation for points in this bin if no error as input:
+        if len(err) == 0:
+            error = [take_average_of[digitized == i].std() for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+        # If error as input, compute error propagation (len(err[digitized==i]) has been moved out from root):
+        else:
+            error = [np.sqrt(np.sum((err[digitized == i])**2))/len(err[digitized == i]) for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+
+        return np.array(middle_of_log_bins), np.array(average), np.array(error)
+
+    else:
+        print(&#39;Input needs to be np.ndarrays, try again.&#39;)
+
+
+def percent_of_filled_time_bins(t_seg,dt,to_return=True):
+    &#34;&#34;&#34;
+    Compute percent of time bins being filled, i.e. without gaps.
+    
+    **Parameters**:
+     
+    `t_seg`: np.ndarray     
+        Segment&#39;s time vector. Should start from zero, i.e. t_seg[0] = 0. 
+        
+    `dt`: np.float     
+        Time resolution of observation.
+        
+    `to_return`: boolean (default: False)     
+        If false, print gap percent, otherwise return it. 
+        
+    **Returns**:
+    
+    `percent_wo_gaps`: np.float     
+        percent of time bins being filled, i.e. without gaps.
+    
+    `hist`: np.ndarray    
+        A list containing 1 for filled bin, 0 for unfilled bin.
+    &#34;&#34;&#34;
+    
+    t_seg_temp = np.copy(t_seg)
+    
+    # Linear transformation of segment&#39;s first element to t_seg=0    
+    if int(t_seg_temp[0]) != 0:
+        t_seg_temp -= t_seg_temp[0]
+    
+    # Count number of filled (= non-empty = no gap) bins
+    num_bins = math.ceil(t_seg_temp[-1]/dt)
+    hist, edges = np.histogram(t_seg_temp,bins=num_bins,range=(0, dt*num_bins))
+    
+    # percent of filled bins (i.e. without gap)
+    percent_wo_gaps = np.sum(hist)/num_bins*100
+
+    if to_return:
+        return percent_wo_gaps, hist 
+    else: 
+        print(&#39;perc_wo_gaps = {:.4f}&#39;.format(percent_wo_gaps))
+
+def Fvar_from_lc(lc, m, percent_limit):
+    &#34;&#34;&#34;
+    Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) from 
+    the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. 
+    
+    **Parameters**:
+    
+    `lc`: class: &#39;Lightcurve&#39;-object     
+        The light curve data to be Fourier-transformed.
+        
+    `m`: int     
+        Number of time bins per segment. 
+
+    `percent_limit`: float, optional, default: 90     
+        Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+
+    **Returns**:
+    
+    `F_var`: float     
+        The fractional root mean square (rms) variability amplitude.   
+        See Eq. (10) from: &#34;On characterizing the variability properties of X-ray light curves from active galaxies&#34; (Vaughan, 2003)
+    &#34;&#34;&#34;
+    
+    # Find rms and return NaN if cannot be computed
+    np.seterr(all=&#39;raise&#39;)
+    try: 
+        # Useful parameters
+        dt = lc.dt
+        K = int(np.floor(lc.N/m)) #num_of_line_seg
+
+        # Average over time segments 
+        rms_lc_seg_v = []
+        for i in range(0,K):
+
+            # Pick out one line segment (ls)
+            t_seg, rate_seg, err_seg, N_gamma, R_seg, T_seg = lc.extract_seg(m,n=i,to_print=False,to_plot=False)
+
+            if percent_limit &gt; 0:
+                percent_wo_gaps, _ = percent_of_filled_time_bins(t_seg,dt,to_return=True) 
+            else: 
+                percent_wo_gaps = 100
+            
+            if percent_wo_gaps &gt; percent_limit: # if True, then there is no large gap in the segment
+                # Perform FFT to find Power spectra for one seg
+                S2 = 1/(len(rate_seg)-1)*np.sum((rate_seg-R_seg)**2)
+                MSE = np.mean(err_seg**2)
+                F_var = np.sqrt((S2-MSE)/R_seg**2)
+                rms_lc_seg_v.append(F_var)
+            else:
+                pass
+
+        return np.mean(rms_lc_seg_v)
+
+    except FloatingPointError:
+        return float(&#34;NaN&#34;)
+
+def Fvar_from_ps(xf,fft_rate):
+    &#34;&#34;&#34;
+    Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) by 
+    discretely integrating the power spectra over the full frequency interval.     
+     
+    Note: **for a smaller freq band**, call remove_freq() prior to calling this function.    
+    
+    **Parameters**:
+    
+    `xf, fft_rate`: np.ndarrays     
+        Frequency vector and power spectrum (the Fourier transformed rate).
+        
+    **Returns**:
+    
+    `F_var`: float     
+        The fractional root mean square (rms) variability amplitude.
+    &#34;&#34;&#34;
+    np.seterr(all=&#39;raise&#39;)
+    try: 
+        df = xf[1]-xf[0]
+        F_var = np.sqrt(df*np.sum(fft_rate))
+        return F_var
+    
+    except FloatingPointError:
+        return float(&#34;NaN&#34;)
+    
+def load_lightcurve(data):
+    &#34;&#34;&#34; 
+    Split the data from a light curve into time, flux, and error vectors. 
+    
+    **Parameters**:
+    
+    `data`: dictionary     
+        Should contain the keys [&#39;TIME&#39;, &#39;RATE&#39;, &#39;ERROR&#39;, &#39;FRACEXP&#39;, &#39;CONTENT&#39;] with corresponding values.    
+        The data[&#39;CONTENT&#39;] ought to be &#39;LIGHT CURVE&#39;.   
+        
+    **Returns**:
+    
+    `t, rate, error`: np.ndarrays     
+        The data values for a light curve: time, rate, rate_error, respectively.
+    &#34;&#34;&#34;
+
+    assert data[&#39;CONTENT&#39;]==&#39;LIGHT CURVE&#39;, &#39;Data does not come from a light curve object.&#39;
+
+    t = np.array(data[&#39;TIME&#39;])
+    rate = np.array(data[&#39;RATE&#39;])
+    err = np.array(data[&#39;ERROR&#39;])
+    
+    return t, rate, err
+
+def remove_freq(xf,other_quantites,limit,leq=False,l=False,geq=False,g=False,disregard=True):
+    &#34;&#34;&#34;
+    Remove frequencies (f) and other quantites&#39; (OQ) corresponding values for those f.    
+    Example: limit = 10 and leq = True: means that only f &lt;= 10 are saved.
+    
+    **Parameters**:
+    
+    `xf`: np.ndarray     
+        Frequency vector.
+        
+    `other_quantites`: list of np.ndarrays
+        The quantities having a value for each frequnecy in xf.
+    
+    `limit`: float     
+        The numerical value of the limit. The type of limit is determined next:   
+    
+    `leq, l, geq, g`: Boolean (default: False)     
+        less or equal than (leq), less than (l), greater or equal to (geq), greater than (g) the limit = will be SAVED.
+        
+    `disregard`: Boolean (default: False)     
+        If True, then the frequency and OQ will be cropped and returned as shorter vectors.
+        If False, returned in the same length with OQs&#39; elements outside given freq range being set to 0.
+
+    **Returns**:
+    
+    `freq`: np.ndarray     
+        The frequency vector. 
+        
+    `other_quantites`: list of np.ndarrays or np.ndarray (if just one quantity)     
+        After disregarding values (or setting them to zero) corresponding to frequencies outside the desired interval. 
+    &#34;&#34;&#34;
+    
+    assert type(limit) != list, &#39;Unfortunately, you cannot fix more than one limit at once.&#39;
+    assert int(leq)+int(l)+int(geq)+int(g) &lt;= 1, &#39;Unfortunately, you cannot fix more than one limit at once.&#39;
+    
+    try: 
+        return_as_nparray = False
+        if type(other_quantites) != list: # i.e. we only have one quantity 
+            other_quantites = [other_quantites]
+            return_as_nparray = True
+
+        if leq:
+            for i in range(0,len(other_quantites)):
+                if disregard:
+                    other_quantites[i] = np.array(other_quantites[i][xf&lt;=limit])
+                else:
+                    other_quantites[i][xf&gt;limit] = 0
+            if disregard:
+                xf = xf[xf&lt;=limit]
+            else:
+                pass
+
+        if l:
+            for i in range(0,len(other_quantites)):
+                if disregard:
+                    other_quantites[i] = np.array(other_quantites[i][xf&lt;limit])
+                else:
+                    other_quantites[i][xf&gt;=limit] = 0
+            if disregard:
+                xf = xf[xf&lt;limit]
+            else:
+                pass
+
+        if geq:
+            for i in range(0,len(other_quantites)):
+                if disregard: 
+                    other_quantites[i] = np.array(other_quantites[i][xf&gt;=limit])
+                else:
+                    other_quantites[i][xf&lt;limit] = 0
+            if disregard:
+                xf = xf[xf&gt;=limit]
+            else:
+                pass
+
+        if g:
+            for i in range(0,len(other_quantites)):
+                if disregard: 
+                    other_quantites[i] = np.array(other_quantites[i][xf&gt;limit])
+                else:
+                    other_quantites[i][xf&lt;=limit] = 0
+            if disregard:
+                xf = xf[xf&gt;limit]
+            else:
+                pass
+
+        if return_as_nparray:
+            return np.array(xf), other_quantites[0]
+        else:
+            return np.array(xf), other_quantites
+    
+    except IndexError:
+        print(&#39;Could not change anything, try again with new limits.&#39;)
+        
+        return xf, other_quantites
+    
+def error_change(err,err_lim=1):
+    &#34;&#34;&#34;
+    Set error to zero if exceeds err_lim.
+    
+    **Parameters**:
+    
+    `err`: np.ndarray     
+        Error vector.
+        
+    `err_lim`: float, optional, default: 1    
+        Error limit. If an error element is larger than err_lim, it is set to zero. 
+    
+    **Returns**:
+    
+    `err`: np.ndarray     
+        Error vector after setting elements that exceeds err_lim to zero.
+    &#34;&#34;&#34;
+    
+    e_temp = []
+    for e in err:
+        if e &lt; err_lim:
+            e_temp.append(e)
+        else:
+            e_temp.append(0)
+    err = e_temp
+    return err
+
+    
+def pick_out_freq_from_lc(lc, freq_low, freq_high, to_plot=False):
+    &#34;&#34;&#34;
+    Fourier transforms a light curve, sets the power = 0 for all freq outside freq_range: freq_low-freq_high,
+    and then performs an inverse Fourier transform back to time-domain.
+    
+    **Parameters**:
+    
+    `lc`: class &#39;Lightcurve&#39;-object     
+            The light curve, whose rms is to be found.
+            
+    `freq_low/freq_high`: floats, optional, default: None     
+        Lower and upper frequency limits.
+    
+    **Returns**:
+    
+    `rate_ifft`: np.ndarray     
+        The inverse Fourier transformed rate-vector, with mean = 0.
+    &#34;&#34;&#34;
+    
+    # Pick out relevant quantties from the lightcurves
+    t, dt, rate, err, R, N = lc.t, lc.dt, lc.rate, lc.err, lc.R, lc.N
+    
+    # FFT on full light curve
+    xf = np.array(fftfreq(N, dt))[1:N//2]
+    fft_rate_unnormalized = fft(rate-R)[1:N//2]
+                    
+    if freq_low == xf[0] and freq_high == xf[-1]: 
+        print(&#34;You&#39;re using the full freq. range.&#34;)
+    else:
+        print(&#39;Inverse FFT using only the freq interval: [{},{}]&#39;.format(freq_low, freq_high)) 
+    
+    # Set fft_rate = 0 for frequencies outside given range
+    xf, fft_rate = remove_freq(xf,fft_rate_unnormalized,freq_low,geq=True,disregard=False)
+    xf, fft_rate = remove_freq(xf,fft_rate,freq_high,leq=True,disregard=False)
+    
+    # Transform back 
+    rate_ifft = ifft_smallfreqband(fft_rate)
+    print(&#39;Inverse FFT performed.\n&#39;)
+
+    if to_plot:
+        standard_plot()
+        plt.plot(t,rate-R,label=&#39;Lc with all freq&#39;)
+        plt.plot(t,rate_ifft,label=&#39;Lc using only f = [{},{}]&#39;.format(freq_low,freq_high))
+        plt.legend()
+        ax = plt.gca()
+        ax.set_xlim([t[0],t[500]])
+        plt.show()
+        
+    return rate_ifft
+    
+def ifft_smallfreqband(fft_rate):
+    &#34;&#34;&#34;
+    Perform inverse transformation from freq domain to time domain. Is called upon in pick_out_freq_from_lc().
+    
+    **Parameters**:
+     
+    `fft_rate`: np.ndarray     
+        The power spectra after having set values outside freq range to 0.
+        
+    **Returns**:
+    
+    `rate`: np.ndarray     
+        New rate vector, now only containing the frequencies in fft_rate. 
+    &#34;&#34;&#34;
+    
+    # Add the negative freq again (that were removed due to [1:m//2])
+    y_together = np.append(np.zeros(1),fft_rate)
+    y_together = np.append(y_together,np.zeros(1))
+    y_together = np.append(y_together,np.conjugate(np.flip(fft_rate)))
+    # Perform ifft
+    yinv = ifft(y_together)
+    # Make to np.ndarray and extract only the real values
+    yinv = np.array(yinv)
+    rate = yinv.real  
+    return rate 
+
+def rms_vs_channels(lc_v, rms_v, rms_err_v, channel_to_kev, overlap=0):
+    &#34;&#34;&#34;
+    Create a list with rms for each channel. If the energy bands are chosen to 50-100, 100-150 etc, then
+    channels 50-99 will be given the rms for the first band, and 100-149 will be given the rms of the second band.
+    
+    **Parameters**:
+    
+    `lc_v`: class: list of &#39;Lightcurve&#39;-objects        
+        The light curves to be used.
+            
+    `rms_v`: np.ndarray     
+        Absolute/fractional rms mulitplied with the spectra.
+        
+    `rms_err_v`: np.ndarray     
+        The error in (absolute/fractional) rms mulitplied with the spectra.
+        
+    `channel_to_kev`: np.ndarray     
+        Conversion from channel (index) to energy (keV).
+    
+    **Returns**:
+    
+    `rms_list_channels`: np.ndarray &lt;br&gt;
+        With rms for each channel.
+    
+    `rms_list_channels_err`: np.ndarray      
+        With rms error for each channel.
+        
+    `overlap`: int, optional, default: 0 
+        The number of channels that are in two adjacent energy bands.
+    &#34;&#34;&#34;
+    
+    # Convert to dictionary, where keys = Emax of corresponding channel and values = channels
+    if isinstance(channel_to_kev,np.ndarray):
+        channel_to_kev_dict = {k: v for v,k in enumerate(channel_to_kev)}
+    elif isinstance(channel_to_kev_dict,dict):
+        pass
+    else:
+        print(&#39;Channel_to_kev is neither a np.ndarray nor a dictionary.&#39;)
+        return
+    
+    # Fill all channels with corresponding rms
+    Emin = lc_v[0].Emin 
+    Emax_v = [lc.Emax for lc in lc_v]
+    
+    assert np.all(Emax_v==sorted(Emax_v)), &#39;The energies are not in increasing order.&#39;
+    
+    rms_list_channels, rms_list_channels_err = np.zeros(len(channel_to_kev_dict)), np.zeros(len(channel_to_kev_dict))
+    grouping = -np.ones(len(channel_to_kev_dict))
+
+    # Where does first Eband start?
+    if Emin == 0:
+        start_index = 0
+    else:
+        start_index = channel_to_kev_dict[Emin]
+    
+    # Go over all energy bands 
+    for i,Emax in enumerate(Emax_v): 
+        grouping[start_index] = 1
+        end_index = channel_to_kev_dict[Emax]+1
+        rms_list_channels[start_index:end_index] = rms_v[i] if not math.isnan(rms_v[i]) else 0 # if rms = NaN then put rms-values for these channels to 0
+        rms_list_channels_err[start_index:end_index] = rms_err_v[i] if not math.isnan(rms_v[i]) else 0
+        # Update start index
+        start_index = end_index-overlap
+        
+    return rms_list_channels, rms_list_channels_err, grouping
+
+def subtract_overlapping_energybands(lc_v):
+    &#34;&#34;&#34;
+    Check if two light curve objects overlap (in terms of energy bands) and subtract one 
+    from the other if one lies in the other.   
+    
+    Reason: When the cross spectral properties is being calculated for an energy channel inside another, 
+    the lc that resides within another is subtracted from the other. The reasoning behind this is 
+    that if one lc is duplicated in the other lc, the error contribution for that channel will 
+    not cancel and will contaminate the result.
+    
+    **Parameters**:
+
+    `lc_v`: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the covariance computation. 
+        lc_v[0] = 1st lightcurve-object, lc_v[1] = 2nd lightcurve-object.
+            
+    **Returns**:
+    
+    `lc_v`: list of deep copies of the two &#39;Lightcurve&#39;-objects (as to not affect the original lightcurves)     
+        If one lc was inside another (energy wise) this has been corrected for.
+    &#34;&#34;&#34;
+    
+    assert len(lc_v) == 2, &#34;You can only compare two light curves.&#34;
+    
+    lc_X = copy.deepcopy(lc_v[0])
+    lc_Y = copy.deepcopy(lc_v[1])
+    
+    # X entirely within Y
+    if lc_X.Emin &gt;= lc_Y.Emin and lc_X.Emax &lt;= lc_Y.Emax: 
+        print(&#39;1st lightcurve-object with Emin-Emax = {}-{} keV lies within 2nd lightcurve-object with Emin-Emax = {}-{} keV&#39;.format(lc_X.Emin,lc_X.Emax,lc_Y.Emin,lc_Y.Emax))
+        lc_Y.rate -= lc_X.rate
+        lc_Y.err = np.sqrt(lc_Y.err**2-lc_X.err**2)
+        lc_Y.R = np.mean(lc_Y.rate)
+        print(&#39;Removed rate and err of 1st lightcurve-object from the 2nd lightcurve-object.\n&#39;)
+        
+    # Y entirely within X
+    if lc_X.Emin &lt;= lc_Y.Emin and lc_X.Emax &gt;= lc_Y.Emax: 
+        print(&#39;2nd lightcurve-object with Emin-Emax = {}-{} keV lies within 1st lightcurve-object with Emin-Emax = {}-{} keV&#39;.format(lc_Y.Emin,lc_Y.Emax,lc_X.Emin,lc_X.Emax))
+        lc_X.rate -= lc_Y.rate
+        lc_X.err = np.sqrt(lc_X.err**2-lc_Y.err**2)
+        lc_X.R = np.mean(lc_X.rate)
+        print(&#39;Removed rate and err of the 2nd lightcurve-object from the 1st lightcurve-object.\n&#39;)
+        
+    return [lc_X,lc_Y]
+
+def frs2pha(spectral_data,FRS,FRS_err,grouping,save_path):
+    &#34;&#34;&#34;
+    Create a .pha-file to be read by XSPEC.      
+    - Important to have the correct HEADERs: https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node6.html  
+    - Important to have the correct names for the data: https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node7.html  
+    
+    **Parameters**:   
+    
+    `spectral_data`: dict    
+        Spectral data extracted from energy spectra with extract_fits(). E.g.: spectral_data = extract_fits(filename_s,keywords=[&#39;DATE&#39;,&#39;EXPOSURE&#39;,&#39;TELESCOP&#39;,&#39;INSTRUME&#39;],p=0) 
+    
+    `FRS`: np.ndarray       
+        Frequency resolved spectrum, i.e. fractional variance in freq band multiplied with energy spectra. Units: counts
+     
+    `FRS_err`: np.ndarray       
+        The corresponding error to the Frequency resolved spectrum.
+     
+    `grouping`: np.ndarray       
+        The channel that is the start of a new energy band has &#34;-1&#34;, o/w &#34;1&#34;.
+        
+    `save_path`: str       
+        Filename including the path to saving directory. E.g.: save_path = &#34;../../Data/FrequencyResolvedSpectra/MAXIJ1535_571/{}_{}to{}Hz.pha&#34;.format(obs_id,freq_low,freq_high)    
+    &#34;&#34;&#34;
+    
+    hdu1 = fits.PrimaryHDU()
+
+    hdu1.header[&#39;DATE&#39;] = (datetime.today().strftime(&#39;%Y-%m-%d, %H:%M:%S&#39;), &#39;Creation date (YYYY-MM-DD, hh:mm:ss CET)&#39;)
+
+    col1 = fits.Column(name=&#39;CHANNEL&#39;, format=&#39;I&#39;, array=spectral_data[&#39;CHANNEL&#39;])
+    col2 = fits.Column(name=&#39;COUNTS&#39;, format=&#39;J&#39;, unit=&#39;count&#39;, array=FRS)
+    col3 = fits.Column(name=&#39;STAT_ERR&#39;, format=&#39;E&#39;, unit=&#39;count&#39;, array=FRS_err)
+    col4 = fits.Column(name=&#39;QUALITY&#39;, format=&#39;I&#39;, array=np.zeros(len(grouping)))
+    col5 = fits.Column(name=&#39;GROUPING&#39;, format=&#39;I&#39;, array=grouping)
+
+    coldefs = fits.ColDefs([col1, col2, col3, col4, col5])
+
+    pha_head = fits.Header()
+
+    pha_head[&#39;EXTNAME&#39;] = &#39;SPECTRUM&#39;
+    pha_head[&#39;DATE&#39;] = (spectral_data[&#39;DATE&#39;], &#39;energy spectrum from (YYYY-MM-DDThh:mm:ss UT)&#39;)
+    pha_head[&#39;EXPOSURE&#39;] = (spectral_data[&#39;EXPOSURE&#39;], &#39;Exposure time (s)&#39;)
+    pha_head[&#39;TELESCOP&#39;] = (spectral_data[&#39;TELESCOP&#39;], &#39;mission/satellite name&#39;)
+    pha_head[&#39;INSTRUME&#39;] = (spectral_data[&#39;INSTRUME&#39;], &#39;instrument/detector name&#39;)
+    pha_head[&#39;BACKFILE&#39;] = (&#39;NONE    &#39;, &#39;associated background filename&#39;)
+    pha_head[&#39;BACKSCAL&#39;] = (1.000000e+00, &#39;background file scaling factor&#39;)
+    pha_head[&#39;CORRFILE&#39;] = (&#39;NONE    &#39;, &#39;associated correction filename&#39;)
+    pha_head[&#39;CORRSCAL&#39;] = (1.000000e+00, &#39;correction file scaling factor&#39;)
+    pha_head[&#39;RESPFILE&#39;] = (&#39;NONE    &#39;, &#39;associated redistrib matrix filename&#39;)
+    pha_head[&#39;ANCRFILE&#39;] = (&#39;NONE    &#39;, &#39;associated ancillary response filename&#39;)
+    pha_head[&#39;AREASCAL&#39;] = (1.000000e+00, &#39;area scaling factor &#39;)
+    pha_head[&#39;HDUCLASS&#39;] = (&#39;OGIP    &#39;, &#39;format conforms to OGIP standard&#39;)
+    pha_head[&#39;HDUCLAS1&#39;] = (&#39;SPECTRUM&#39;, &#39;PHA dataset (OGIP memo OGIP-92-007)&#39;)
+    pha_head[&#39;HDUVERS&#39;] = (&#39;1.1.0   &#39;, &#39;Obsolete - included for backwards compatibility&#39;)
+    pha_head[&#39;POISSERR&#39;] = (False, &#39;Poissonian errors not applicable&#39;)
+    pha_head[&#39;CHANTYPE&#39;] = (spectral_data[&#39;CHANTYPE&#39;], &#39;channel type (PHA, PI etc)&#39;)
+    pha_head[&#39;DETCHANS&#39;] = (len(spectral_data[&#39;CHANNEL&#39;]), &#39;total number possible channels&#39;)
+
+    pha_data = fits.BinTableHDU.from_columns(coldefs,header=pha_head)
+    phafile = fits.HDUList([hdu1, pha_data])
+    phafile.writeto(save_path,overwrite=True)
+    
+def merge(lc_v):
+    &#34;&#34;&#34;
+    Merge lightcurves into one light curve object.
+    
+    **Parameters**:
+    
+    ``lc_v``: list of light curve objects
+        At least 2 light curves to be merged.
+    &#34;&#34;&#34;
+    
+    
+    assert len(lc_v) &gt;= 2, &#39;You need at least two light curves to be merged.&#39;
+    
+    # Create a new light curve object
+    lc_broad = lightcurve(&#39;&#39;)
+    
+    # Initilaize 
+    print(&#39;Initializing with lc in {}-{} keV&#39;.format(lc_v[0].Emin,lc_v[0].Emax))
+    lc_broad.rate = np.copy(lc_v[0].rate)
+    lc_broad.err = np.copy(lc_v[0].err)
+    lc_broad.N = np.copy(lc_v[0].N)
+    lc_broad.dt = np.copy(lc_v[0].dt)
+    lc_broad.t = np.copy(lc_v[0].t)
+
+    # Merge with the rest
+    for i in range(1,len(lc_v)):
+        print(&#39;Merging with lc in {}-{} keV&#39;.format(lc_v[i].Emin,lc_v[i].Emax))
+        assert lc_v[i].Emin &gt;= lc_v[i-1].Emax, &#34;No overlapping energy bands allowed&#34;
+        lc_broad.rate += lc_v[i].rate
+        lc_broad.err = np.sqrt(lc_broad.err**2+lc_v[i].err**2)
+            
+    # Update again 
+    lc_broad.R = np.mean(lc_broad.rate)
+    lc_broad.Emin = lc_v[0].Emin
+    lc_broad.Emax = lc_v[-1].Emax
+    
+    #lc_broad.err = np.sqrt(lc_broad.rate/lc.dt)
+
+    return lc_broad
+
+def merge_energies_lc(lc_v):
+    &#34;&#34;&#34;
+    Merge light curves of different energies with each other.
+    
+    **Parameter**:
+    
+    ``lc_v``: list of lightcurve objects   
+        Light curves to be merged.
+        
+    **Return**:
+    
+    ``lc_broad``: lightcurve object   
+        The merged light curve, now spanning a larger energy range.
+    &#34;&#34;&#34;
+    
+    
+    assert len(lc_v) &gt;= 2, &#39;You need at least two light curves to be merged.&#39;
+    
+    # Create a new light curve object
+    lc_broad = lightcurve(&#39;&#39;)
+    
+    # Initilaize 
+    print(&#39;Initializing with lc in {}-{} keV&#39;.format(lc_v[0].Emin,lc_v[0].Emax))
+    lc_broad.rate = np.copy(lc_v[0].rate)
+    lc_broad.err = np.copy(lc_v[0].err)
+    lc_broad.N = np.copy(lc_v[0].N)
+    lc_broad.dt = np.copy(lc_v[0].dt)
+    lc_broad.t = np.copy(lc_v[0].t)
+
+    # Merge with the rest
+    for i in range(1,len(lc_v)):
+        print(&#39;Merging with lc in {}-{} keV&#39;.format(lc_v[i].Emin,lc_v[i].Emax))
+        assert lc_v[i].Emin &gt;= lc_v[i-1].Emax, &#34;No overlapping energy bands allowed&#34;
+        lc_broad.rate += lc_v[i].rate
+        lc_broad.err = np.sqrt(lc_broad.err**2+lc_v[i].err**2)
+            
+    # Update again 
+    lc_broad.R = np.mean(lc_broad.rate)
+    lc_broad.Emin = lc_v[0].Emin
+    lc_broad.Emax = lc_v[-1].Emax
+    
+    #lc_broad.err = np.sqrt(lc_broad.rate/lc.dt)
+
+    return lc_broad
+
+def split_time_lc(lc,equal=True,m=None,step=None,i=None,start=None,stop=None):
+    &#34;&#34;&#34;
+    Split light curve into several shorter parts.
+    
+    **Parameters**:
+    
+    ``equal``: boolean, default, True
+        If true, split light curve into equally long parts.
+        If false, split light curve according to start and stop indices. 
+        
+    ``m,step,i``: ints
+        Bins per segment, segments per part and part number respectively.
+    
+    ``start,stop``: ints
+        Index for start and stop of the part.
+        
+    **Return**:
+    
+    ``lc_part``: lightcurve object   
+        A part of the original light curve. 
+    &#34;&#34;&#34;
+    
+    if equal:
+        start, stop = i*m*step, (i+1)*m*step
+    
+    print(&#39;New part for time indices: ({})-({})&#39;.format(start,stop))
+    
+    lc_part = copy.deepcopy(lc)
+    lc_part.t = lc_part.t[start:stop]
+    lc_part.rate = lc_part.rate[start:stop]
+    lc_part.err = lc_part.err[start:stop]
+    lc_part.R = np.mean(lc_part.rate)
+    lc_part.N = len(lc_part.t)
+
+    return lc_part
+
+def find_where_to_split_lc(lc_v,stops,m=2**13):
+    &#34;&#34;&#34;
+    If want to split up an observation in several parts.
+    
+    Needs to be updated: should just need to input one lightcurve, not a list.
+    
+    **Parameters**:
+    
+    ``lc_v``: list of light curve objects.
+        The lightcurves to be split., 
+        
+    **Returns**:
+    
+    ``start_v,stop_v``: list of arrays
+        Vectors containing the indices for start and stop for each part.   
+    &#34;&#34;&#34;
+    
+    ax = standard_plot()
+    plt.plot(lc.t,lc.rate)
+    N = lc_v[0].N
+
+    stops.append(lc_v[0].t[-1]) #the last part
+    start = 0
+    
+    # Determine where to split parts
+    break_points = []
+    len_of_parts = []
+    for stop in stops:
+        part = [t for t in lc_v[0].t if start &lt; t &lt; stop]
+        ax.axvline(part[-1],color=&#39;r&#39;,label=&#39;end of a part&#39;)
+        break_points.append(np.where(lc_v[0].t == part[-1])[0][0])
+        
+        start = stop
+        
+        len_of_parts_temp = len(part)/m
+        len_of_parts.append(len_of_parts_temp)
+        print(&#39;\nLength of part: &#39;,len_of_parts_temp)
+    
+    # Determine start and stop for each part
+    break_points.insert(0,0)
+    
+    start_v = []
+    stop_v = []
+    for i in range(0,len(break_points)-1):
+        #if len_of_parts[i] &gt;= 10:
+        start_v.append(break_points[i])
+        stop_v.append(break_points[i+1])
+
+    return start_v, stop_v 
+
+def print_datetime_UT(lc_v,obs_start,stops):
+    &#34;&#34;&#34;
+    If want to split up an observation in several parts, each of length m*step bins, 
+    where m=bins/seg and step = num of seg.
+    
+    **Parameters**:
+    
+    ``obs_start``: str, 
+        Format: YYYY-MM-DDThh:mm:ss.sss 
+    &#34;&#34;&#34;
+    
+    obs_time = dati.fromisoformat(obs_start)
+    print(&#39;obs start time = &#39;,obs_time,&#39;\n&#39;)
+    
+    print(&#39;The different parts are:&#39;)
+    
+    start = 0
+    for stop in stops:
+    
+        time_change_to_start = datetime.timedelta(seconds=start)
+        time_change_to_end = datetime.timedelta(seconds=stop)
+        
+        part_start = obs_time + time_change_to_start
+        part_end = obs_time + time_change_to_end
+        
+        print(str(part_start.isoformat(sep=&#39;T&#39;, timespec=&#39;milliseconds&#39;))+&#39;,&#39;,part_end.isoformat(sep=&#39;T&#39;, timespec=&#39;milliseconds&#39;))
+
+        start = stop</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="star.AuxiliaryFunctions.Fvar_from_lc"><code class="name flex">
+<span>def <span class="ident">Fvar_from_lc</span></span>(<span>lc, m, percent_limit)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) from
+the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. </p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc</code>: class: 'Lightcurve'-object
+<br>
+The light curve data to be Fourier-transformed.</p>
+<p><code>m</code>: int
+<br>
+Number of time bins per segment. </p>
+<p><code>percent_limit</code>: float, optional, default: 90
+<br>
+Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>F_var</code>: float
+<br>
+The fractional root mean square (rms) variability amplitude. <br>
+See Eq. (10) from: "On characterizing the variability properties of X-ray light curves from active galaxies" (Vaughan, 2003)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Fvar_from_lc(lc, m, percent_limit):
+    &#34;&#34;&#34;
+    Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) from 
+    the variance (S^2) in the light curve, by averaging over K=int(np.floor(lc.N/m)) segments. 
+    
+    **Parameters**:
+    
+    `lc`: class: &#39;Lightcurve&#39;-object     
+        The light curve data to be Fourier-transformed.
+        
+    `m`: int     
+        Number of time bins per segment. 
+
+    `percent_limit`: float, optional, default: 90     
+        Lower limit for percent of time bins having to be filled, i.e. without gaps, for that segment to be used.
+
+    **Returns**:
+    
+    `F_var`: float     
+        The fractional root mean square (rms) variability amplitude.   
+        See Eq. (10) from: &#34;On characterizing the variability properties of X-ray light curves from active galaxies&#34; (Vaughan, 2003)
+    &#34;&#34;&#34;
+    
+    # Find rms and return NaN if cannot be computed
+    np.seterr(all=&#39;raise&#39;)
+    try: 
+        # Useful parameters
+        dt = lc.dt
+        K = int(np.floor(lc.N/m)) #num_of_line_seg
+
+        # Average over time segments 
+        rms_lc_seg_v = []
+        for i in range(0,K):
+
+            # Pick out one line segment (ls)
+            t_seg, rate_seg, err_seg, N_gamma, R_seg, T_seg = lc.extract_seg(m,n=i,to_print=False,to_plot=False)
+
+            if percent_limit &gt; 0:
+                percent_wo_gaps, _ = percent_of_filled_time_bins(t_seg,dt,to_return=True) 
+            else: 
+                percent_wo_gaps = 100
+            
+            if percent_wo_gaps &gt; percent_limit: # if True, then there is no large gap in the segment
+                # Perform FFT to find Power spectra for one seg
+                S2 = 1/(len(rate_seg)-1)*np.sum((rate_seg-R_seg)**2)
+                MSE = np.mean(err_seg**2)
+                F_var = np.sqrt((S2-MSE)/R_seg**2)
+                rms_lc_seg_v.append(F_var)
+            else:
+                pass
+
+        return np.mean(rms_lc_seg_v)
+
+    except FloatingPointError:
+        return float(&#34;NaN&#34;)</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.Fvar_from_ps"><code class="name flex">
+<span>def <span class="ident">Fvar_from_ps</span></span>(<span>xf, fft_rate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) by
+discretely integrating the power spectra over the full frequency interval.
+</p>
+<p>Note: <strong>for a smaller freq band</strong>, call remove_freq() prior to calling this function.
+</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>xf, fft_rate</code>: np.ndarrays
+<br>
+Frequency vector and power spectrum (the Fourier transformed rate).</p>
+<p><strong>Returns</strong>:</p>
+<p><code>F_var</code>: float
+<br>
+The fractional root mean square (rms) variability amplitude.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def Fvar_from_ps(xf,fft_rate):
+    &#34;&#34;&#34;
+    Calculate the fractional root mean square (rms) variability amplitude (over all frequencies) by 
+    discretely integrating the power spectra over the full frequency interval.     
+     
+    Note: **for a smaller freq band**, call remove_freq() prior to calling this function.    
+    
+    **Parameters**:
+    
+    `xf, fft_rate`: np.ndarrays     
+        Frequency vector and power spectrum (the Fourier transformed rate).
+        
+    **Returns**:
+    
+    `F_var`: float     
+        The fractional root mean square (rms) variability amplitude.
+    &#34;&#34;&#34;
+    np.seterr(all=&#39;raise&#39;)
+    try: 
+        df = xf[1]-xf[0]
+        F_var = np.sqrt(df*np.sum(fft_rate))
+        return F_var
+    
+    except FloatingPointError:
+        return float(&#34;NaN&#34;)</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.error_change"><code class="name flex">
+<span>def <span class="ident">error_change</span></span>(<span>err, err_lim=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set error to zero if exceeds err_lim.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>err</code>: np.ndarray
+<br>
+Error vector.</p>
+<p><code>err_lim</code>: float, optional, default: 1
+<br>
+Error limit. If an error element is larger than err_lim, it is set to zero. </p>
+<p><strong>Returns</strong>:</p>
+<p><code>err</code>: np.ndarray
+<br>
+Error vector after setting elements that exceeds err_lim to zero.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def error_change(err,err_lim=1):
+    &#34;&#34;&#34;
+    Set error to zero if exceeds err_lim.
+    
+    **Parameters**:
+    
+    `err`: np.ndarray     
+        Error vector.
+        
+    `err_lim`: float, optional, default: 1    
+        Error limit. If an error element is larger than err_lim, it is set to zero. 
+    
+    **Returns**:
+    
+    `err`: np.ndarray     
+        Error vector after setting elements that exceeds err_lim to zero.
+    &#34;&#34;&#34;
+    
+    e_temp = []
+    for e in err:
+        if e &lt; err_lim:
+            e_temp.append(e)
+        else:
+            e_temp.append(0)
+    err = e_temp
+    return err</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.extract_fits"><code class="name flex">
+<span>def <span class="ident">extract_fits</span></span>(<span>filename, keywords=[], p=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract (and print info about) a fits-file. </p>
+<p><strong>Parameters</strong>:</p>
+<p><code>filename</code>: string
+<br>
+The path to the .fits-file.</p>
+<p><code>keywords</code>: list of strings
+<br>
+Keywords (and corresponding values) apart from the ones mentioned below to return.
+<em>All data-keys are always automatically returned (for a lightcurve, these are: {"TIME", "RATE", "ERROR","FRACEXP"}).
+</em>Note also that the header-keys {"CONTENT","OBJECT"} are returned if they exist. </p>
+<p><code>p</code>: boolean, optional, default: 0
+<br>
+If True (=1), print the headers of the fits-file.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>data</code>: dictionary
+<br>
+Keys and the corresponding data values.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def extract_fits(filename,keywords=[],p=0):
+    &#34;&#34;&#34; 
+    Extract (and print info about) a fits-file. 
+    
+    **Parameters**:
+    
+    `filename`: string     
+        The path to the .fits-file.
+    
+    `keywords`: list of strings     
+        Keywords (and corresponding values) apart from the ones mentioned below to return. 
+        *All data-keys are always automatically returned (for a lightcurve, these are: {&#34;TIME&#34;, &#34;RATE&#34;, &#34;ERROR&#34;,&#34;FRACEXP&#34;}).
+        *Note also that the header-keys {&#34;CONTENT&#34;,&#34;OBJECT&#34;} are returned if they exist. 
+    
+    `p`: boolean, optional, default: 0     
+        If True (=1), print the headers of the fits-file.
+        
+    **Returns**:
+    
+    `data`: dictionary     
+        Keys and the corresponding data values.
+    &#34;&#34;&#34;
+    
+    print(&#39;Loading fits from filename: &#39;,filename)
+    with fits.open(filename) as hdulist: 
+    
+        # HEADER
+        header0 = hdulist[0].header
+        header1 = hdulist[1].header
+        
+        # DATA KEYS
+        binaryext = hdulist[1].data
+        binarytable = Table(binaryext)
+        keys = binarytable.keys()
+        
+        data = {}
+        for key in keys:
+            data[key] = hdulist[1].data[key]
+        
+        # HEADER KEYS
+        try:
+            data[&#39;CONTENT&#39;] = header0[&#39;CONTENT&#39;]
+            content_exist = True
+        except KeyError:
+            print(&#39;There is no content-information for this fits.&#39;)
+            content_exist = False
+        try:
+            data[&#39;OBJECT&#39;] = header0[&#39;OBJECT&#39;]
+        except KeyError:   
+            print(&#39;There is no object-information for this fits.&#39;)
+          
+        # Extract extra keyswords
+        for extra_key in keywords:  
+            try: 
+                data[extra_key] = header0[extra_key]
+                print(&#34;Found key {} in header0&#34;.format(extra_key))
+                cannot_find = False
+            except KeyError:
+                print(&#34;There is no key {} in header0, let&#39;s have a look at header1.&#34;.format(extra_key))
+            try: 
+                data[extra_key] = header1[extra_key]
+                print(&#34;Found key {} in header1.&#34;.format(extra_key))
+                cannot_find = False
+            except KeyError:
+                print(&#34;There is no key {} in header1 either, sorry...&#34;.format(extra_key))
+                cannot_find = True
+            
+            if cannot_find: 
+                matchingK0 = matchingKeys(header0, extra_key)
+                matchingK1 = matchingKeys(header1, extra_key)
+                print(&#39;Matching keys in header0 = &#39;,matchingK0)
+                print(&#39;Matching keys in header1 = &#39;,matchingK1)
+                for K in matchingK0:
+                    use = input(&#39;Do you want to extract the header0 key {}? [y/n] &#39;.format(K))
+                    if use == &#39;y&#39; or use == &#39;yes&#39; or use == &#39;Y&#39;:
+                        data[K] = header0[K]
+                for K in matchingK1:
+                    use = input(&#39;Do you want to extract the header1 key {}? [y/n] &#39;.format(K))
+                    if use == &#39;y&#39; or use == &#39;yes&#39; or use == &#39;Y&#39;:
+                        data[K] = header1[K]
+         
+        # Print out all info if true:
+        if p:
+            print(&#39;hdu.info()&#39;)
+            print(hdulist.info(),&#39;\n&#39;)
+            print(&#39;Header0:&#39;)
+            print(repr(header0),&#39;\n&#39;) #repr() prints the info into neat columns
+            print(&#39;Header1:&#39;)
+            print(repr(header1),&#39;\n&#39;) #repr() prints the info into neat columns
+            print(binarytable[0:10],&#39;\n&#39;)
+        else:
+            if content_exist:
+                print(&#39;The keys to the {} data are: {}&#39;.format(data[&#39;CONTENT&#39;],data.keys()))
+            else:
+                print(&#39;The keys to the data are: {}&#39;.format(data.keys()))
+        print(&#39;Loading fits done. \n&#39;)
+        
+        return data</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.find_where_to_split_lc"><code class="name flex">
+<span>def <span class="ident">find_where_to_split_lc</span></span>(<span>lc_v, stops, m=8192)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>If want to split up an observation in several parts.</p>
+<p>Needs to be updated: should just need to input one lightcurve, not a list.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: list of light curve objects.
+The lightcurves to be split., </p>
+<p><strong>Returns</strong>:</p>
+<p><code>start_v,stop_v</code>: list of arrays
+Vectors containing the indices for start and stop for each part.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_where_to_split_lc(lc_v,stops,m=2**13):
+    &#34;&#34;&#34;
+    If want to split up an observation in several parts.
+    
+    Needs to be updated: should just need to input one lightcurve, not a list.
+    
+    **Parameters**:
+    
+    ``lc_v``: list of light curve objects.
+        The lightcurves to be split., 
+        
+    **Returns**:
+    
+    ``start_v,stop_v``: list of arrays
+        Vectors containing the indices for start and stop for each part.   
+    &#34;&#34;&#34;
+    
+    ax = standard_plot()
+    plt.plot(lc.t,lc.rate)
+    N = lc_v[0].N
+
+    stops.append(lc_v[0].t[-1]) #the last part
+    start = 0
+    
+    # Determine where to split parts
+    break_points = []
+    len_of_parts = []
+    for stop in stops:
+        part = [t for t in lc_v[0].t if start &lt; t &lt; stop]
+        ax.axvline(part[-1],color=&#39;r&#39;,label=&#39;end of a part&#39;)
+        break_points.append(np.where(lc_v[0].t == part[-1])[0][0])
+        
+        start = stop
+        
+        len_of_parts_temp = len(part)/m
+        len_of_parts.append(len_of_parts_temp)
+        print(&#39;\nLength of part: &#39;,len_of_parts_temp)
+    
+    # Determine start and stop for each part
+    break_points.insert(0,0)
+    
+    start_v = []
+    stop_v = []
+    for i in range(0,len(break_points)-1):
+        #if len_of_parts[i] &gt;= 10:
+        start_v.append(break_points[i])
+        stop_v.append(break_points[i+1])
+
+    return start_v, stop_v </code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.frs2pha"><code class="name flex">
+<span>def <span class="ident">frs2pha</span></span>(<span>spectral_data, FRS, FRS_err, grouping, save_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a .pha-file to be read by XSPEC.
+<br>
+- Important to have the correct HEADERs: <a href="https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node6.html">https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node6.html</a><br>
+- Important to have the correct names for the data: <a href="https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node7.html">https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node7.html</a>
+</p>
+<p><strong>Parameters</strong>:
+</p>
+<p><code>spectral_data</code>: dict
+<br>
+Spectral data extracted from energy spectra with extract_fits(). E.g.: spectral_data = extract_fits(filename_s,keywords=['DATE','EXPOSURE','TELESCOP','INSTRUME'],p=0) </p>
+<p><code>FRS</code>: np.ndarray
+<br>
+Frequency resolved spectrum, i.e. fractional variance in freq band multiplied with energy spectra. Units: counts</p>
+<p><code>FRS_err</code>: np.ndarray
+<br>
+The corresponding error to the Frequency resolved spectrum.</p>
+<p><code>grouping</code>: np.ndarray
+<br>
+The channel that is the start of a new energy band has "-1", o/w "1".</p>
+<p><code>save_path</code>: str
+<br>
+Filename including the path to saving directory. E.g.: save_path = "../../Data/FrequencyResolvedSpectra/MAXIJ1535_571/{}_{}to{}Hz.pha".format(obs_id,freq_low,freq_high)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def frs2pha(spectral_data,FRS,FRS_err,grouping,save_path):
+    &#34;&#34;&#34;
+    Create a .pha-file to be read by XSPEC.      
+    - Important to have the correct HEADERs: https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node6.html  
+    - Important to have the correct names for the data: https://heasarc.gsfc.nasa.gov/docs/heasarc/ofwg/docs/spectra/ogip_92_007/node7.html  
+    
+    **Parameters**:   
+    
+    `spectral_data`: dict    
+        Spectral data extracted from energy spectra with extract_fits(). E.g.: spectral_data = extract_fits(filename_s,keywords=[&#39;DATE&#39;,&#39;EXPOSURE&#39;,&#39;TELESCOP&#39;,&#39;INSTRUME&#39;],p=0) 
+    
+    `FRS`: np.ndarray       
+        Frequency resolved spectrum, i.e. fractional variance in freq band multiplied with energy spectra. Units: counts
+     
+    `FRS_err`: np.ndarray       
+        The corresponding error to the Frequency resolved spectrum.
+     
+    `grouping`: np.ndarray       
+        The channel that is the start of a new energy band has &#34;-1&#34;, o/w &#34;1&#34;.
+        
+    `save_path`: str       
+        Filename including the path to saving directory. E.g.: save_path = &#34;../../Data/FrequencyResolvedSpectra/MAXIJ1535_571/{}_{}to{}Hz.pha&#34;.format(obs_id,freq_low,freq_high)    
+    &#34;&#34;&#34;
+    
+    hdu1 = fits.PrimaryHDU()
+
+    hdu1.header[&#39;DATE&#39;] = (datetime.today().strftime(&#39;%Y-%m-%d, %H:%M:%S&#39;), &#39;Creation date (YYYY-MM-DD, hh:mm:ss CET)&#39;)
+
+    col1 = fits.Column(name=&#39;CHANNEL&#39;, format=&#39;I&#39;, array=spectral_data[&#39;CHANNEL&#39;])
+    col2 = fits.Column(name=&#39;COUNTS&#39;, format=&#39;J&#39;, unit=&#39;count&#39;, array=FRS)
+    col3 = fits.Column(name=&#39;STAT_ERR&#39;, format=&#39;E&#39;, unit=&#39;count&#39;, array=FRS_err)
+    col4 = fits.Column(name=&#39;QUALITY&#39;, format=&#39;I&#39;, array=np.zeros(len(grouping)))
+    col5 = fits.Column(name=&#39;GROUPING&#39;, format=&#39;I&#39;, array=grouping)
+
+    coldefs = fits.ColDefs([col1, col2, col3, col4, col5])
+
+    pha_head = fits.Header()
+
+    pha_head[&#39;EXTNAME&#39;] = &#39;SPECTRUM&#39;
+    pha_head[&#39;DATE&#39;] = (spectral_data[&#39;DATE&#39;], &#39;energy spectrum from (YYYY-MM-DDThh:mm:ss UT)&#39;)
+    pha_head[&#39;EXPOSURE&#39;] = (spectral_data[&#39;EXPOSURE&#39;], &#39;Exposure time (s)&#39;)
+    pha_head[&#39;TELESCOP&#39;] = (spectral_data[&#39;TELESCOP&#39;], &#39;mission/satellite name&#39;)
+    pha_head[&#39;INSTRUME&#39;] = (spectral_data[&#39;INSTRUME&#39;], &#39;instrument/detector name&#39;)
+    pha_head[&#39;BACKFILE&#39;] = (&#39;NONE    &#39;, &#39;associated background filename&#39;)
+    pha_head[&#39;BACKSCAL&#39;] = (1.000000e+00, &#39;background file scaling factor&#39;)
+    pha_head[&#39;CORRFILE&#39;] = (&#39;NONE    &#39;, &#39;associated correction filename&#39;)
+    pha_head[&#39;CORRSCAL&#39;] = (1.000000e+00, &#39;correction file scaling factor&#39;)
+    pha_head[&#39;RESPFILE&#39;] = (&#39;NONE    &#39;, &#39;associated redistrib matrix filename&#39;)
+    pha_head[&#39;ANCRFILE&#39;] = (&#39;NONE    &#39;, &#39;associated ancillary response filename&#39;)
+    pha_head[&#39;AREASCAL&#39;] = (1.000000e+00, &#39;area scaling factor &#39;)
+    pha_head[&#39;HDUCLASS&#39;] = (&#39;OGIP    &#39;, &#39;format conforms to OGIP standard&#39;)
+    pha_head[&#39;HDUCLAS1&#39;] = (&#39;SPECTRUM&#39;, &#39;PHA dataset (OGIP memo OGIP-92-007)&#39;)
+    pha_head[&#39;HDUVERS&#39;] = (&#39;1.1.0   &#39;, &#39;Obsolete - included for backwards compatibility&#39;)
+    pha_head[&#39;POISSERR&#39;] = (False, &#39;Poissonian errors not applicable&#39;)
+    pha_head[&#39;CHANTYPE&#39;] = (spectral_data[&#39;CHANTYPE&#39;], &#39;channel type (PHA, PI etc)&#39;)
+    pha_head[&#39;DETCHANS&#39;] = (len(spectral_data[&#39;CHANNEL&#39;]), &#39;total number possible channels&#39;)
+
+    pha_data = fits.BinTableHDU.from_columns(coldefs,header=pha_head)
+    phafile = fits.HDUList([hdu1, pha_data])
+    phafile.writeto(save_path,overwrite=True)</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.ifft_smallfreqband"><code class="name flex">
+<span>def <span class="ident">ifft_smallfreqband</span></span>(<span>fft_rate)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Perform inverse transformation from freq domain to time domain. Is called upon in pick_out_freq_from_lc().</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>fft_rate</code>: np.ndarray
+<br>
+The power spectra after having set values outside freq range to 0.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>rate</code>: np.ndarray
+<br>
+New rate vector, now only containing the frequencies in fft_rate.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ifft_smallfreqband(fft_rate):
+    &#34;&#34;&#34;
+    Perform inverse transformation from freq domain to time domain. Is called upon in pick_out_freq_from_lc().
+    
+    **Parameters**:
+     
+    `fft_rate`: np.ndarray     
+        The power spectra after having set values outside freq range to 0.
+        
+    **Returns**:
+    
+    `rate`: np.ndarray     
+        New rate vector, now only containing the frequencies in fft_rate. 
+    &#34;&#34;&#34;
+    
+    # Add the negative freq again (that were removed due to [1:m//2])
+    y_together = np.append(np.zeros(1),fft_rate)
+    y_together = np.append(y_together,np.zeros(1))
+    y_together = np.append(y_together,np.conjugate(np.flip(fft_rate)))
+    # Perform ifft
+    yinv = ifft(y_together)
+    # Make to np.ndarray and extract only the real values
+    yinv = np.array(yinv)
+    rate = yinv.real  
+    return rate </code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.load_lightcurve"><code class="name flex">
+<span>def <span class="ident">load_lightcurve</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Split the data from a light curve into time, flux, and error vectors. </p>
+<p><strong>Parameters</strong>:</p>
+<p><code>data</code>: dictionary
+<br>
+Should contain the keys ['TIME', 'RATE', 'ERROR', 'FRACEXP', 'CONTENT'] with corresponding values.
+<br>
+The data['CONTENT'] ought to be 'LIGHT CURVE'.
+</p>
+<p><strong>Returns</strong>:</p>
+<p><code>t, rate, error</code>: np.ndarrays
+<br>
+The data values for a light curve: time, rate, rate_error, respectively.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_lightcurve(data):
+    &#34;&#34;&#34; 
+    Split the data from a light curve into time, flux, and error vectors. 
+    
+    **Parameters**:
+    
+    `data`: dictionary     
+        Should contain the keys [&#39;TIME&#39;, &#39;RATE&#39;, &#39;ERROR&#39;, &#39;FRACEXP&#39;, &#39;CONTENT&#39;] with corresponding values.    
+        The data[&#39;CONTENT&#39;] ought to be &#39;LIGHT CURVE&#39;.   
+        
+    **Returns**:
+    
+    `t, rate, error`: np.ndarrays     
+        The data values for a light curve: time, rate, rate_error, respectively.
+    &#34;&#34;&#34;
+
+    assert data[&#39;CONTENT&#39;]==&#39;LIGHT CURVE&#39;, &#39;Data does not come from a light curve object.&#39;
+
+    t = np.array(data[&#39;TIME&#39;])
+    rate = np.array(data[&#39;RATE&#39;])
+    err = np.array(data[&#39;ERROR&#39;])
+    
+    return t, rate, err</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.log_rebin"><code class="name flex">
+<span>def <span class="ident">log_rebin</span></span>(<span>xf, take_average_of, err=[], low_lim=None, high_lim=None, num=50)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Distribute the data into logarithmic frequency bins and compute the bin-average of the data.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>xf</code>: np.ndarray
+<br>
+The frequency-vector.</p>
+<p><code>take_average_of</code>: np.ndarray
+<br>
+The quantity to take average of. </p>
+<p><code>err</code>: np.ndarray, optional, default: empty list
+<br>
+Errors corresponding to the "take_average_of"-quantity.
+<br>
+If empty, compute the standard deviation of all values that end up in the same bin.</p>
+<p><code>low_lim, high_lim</code>: floats, optional, default: None
+<br>
+The interval to bin into log-bins: 10^(low_lim) to 10^(high_lim).
+If None, limits are given by the respective end point of the frequency vector.</p>
+<p><code>num</code>: int
+<br>
+The number of logarithmic frequency bins to create.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>middle_of_log_bins</code>: np.ndarray
+<br>
+The logarithmic midpoint of each log-bin, computed as:
+<br>
+<span><span class="MathJax_Preview">10^{\frac{1}{2}\left(\texttt{np.log10}(\texttt{log_bins}[i])+\texttt{np.log10}(\texttt{log_bins}[i+1])\right)}</span><script type="math/tex; mode=display">10^{\frac{1}{2}\left(\texttt{np.log10}(\texttt{log_bins}[i])+\texttt{np.log10}(\texttt{log_bins}[i+1])\right)}</script></span></p>
+<p><code>average</code>: np.ndarray
+<br>
+The average of the data within a log-bin.</p>
+<p><code>error</code>: np.ndarray
+<br>
+The propagated error, or (in case empty error-input) the standard deviation of all points within a log-bin.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_rebin(xf,take_average_of,err=[],low_lim=None,high_lim=None,num=50):
+    &#34;&#34;&#34;
+    Distribute the data into logarithmic frequency bins and compute the bin-average of the data.
+    
+    **Parameters**:
+    
+    `xf`: np.ndarray     
+        The frequency-vector.
+    
+    `take_average_of`: np.ndarray     
+        The quantity to take average of. 
+        
+    `err`: np.ndarray, optional, default: empty list     
+        Errors corresponding to the &#34;take_average_of&#34;-quantity.     
+        If empty, compute the standard deviation of all values that end up in the same bin.
+    
+    `low_lim, high_lim`: floats, optional, default: None     
+        The interval to bin into log-bins: 10^(low_lim) to 10^(high_lim).
+        If None, limits are given by the respective end point of the frequency vector.
+    
+    `num`: int     
+        The number of logarithmic frequency bins to create.
+    
+    **Returns**:
+    
+    `middle_of_log_bins`: np.ndarray     
+        The logarithmic midpoint of each log-bin, computed as:     
+    $$10^{\\frac{1}{2}\\left(\\texttt{np.log10}(\\texttt{log_bins}[i])+\\texttt{np.log10}(\\texttt{log_bins}[i+1])\\right)}$$
+        
+    `average`: np.ndarray     
+        The average of the data within a log-bin.
+         
+    `error`: np.ndarray     
+        The propagated error, or (in case empty error-input) the standard deviation of all points within a log-bin. 
+    &#34;&#34;&#34;
+    
+    if isinstance(xf,np.ndarray) and isinstance(take_average_of,np.ndarray):
+        
+        # Find limits and make log bins
+        if low_lim == None:
+            low_lim = np.log10(np.amin(xf))
+        if high_lim == None:
+            high_lim = np.log10(np.amax(xf))
+        eps = 10e-15 #to include the final point
+        log_bins = np.logspace(low_lim, high_lim+eps, num=num)
+
+        # Find the logarithmic mid-points
+        middle_of_log_bins = []
+        for i in range(0,len(log_bins)-1):
+            middle_of_log_bins.append(10**(1/2*(np.log10(log_bins[i])+np.log10(log_bins[i+1]))))
+
+        # Determine what freq-values correspond to what bin
+        digitized = np.digitize(xf, log_bins)
+
+        # Sort into bins and make sure no bin is empty 
+        # Note that num-1 is equal to len(middle_of_log_bins)
+        # i-1 for middle_of_log_bins and i for average due to indexing.. 
+        middle_of_log_bins = [middle_of_log_bins[i-1] for i in range(1, num) if len(take_average_of[digitized == i])!=0] 
+        average = [take_average_of[digitized == i].mean() for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+        
+        # Standard deviation for points in this bin if no error as input:
+        if len(err) == 0:
+            error = [take_average_of[digitized == i].std() for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+        # If error as input, compute error propagation (len(err[digitized==i]) has been moved out from root):
+        else:
+            error = [np.sqrt(np.sum((err[digitized == i])**2))/len(err[digitized == i]) for i in range(1, num) if len(take_average_of[digitized == i])!=0]
+
+        return np.array(middle_of_log_bins), np.array(average), np.array(error)
+
+    else:
+        print(&#39;Input needs to be np.ndarrays, try again.&#39;)</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.matchingKeys"><code class="name flex">
+<span>def <span class="ident">matchingKeys</span></span>(<span>dictionary, searchString)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Find if a string is contained within any of the dictionary's keys.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>dictionary</code>: dict
+The dictionary to be searched.</p>
+<p><code>searchString</code>: str
+The string to be looked after.</p>
+<p><strong> Returns</strong>:</p>
+<p><code>matches</code>: list
+A list with all key-matches.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def matchingKeys(dictionary, searchString):
+    &#34;&#34;&#34;
+    Find if a string is contained within any of the dictionary&#39;s keys.
+    
+    **Parameters**:
+    
+    `dictionary`: dict
+        The dictionary to be searched.
+        
+    `searchString`: str
+        The string to be looked after.
+    
+    ** Returns**:
+    
+    `matches`: list
+        A list with all key-matches.
+    &#34;&#34;&#34;
+    
+    matches = [key for key,val in dictionary.items() if searchString in key]    
+    
+    return matches</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.merge"><code class="name flex">
+<span>def <span class="ident">merge</span></span>(<span>lc_v)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merge lightcurves into one light curve object.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: list of light curve objects
+At least 2 light curves to be merged.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge(lc_v):
+    &#34;&#34;&#34;
+    Merge lightcurves into one light curve object.
+    
+    **Parameters**:
+    
+    ``lc_v``: list of light curve objects
+        At least 2 light curves to be merged.
+    &#34;&#34;&#34;
+    
+    
+    assert len(lc_v) &gt;= 2, &#39;You need at least two light curves to be merged.&#39;
+    
+    # Create a new light curve object
+    lc_broad = lightcurve(&#39;&#39;)
+    
+    # Initilaize 
+    print(&#39;Initializing with lc in {}-{} keV&#39;.format(lc_v[0].Emin,lc_v[0].Emax))
+    lc_broad.rate = np.copy(lc_v[0].rate)
+    lc_broad.err = np.copy(lc_v[0].err)
+    lc_broad.N = np.copy(lc_v[0].N)
+    lc_broad.dt = np.copy(lc_v[0].dt)
+    lc_broad.t = np.copy(lc_v[0].t)
+
+    # Merge with the rest
+    for i in range(1,len(lc_v)):
+        print(&#39;Merging with lc in {}-{} keV&#39;.format(lc_v[i].Emin,lc_v[i].Emax))
+        assert lc_v[i].Emin &gt;= lc_v[i-1].Emax, &#34;No overlapping energy bands allowed&#34;
+        lc_broad.rate += lc_v[i].rate
+        lc_broad.err = np.sqrt(lc_broad.err**2+lc_v[i].err**2)
+            
+    # Update again 
+    lc_broad.R = np.mean(lc_broad.rate)
+    lc_broad.Emin = lc_v[0].Emin
+    lc_broad.Emax = lc_v[-1].Emax
+    
+    #lc_broad.err = np.sqrt(lc_broad.rate/lc.dt)
+
+    return lc_broad</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.merge_energies_lc"><code class="name flex">
+<span>def <span class="ident">merge_energies_lc</span></span>(<span>lc_v)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merge light curves of different energies with each other.</p>
+<p><strong>Parameter</strong>:</p>
+<p><code>lc_v</code>: list of lightcurve objects <br>
+Light curves to be merged.</p>
+<p><strong>Return</strong>:</p>
+<p><code>lc_broad</code>: lightcurve object <br>
+The merged light curve, now spanning a larger energy range.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def merge_energies_lc(lc_v):
+    &#34;&#34;&#34;
+    Merge light curves of different energies with each other.
+    
+    **Parameter**:
+    
+    ``lc_v``: list of lightcurve objects   
+        Light curves to be merged.
+        
+    **Return**:
+    
+    ``lc_broad``: lightcurve object   
+        The merged light curve, now spanning a larger energy range.
+    &#34;&#34;&#34;
+    
+    
+    assert len(lc_v) &gt;= 2, &#39;You need at least two light curves to be merged.&#39;
+    
+    # Create a new light curve object
+    lc_broad = lightcurve(&#39;&#39;)
+    
+    # Initilaize 
+    print(&#39;Initializing with lc in {}-{} keV&#39;.format(lc_v[0].Emin,lc_v[0].Emax))
+    lc_broad.rate = np.copy(lc_v[0].rate)
+    lc_broad.err = np.copy(lc_v[0].err)
+    lc_broad.N = np.copy(lc_v[0].N)
+    lc_broad.dt = np.copy(lc_v[0].dt)
+    lc_broad.t = np.copy(lc_v[0].t)
+
+    # Merge with the rest
+    for i in range(1,len(lc_v)):
+        print(&#39;Merging with lc in {}-{} keV&#39;.format(lc_v[i].Emin,lc_v[i].Emax))
+        assert lc_v[i].Emin &gt;= lc_v[i-1].Emax, &#34;No overlapping energy bands allowed&#34;
+        lc_broad.rate += lc_v[i].rate
+        lc_broad.err = np.sqrt(lc_broad.err**2+lc_v[i].err**2)
+            
+    # Update again 
+    lc_broad.R = np.mean(lc_broad.rate)
+    lc_broad.Emin = lc_v[0].Emin
+    lc_broad.Emax = lc_v[-1].Emax
+    
+    #lc_broad.err = np.sqrt(lc_broad.rate/lc.dt)
+
+    return lc_broad</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.percent_of_filled_time_bins"><code class="name flex">
+<span>def <span class="ident">percent_of_filled_time_bins</span></span>(<span>t_seg, dt, to_return=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute percent of time bins being filled, i.e. without gaps.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>t_seg</code>: np.ndarray
+<br>
+Segment's time vector. Should start from zero, i.e. t_seg[0] = 0. </p>
+<p><code>dt</code>: np.float
+<br>
+Time resolution of observation.</p>
+<p><code>to_return</code>: boolean (default: False)
+<br>
+If false, print gap percent, otherwise return it. </p>
+<p><strong>Returns</strong>:</p>
+<p><code>percent_wo_gaps</code>: np.float
+<br>
+percent of time bins being filled, i.e. without gaps.</p>
+<p><code>hist</code>: np.ndarray
+<br>
+A list containing 1 for filled bin, 0 for unfilled bin.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def percent_of_filled_time_bins(t_seg,dt,to_return=True):
+    &#34;&#34;&#34;
+    Compute percent of time bins being filled, i.e. without gaps.
+    
+    **Parameters**:
+     
+    `t_seg`: np.ndarray     
+        Segment&#39;s time vector. Should start from zero, i.e. t_seg[0] = 0. 
+        
+    `dt`: np.float     
+        Time resolution of observation.
+        
+    `to_return`: boolean (default: False)     
+        If false, print gap percent, otherwise return it. 
+        
+    **Returns**:
+    
+    `percent_wo_gaps`: np.float     
+        percent of time bins being filled, i.e. without gaps.
+    
+    `hist`: np.ndarray    
+        A list containing 1 for filled bin, 0 for unfilled bin.
+    &#34;&#34;&#34;
+    
+    t_seg_temp = np.copy(t_seg)
+    
+    # Linear transformation of segment&#39;s first element to t_seg=0    
+    if int(t_seg_temp[0]) != 0:
+        t_seg_temp -= t_seg_temp[0]
+    
+    # Count number of filled (= non-empty = no gap) bins
+    num_bins = math.ceil(t_seg_temp[-1]/dt)
+    hist, edges = np.histogram(t_seg_temp,bins=num_bins,range=(0, dt*num_bins))
+    
+    # percent of filled bins (i.e. without gap)
+    percent_wo_gaps = np.sum(hist)/num_bins*100
+
+    if to_return:
+        return percent_wo_gaps, hist 
+    else: 
+        print(&#39;perc_wo_gaps = {:.4f}&#39;.format(percent_wo_gaps))</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.pick_out_freq_from_lc"><code class="name flex">
+<span>def <span class="ident">pick_out_freq_from_lc</span></span>(<span>lc, freq_low, freq_high, to_plot=False)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Fourier transforms a light curve, sets the power = 0 for all freq outside freq_range: freq_low-freq_high,
+and then performs an inverse Fourier transform back to time-domain.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc</code>: class 'Lightcurve'-object
+<br>
+The light curve, whose rms is to be found.</p>
+<p><code>freq_low/freq_high</code>: floats, optional, default: None
+<br>
+Lower and upper frequency limits.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>rate_ifft</code>: np.ndarray
+<br>
+The inverse Fourier transformed rate-vector, with mean = 0.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def pick_out_freq_from_lc(lc, freq_low, freq_high, to_plot=False):
+    &#34;&#34;&#34;
+    Fourier transforms a light curve, sets the power = 0 for all freq outside freq_range: freq_low-freq_high,
+    and then performs an inverse Fourier transform back to time-domain.
+    
+    **Parameters**:
+    
+    `lc`: class &#39;Lightcurve&#39;-object     
+            The light curve, whose rms is to be found.
+            
+    `freq_low/freq_high`: floats, optional, default: None     
+        Lower and upper frequency limits.
+    
+    **Returns**:
+    
+    `rate_ifft`: np.ndarray     
+        The inverse Fourier transformed rate-vector, with mean = 0.
+    &#34;&#34;&#34;
+    
+    # Pick out relevant quantties from the lightcurves
+    t, dt, rate, err, R, N = lc.t, lc.dt, lc.rate, lc.err, lc.R, lc.N
+    
+    # FFT on full light curve
+    xf = np.array(fftfreq(N, dt))[1:N//2]
+    fft_rate_unnormalized = fft(rate-R)[1:N//2]
+                    
+    if freq_low == xf[0] and freq_high == xf[-1]: 
+        print(&#34;You&#39;re using the full freq. range.&#34;)
+    else:
+        print(&#39;Inverse FFT using only the freq interval: [{},{}]&#39;.format(freq_low, freq_high)) 
+    
+    # Set fft_rate = 0 for frequencies outside given range
+    xf, fft_rate = remove_freq(xf,fft_rate_unnormalized,freq_low,geq=True,disregard=False)
+    xf, fft_rate = remove_freq(xf,fft_rate,freq_high,leq=True,disregard=False)
+    
+    # Transform back 
+    rate_ifft = ifft_smallfreqband(fft_rate)
+    print(&#39;Inverse FFT performed.\n&#39;)
+
+    if to_plot:
+        standard_plot()
+        plt.plot(t,rate-R,label=&#39;Lc with all freq&#39;)
+        plt.plot(t,rate_ifft,label=&#39;Lc using only f = [{},{}]&#39;.format(freq_low,freq_high))
+        plt.legend()
+        ax = plt.gca()
+        ax.set_xlim([t[0],t[500]])
+        plt.show()
+        
+    return rate_ifft</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.print_datetime_UT"><code class="name flex">
+<span>def <span class="ident">print_datetime_UT</span></span>(<span>lc_v, obs_start, stops)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>If want to split up an observation in several parts, each of length m*step bins,
+where m=bins/seg and step = num of seg.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>obs_start</code>: str,
+Format: YYYY-MM-DDThh:mm:ss.sss</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def print_datetime_UT(lc_v,obs_start,stops):
+    &#34;&#34;&#34;
+    If want to split up an observation in several parts, each of length m*step bins, 
+    where m=bins/seg and step = num of seg.
+    
+    **Parameters**:
+    
+    ``obs_start``: str, 
+        Format: YYYY-MM-DDThh:mm:ss.sss 
+    &#34;&#34;&#34;
+    
+    obs_time = dati.fromisoformat(obs_start)
+    print(&#39;obs start time = &#39;,obs_time,&#39;\n&#39;)
+    
+    print(&#39;The different parts are:&#39;)
+    
+    start = 0
+    for stop in stops:
+    
+        time_change_to_start = datetime.timedelta(seconds=start)
+        time_change_to_end = datetime.timedelta(seconds=stop)
+        
+        part_start = obs_time + time_change_to_start
+        part_end = obs_time + time_change_to_end
+        
+        print(str(part_start.isoformat(sep=&#39;T&#39;, timespec=&#39;milliseconds&#39;))+&#39;,&#39;,part_end.isoformat(sep=&#39;T&#39;, timespec=&#39;milliseconds&#39;))
+
+        start = stop</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.remove_freq"><code class="name flex">
+<span>def <span class="ident">remove_freq</span></span>(<span>xf, other_quantites, limit, leq=False, l=False, geq=False, g=False, disregard=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove frequencies (f) and other quantites' (OQ) corresponding values for those f.
+<br>
+Example: limit = 10 and leq = True: means that only f &lt;= 10 are saved.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>xf</code>: np.ndarray
+<br>
+Frequency vector.</p>
+<p><code>other_quantites</code>: list of np.ndarrays
+The quantities having a value for each frequnecy in xf.</p>
+<p><code>limit</code>: float
+<br>
+The numerical value of the limit. The type of limit is determined next:
+</p>
+<p><code>leq, l, geq, g</code>: Boolean (default: False)
+<br>
+less or equal than (leq), less than (l), greater or equal to (geq), greater than (g) the limit = will be SAVED.</p>
+<p><code>disregard</code>: Boolean (default: False)
+<br>
+If True, then the frequency and OQ will be cropped and returned as shorter vectors.
+If False, returned in the same length with OQs' elements outside given freq range being set to 0.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>freq</code>: np.ndarray
+<br>
+The frequency vector. </p>
+<p><code>other_quantites</code>: list of np.ndarrays or np.ndarray (if just one quantity)
+<br>
+After disregarding values (or setting them to zero) corresponding to frequencies outside the desired interval.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def remove_freq(xf,other_quantites,limit,leq=False,l=False,geq=False,g=False,disregard=True):
+    &#34;&#34;&#34;
+    Remove frequencies (f) and other quantites&#39; (OQ) corresponding values for those f.    
+    Example: limit = 10 and leq = True: means that only f &lt;= 10 are saved.
+    
+    **Parameters**:
+    
+    `xf`: np.ndarray     
+        Frequency vector.
+        
+    `other_quantites`: list of np.ndarrays
+        The quantities having a value for each frequnecy in xf.
+    
+    `limit`: float     
+        The numerical value of the limit. The type of limit is determined next:   
+    
+    `leq, l, geq, g`: Boolean (default: False)     
+        less or equal than (leq), less than (l), greater or equal to (geq), greater than (g) the limit = will be SAVED.
+        
+    `disregard`: Boolean (default: False)     
+        If True, then the frequency and OQ will be cropped and returned as shorter vectors.
+        If False, returned in the same length with OQs&#39; elements outside given freq range being set to 0.
+
+    **Returns**:
+    
+    `freq`: np.ndarray     
+        The frequency vector. 
+        
+    `other_quantites`: list of np.ndarrays or np.ndarray (if just one quantity)     
+        After disregarding values (or setting them to zero) corresponding to frequencies outside the desired interval. 
+    &#34;&#34;&#34;
+    
+    assert type(limit) != list, &#39;Unfortunately, you cannot fix more than one limit at once.&#39;
+    assert int(leq)+int(l)+int(geq)+int(g) &lt;= 1, &#39;Unfortunately, you cannot fix more than one limit at once.&#39;
+    
+    try: 
+        return_as_nparray = False
+        if type(other_quantites) != list: # i.e. we only have one quantity 
+            other_quantites = [other_quantites]
+            return_as_nparray = True
+
+        if leq:
+            for i in range(0,len(other_quantites)):
+                if disregard:
+                    other_quantites[i] = np.array(other_quantites[i][xf&lt;=limit])
+                else:
+                    other_quantites[i][xf&gt;limit] = 0
+            if disregard:
+                xf = xf[xf&lt;=limit]
+            else:
+                pass
+
+        if l:
+            for i in range(0,len(other_quantites)):
+                if disregard:
+                    other_quantites[i] = np.array(other_quantites[i][xf&lt;limit])
+                else:
+                    other_quantites[i][xf&gt;=limit] = 0
+            if disregard:
+                xf = xf[xf&lt;limit]
+            else:
+                pass
+
+        if geq:
+            for i in range(0,len(other_quantites)):
+                if disregard: 
+                    other_quantites[i] = np.array(other_quantites[i][xf&gt;=limit])
+                else:
+                    other_quantites[i][xf&lt;limit] = 0
+            if disregard:
+                xf = xf[xf&gt;=limit]
+            else:
+                pass
+
+        if g:
+            for i in range(0,len(other_quantites)):
+                if disregard: 
+                    other_quantites[i] = np.array(other_quantites[i][xf&gt;limit])
+                else:
+                    other_quantites[i][xf&lt;=limit] = 0
+            if disregard:
+                xf = xf[xf&gt;limit]
+            else:
+                pass
+
+        if return_as_nparray:
+            return np.array(xf), other_quantites[0]
+        else:
+            return np.array(xf), other_quantites
+    
+    except IndexError:
+        print(&#39;Could not change anything, try again with new limits.&#39;)
+        
+        return xf, other_quantites</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.rms_vs_channels"><code class="name flex">
+<span>def <span class="ident">rms_vs_channels</span></span>(<span>lc_v, rms_v, rms_err_v, channel_to_kev, overlap=0)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a list with rms for each channel. If the energy bands are chosen to 50-100, 100-150 etc, then
+channels 50-99 will be given the rms for the first band, and 100-149 will be given the rms of the second band.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: class: list of 'Lightcurve'-objects
+<br>
+The light curves to be used.</p>
+<p><code>rms_v</code>: np.ndarray
+<br>
+Absolute/fractional rms mulitplied with the spectra.</p>
+<p><code>rms_err_v</code>: np.ndarray
+<br>
+The error in (absolute/fractional) rms mulitplied with the spectra.</p>
+<p><code>channel_to_kev</code>: np.ndarray
+<br>
+Conversion from channel (index) to energy (keV).</p>
+<p><strong>Returns</strong>:</p>
+<p><code>rms_list_channels</code>: np.ndarray <br>
+With rms for each channel.</p>
+<p><code>rms_list_channels_err</code>: np.ndarray
+<br>
+With rms error for each channel.</p>
+<p><code>overlap</code>: int, optional, default: 0
+The number of channels that are in two adjacent energy bands.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def rms_vs_channels(lc_v, rms_v, rms_err_v, channel_to_kev, overlap=0):
+    &#34;&#34;&#34;
+    Create a list with rms for each channel. If the energy bands are chosen to 50-100, 100-150 etc, then
+    channels 50-99 will be given the rms for the first band, and 100-149 will be given the rms of the second band.
+    
+    **Parameters**:
+    
+    `lc_v`: class: list of &#39;Lightcurve&#39;-objects        
+        The light curves to be used.
+            
+    `rms_v`: np.ndarray     
+        Absolute/fractional rms mulitplied with the spectra.
+        
+    `rms_err_v`: np.ndarray     
+        The error in (absolute/fractional) rms mulitplied with the spectra.
+        
+    `channel_to_kev`: np.ndarray     
+        Conversion from channel (index) to energy (keV).
+    
+    **Returns**:
+    
+    `rms_list_channels`: np.ndarray &lt;br&gt;
+        With rms for each channel.
+    
+    `rms_list_channels_err`: np.ndarray      
+        With rms error for each channel.
+        
+    `overlap`: int, optional, default: 0 
+        The number of channels that are in two adjacent energy bands.
+    &#34;&#34;&#34;
+    
+    # Convert to dictionary, where keys = Emax of corresponding channel and values = channels
+    if isinstance(channel_to_kev,np.ndarray):
+        channel_to_kev_dict = {k: v for v,k in enumerate(channel_to_kev)}
+    elif isinstance(channel_to_kev_dict,dict):
+        pass
+    else:
+        print(&#39;Channel_to_kev is neither a np.ndarray nor a dictionary.&#39;)
+        return
+    
+    # Fill all channels with corresponding rms
+    Emin = lc_v[0].Emin 
+    Emax_v = [lc.Emax for lc in lc_v]
+    
+    assert np.all(Emax_v==sorted(Emax_v)), &#39;The energies are not in increasing order.&#39;
+    
+    rms_list_channels, rms_list_channels_err = np.zeros(len(channel_to_kev_dict)), np.zeros(len(channel_to_kev_dict))
+    grouping = -np.ones(len(channel_to_kev_dict))
+
+    # Where does first Eband start?
+    if Emin == 0:
+        start_index = 0
+    else:
+        start_index = channel_to_kev_dict[Emin]
+    
+    # Go over all energy bands 
+    for i,Emax in enumerate(Emax_v): 
+        grouping[start_index] = 1
+        end_index = channel_to_kev_dict[Emax]+1
+        rms_list_channels[start_index:end_index] = rms_v[i] if not math.isnan(rms_v[i]) else 0 # if rms = NaN then put rms-values for these channels to 0
+        rms_list_channels_err[start_index:end_index] = rms_err_v[i] if not math.isnan(rms_v[i]) else 0
+        # Update start index
+        start_index = end_index-overlap
+        
+    return rms_list_channels, rms_list_channels_err, grouping</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.split_time_lc"><code class="name flex">
+<span>def <span class="ident">split_time_lc</span></span>(<span>lc, equal=True, m=None, step=None, i=None, start=None, stop=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Split light curve into several shorter parts.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>equal</code>: boolean, default, True
+If true, split light curve into equally long parts.
+If false, split light curve according to start and stop indices. </p>
+<p><code>m,step,i</code>: ints
+Bins per segment, segments per part and part number respectively.</p>
+<p><code>start,stop</code>: ints
+Index for start and stop of the part.</p>
+<p><strong>Return</strong>:</p>
+<p><code>lc_part</code>: lightcurve object <br>
+A part of the original light curve.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def split_time_lc(lc,equal=True,m=None,step=None,i=None,start=None,stop=None):
+    &#34;&#34;&#34;
+    Split light curve into several shorter parts.
+    
+    **Parameters**:
+    
+    ``equal``: boolean, default, True
+        If true, split light curve into equally long parts.
+        If false, split light curve according to start and stop indices. 
+        
+    ``m,step,i``: ints
+        Bins per segment, segments per part and part number respectively.
+    
+    ``start,stop``: ints
+        Index for start and stop of the part.
+        
+    **Return**:
+    
+    ``lc_part``: lightcurve object   
+        A part of the original light curve. 
+    &#34;&#34;&#34;
+    
+    if equal:
+        start, stop = i*m*step, (i+1)*m*step
+    
+    print(&#39;New part for time indices: ({})-({})&#39;.format(start,stop))
+    
+    lc_part = copy.deepcopy(lc)
+    lc_part.t = lc_part.t[start:stop]
+    lc_part.rate = lc_part.rate[start:stop]
+    lc_part.err = lc_part.err[start:stop]
+    lc_part.R = np.mean(lc_part.rate)
+    lc_part.N = len(lc_part.t)
+
+    return lc_part</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.standard_plot"><code class="name flex">
+<span>def <span class="ident">standard_plot</span></span>(<span>h=4, w=10, fontsize=16)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Standard plot to enable use of the same figsize, fontsize and font.family in all figures.</p>
+<p><strong>Parameters</strong>: <br>
+<code>h,w</code>: (float, float), optional, default: h=4, w=10
+<br>
+Height and width of the figure, i.e., figsize=(w,h).</p>
+<p><code>fontsize</code>: int, optional, default: 16
+Fontsize of labels in figure.</p>
+<p><strong>Returns</strong>: </p>
+<p><code>ax</code>: Axes,
+<br>
+Axes of the figure.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def standard_plot(h=4,w=10,fontsize=16):
+    &#34;&#34;&#34;
+    Standard plot to enable use of the same figsize, fontsize and font.family in all figures.
+    
+    **Parameters**:   
+    `h,w`: (float, float), optional, default: h=4, w=10     
+        Height and width of the figure, i.e., figsize=(w,h).
+    
+    `fontsize`: int, optional, default: 16
+        Fontsize of labels in figure.
+        
+    **Returns**: 
+    
+    `ax`: Axes,     
+        Axes of the figure. 
+    &#34;&#34;&#34;
+    
+    fig = plt.figure(figsize=(w,h))
+    plt.rcParams.update(plt.rcParamsDefault)
+    plt.rcParams.update({&#39;font.size&#39;: fontsize})
+    plt.rcParams[&#39;font.family&#39;] = &#39;Times&#39;
+    plt.rc(&#39;text&#39;, usetex=True) 
+    
+    return plt.gca()</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.subtract_overlapping_energybands"><code class="name flex">
+<span>def <span class="ident">subtract_overlapping_energybands</span></span>(<span>lc_v)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Check if two light curve objects overlap (in terms of energy bands) and subtract one
+from the other if one lies in the other.
+</p>
+<p>Reason: When the cross spectral properties is being calculated for an energy channel inside another,
+the lc that resides within another is subtracted from the other. The reasoning behind this is
+that if one lc is duplicated in the other lc, the error contribution for that channel will
+not cancel and will contaminate the result.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>lc_v</code>: list of two 'Lightcurve'-objects
+<br>
+The light curves to be used in the covariance computation.
+lc_v[0] = 1st lightcurve-object, lc_v[1] = 2nd lightcurve-object.</p>
+<p><strong>Returns</strong>:</p>
+<p><code>lc_v</code>: list of deep copies of the two 'Lightcurve'-objects (as to not affect the original lightcurves)
+<br>
+If one lc was inside another (energy wise) this has been corrected for.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def subtract_overlapping_energybands(lc_v):
+    &#34;&#34;&#34;
+    Check if two light curve objects overlap (in terms of energy bands) and subtract one 
+    from the other if one lies in the other.   
+    
+    Reason: When the cross spectral properties is being calculated for an energy channel inside another, 
+    the lc that resides within another is subtracted from the other. The reasoning behind this is 
+    that if one lc is duplicated in the other lc, the error contribution for that channel will 
+    not cancel and will contaminate the result.
+    
+    **Parameters**:
+
+    `lc_v`: list of two &#39;Lightcurve&#39;-objects    
+        The light curves to be used in the covariance computation. 
+        lc_v[0] = 1st lightcurve-object, lc_v[1] = 2nd lightcurve-object.
+            
+    **Returns**:
+    
+    `lc_v`: list of deep copies of the two &#39;Lightcurve&#39;-objects (as to not affect the original lightcurves)     
+        If one lc was inside another (energy wise) this has been corrected for.
+    &#34;&#34;&#34;
+    
+    assert len(lc_v) == 2, &#34;You can only compare two light curves.&#34;
+    
+    lc_X = copy.deepcopy(lc_v[0])
+    lc_Y = copy.deepcopy(lc_v[1])
+    
+    # X entirely within Y
+    if lc_X.Emin &gt;= lc_Y.Emin and lc_X.Emax &lt;= lc_Y.Emax: 
+        print(&#39;1st lightcurve-object with Emin-Emax = {}-{} keV lies within 2nd lightcurve-object with Emin-Emax = {}-{} keV&#39;.format(lc_X.Emin,lc_X.Emax,lc_Y.Emin,lc_Y.Emax))
+        lc_Y.rate -= lc_X.rate
+        lc_Y.err = np.sqrt(lc_Y.err**2-lc_X.err**2)
+        lc_Y.R = np.mean(lc_Y.rate)
+        print(&#39;Removed rate and err of 1st lightcurve-object from the 2nd lightcurve-object.\n&#39;)
+        
+    # Y entirely within X
+    if lc_X.Emin &lt;= lc_Y.Emin and lc_X.Emax &gt;= lc_Y.Emax: 
+        print(&#39;2nd lightcurve-object with Emin-Emax = {}-{} keV lies within 1st lightcurve-object with Emin-Emax = {}-{} keV&#39;.format(lc_Y.Emin,lc_Y.Emax,lc_X.Emin,lc_X.Emax))
+        lc_X.rate -= lc_Y.rate
+        lc_X.err = np.sqrt(lc_X.err**2-lc_Y.err**2)
+        lc_X.R = np.mean(lc_X.rate)
+        print(&#39;Removed rate and err of the 2nd lightcurve-object from the 1st lightcurve-object.\n&#39;)
+        
+    return [lc_X,lc_Y]</code></pre>
+</details>
+</dd>
+<dt id="star.AuxiliaryFunctions.timer"><code class="name flex">
+<span>def <span class="ident">timer</span></span>(<span>i, nr, start, clear=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Print out the loop progress, and try to estimate the time remaining.</p>
+<p><strong>Parameters</strong>:</p>
+<p><code>i, nr</code>: ints
+<br>
+The current loop number, and the total number of loops.</p>
+<p><code>start</code>: float
+<br>
+Start of the loop, as given by: timeit.default_timer(). </p>
+<p><code>clear</code>: boolean
+<br>
+Clear the output between loops.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def timer(i,nr,start,clear=True):
+    &#34;&#34;&#34;
+    Print out the loop progress, and try to estimate the time remaining.
+    
+    **Parameters**:
+    
+    `i, nr`: ints      
+        The current loop number, and the total number of loops.
+    
+    `start`: float      
+        Start of the loop, as given by: timeit.default_timer(). 
+    
+    `clear`: boolean      
+        Clear the output between loops. 
+    &#34;&#34;&#34;
+    
+    stop=timeit.default_timer()
+    if (i/nr*100) &lt; 10:
+        expected_time=&#34;Calculating...&#34;
+    else:
+        time_perc=timeit.default_timer()
+        expected_time=np.round(((time_perc-start)/(i/nr))/60,2)
+    if clear == True:
+        clear_output(wait=True)
+    
+    print(&#34;Calculating the power spectra...&#34;)
+    print(&#34;Current progress: {}%&#34;.format(np.round(i/nr*100,2)))
+    print(&#34;Current run time: &#34;,np.round((stop-start)/60,2),&#34; minutes&#34;)
+    print(&#34;Expected run time: &#34;,expected_time,&#34; minutes&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="star" href="index.html">star</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="star.AuxiliaryFunctions.Fvar_from_lc" href="#star.AuxiliaryFunctions.Fvar_from_lc">Fvar_from_lc</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.Fvar_from_ps" href="#star.AuxiliaryFunctions.Fvar_from_ps">Fvar_from_ps</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.error_change" href="#star.AuxiliaryFunctions.error_change">error_change</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.extract_fits" href="#star.AuxiliaryFunctions.extract_fits">extract_fits</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.find_where_to_split_lc" href="#star.AuxiliaryFunctions.find_where_to_split_lc">find_where_to_split_lc</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.frs2pha" href="#star.AuxiliaryFunctions.frs2pha">frs2pha</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.ifft_smallfreqband" href="#star.AuxiliaryFunctions.ifft_smallfreqband">ifft_smallfreqband</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.load_lightcurve" href="#star.AuxiliaryFunctions.load_lightcurve">load_lightcurve</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.log_rebin" href="#star.AuxiliaryFunctions.log_rebin">log_rebin</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.matchingKeys" href="#star.AuxiliaryFunctions.matchingKeys">matchingKeys</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.merge" href="#star.AuxiliaryFunctions.merge">merge</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.merge_energies_lc" href="#star.AuxiliaryFunctions.merge_energies_lc">merge_energies_lc</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.percent_of_filled_time_bins" href="#star.AuxiliaryFunctions.percent_of_filled_time_bins">percent_of_filled_time_bins</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.pick_out_freq_from_lc" href="#star.AuxiliaryFunctions.pick_out_freq_from_lc">pick_out_freq_from_lc</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.print_datetime_UT" href="#star.AuxiliaryFunctions.print_datetime_UT">print_datetime_UT</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.remove_freq" href="#star.AuxiliaryFunctions.remove_freq">remove_freq</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.rms_vs_channels" href="#star.AuxiliaryFunctions.rms_vs_channels">rms_vs_channels</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.split_time_lc" href="#star.AuxiliaryFunctions.split_time_lc">split_time_lc</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.standard_plot" href="#star.AuxiliaryFunctions.standard_plot">standard_plot</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.subtract_overlapping_energybands" href="#star.AuxiliaryFunctions.subtract_overlapping_energybands">subtract_overlapping_energybands</a></code></li>
+<li><code><a title="star.AuxiliaryFunctions.timer" href="#star.AuxiliaryFunctions.timer">timer</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
