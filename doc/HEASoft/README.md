@@ -1,5 +1,5 @@
 <h1>
-  How to work with HEASOFT; XSELECT; XSPEC; nicerl2 etc
+  How to work with HEASoft, XSELECT, XSPEC, CALDB, nicerl2.
 </h1>
 
 What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites.astro.caltech.edu/~srk/XC/Notes/NICER_Mission_Guide.pdf).
