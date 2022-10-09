@@ -2,11 +2,11 @@
   How to work with HEASOFT; XSELECT; XSPEC; nicerl2 etc
 </h1>
 
-What's the purpose of NICER? Have a look at: [https://sites.astro.caltech.edu/~srk/XC/Notes/NICER_Mission_Guide.pdf](NICER mission guide).
+What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites.astro.caltech.edu/~srk/XC/Notes/NICER_Mission_Guide.pdf).
 
 <h2> To download correct data: </h2>
 
-1. Go to [https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html ](NICER Archive) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl](HEASARC Browse). Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
+1. Go to [NICER Archive](https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [HEASARC Browse](https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl. Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
 
 ![NICERarchive](NICERarchive.png)
 
@@ -16,39 +16,27 @@ What's the purpose of NICER? Have a look at: [https://sites.astro.caltech.edu/~s
 
 ![NICERarchive_XTIcleanedEVT](NICERarchive_XTIcleanedEVT.png)
 
-Click on the *cl.evt.gz-file, which will direct you to the website:
-
-https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_04/4133010109/xti/event_cl/ni4133010109_0mpu7_cl.evt.gz
-
-Copy paste this link and run (in Python):
-
-<img src="NICERarchive.png" alt="NICERarchive" style="zoom:50%;" />
-
-```
-!wget https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_10/4133010273/xti/event_cl/ni4133010273_0mpu7_cl.evt.gz
-```
-
-or just (in bash):
+4. Click on the *cl.evt.gz-file, which will direct you to: `https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_04/4133010109/xti/event_cl/ni4133010109_0mpu7_cl.evt.gz)`. Copy paste this link and run:
 
 ```
 wget https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_10/4133010273/xti/event_cl/ni4133010273_0mpu7_cl.evt.gz
 ```
 
-To unzip correctly, run:
+in the terminal. Or do `!wget *link*` if you want to download it directly within a jupyter notebook.
+
+5. To unzip correctly, run:
 
 ```
 gzip -dk filename.gz
 ```
 
-Can then run the stasp.extract_fits()-method:
+6. You can then use the HeaSoft-package to extract **light curves** or **energy spectra**. If you want you can also run the star.extract_fits()-method to get the data:
 
 ```
 extract_fits('ni4133010273_0mpu7_cl.evt')
 ```
 
-Or use the HeaSoft-package to extract **light curves** or **energy spectra**.
-
-<h1>Downloading HeaSoft</h1>
+<h2>Downloading HeaSoft</h2>
 
 Step1: https://heasarc.gsfc.nasa.gov/lheasoft/download.html
 
