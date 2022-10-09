@@ -4,6 +4,8 @@
 
 What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites.astro.caltech.edu/~srk/XC/Notes/NICER_Mission_Guide.pdf).
 
+---
+
 <h2> To download correct data: </h2>
 
 1. Go to [NICER Archive](https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [HEASARC Browse](https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl). Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
@@ -18,43 +20,47 @@ What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites
 | ![NICERarchive_XTIcleanedEVT](NICERarchive_XTIcleanedEVT.png)|
 |-|
 
-4. Click on the *cl.evt.gz-file, which will direct you to: `https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_04/4133010109/xti/event_cl/ni4133010109_0mpu7_cl.evt.gz)`. Copy paste this link and run:
+4. Click on the *cl.evt.gz-file, which will re-direct you. Copy paste the link to that webpage and run it with `wget` in the terminal, e.g.
 
-```
+```bash
 wget https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_10/4133010273/xti/event_cl/ni4133010273_0mpu7_cl.evt.gz
 ```
 
-in the terminal. Or do `!wget *link*` if you want to download it directly within a jupyter notebook.
+You can also do `!wget *link*` directly within a jupyter notebook if you want to download it from there.
 
 5. To unzip correctly, run:
 
-```
+```bash
 gzip -dk filename.gz
 ```
 
 6. You can then use the HeaSoft-package to extract **light curves** or **energy spectra**. If you want you can also run the star.extract_fits()-method to get the data:
 
-```
+```python
 extract_fits('ni4133010273_0mpu7_cl.evt')
 ```
 
 <h2>Downloading HeaSoft</h2>
 
-1: [Download the HEASOFT Software](https://heasarc.gsfc.nasa.gov/lheasoft/download.html). At that page, follow steps 1-3: pick **SOURCE CODE DISTRIBUTION**, then pick "All" packages, and go to:
+1: [Download the HEASOFT Software](https://heasarc.gsfc.nasa.gov/lheasoft/download.html). At that page, follow steps 1-3. Pick **SOURCE CODE DISTRIBUTION** and pick "All" packages.
 
-2 (on Intel Mac): Make sure that you have installed  "XQuartz" samt "Homebrew"; if not, start with installing those. Then, [install HEASoft - Intel Mac](https://heasarc.gsfc.nasa.gov/lheasoft/macos.html) Follow the "Bourne shell variants (bash/sh/zsh)"-column.
+2 (on Intel Mac): Make sure that you have installed  "XQuartz" samt "Homebrew"; if not, start with installing those. Then, [install HEASoft - Intel Mac](https://heasarc.gsfc.nasa.gov/lheasoft/macos.html). Follow the "Bourne shell variants (bash/sh/zsh)"-column.
 
 **Some notes:**
 * Before running the EXPORT-commands, make sure the files/executables are at the correct paths. E.g. I had to change `export FC=/usr/local/bin/gfortran-11` to `export FC=/usr/local/gfortran/bin/gfortran`.
 * You can run `tail -f build.log` to see how the build is doing. Wait for it to finish before running the installation.
 
-<h2> XSELECT </h2>
+---
 
-<h3> In terminal to extract lightcurves: </h3>
+<h1> XSELECT </h1>
+
+[Documentation for XSELECT](https://heasarc.gsfc.nasa.gov/docs/rosat/ros_xselect_guide/#tth_chAp2).
+
+<h2> In terminal to extract lightcurves: </h2>
 
 **To initialize software:**
 
-Create environment HEADAS and source it(?):
+Create environment HEADAS and source:
 
 ```bash
 export HEADAS=/Applications/heasoft-6.29/x86_64-apple-darwin21.1.0  
@@ -62,7 +68,7 @@ export HEADAS=/Applications/heasoft-6.29/x86_64-apple-darwin21.1.0
 . $HEADAS/headas-init.sh
 ```
 
-**To start software, e.g. xselect, just run:**
+**To start software, e.g. XSELECT, just run:**
 
 ```bash
 XSELECT
@@ -79,7 +85,7 @@ yes (to the q: "Reset the mission?")
 @script (e.g @../../HeaSoft/lc0p5_5ms.xco)
 ```
 
-A script can look like:
+A .xco-script can look like:
 
 ```
 set binsize 0.005  
@@ -100,7 +106,7 @@ exit
 
 Then the program will ask if you want to save the session (if yes, then you can continue that session later).
 
-<h1> In terminal to extract spectrum: </h1>
+<h2> In terminal to extract spectrum: </h2>
 
 Like above (for light curves), with the difference that we know need to specify the channels we want to extract the spectrum for (e.g. 0-1500 = 0-15 keV)
 
@@ -114,13 +120,13 @@ save spectrum fullspec.pha
 
 If we want to filter time: skip "set phaname PI" for some reason...
 
-To get the new times, first use:
+To get the new times, one can use the following function from the package:
 
 ```python
-print_datetime_UT(obs_start,m,step,parts)
+print_datetime_UT(lc_v,obs_start,stops)
 ```
 
-before running (in XSELECT):
+which will print out the times to provide in XSELECT:
 
 ```
 filter pha_cutoff 0 1500  
@@ -136,18 +142,12 @@ clear time all #clears the filter, otherwise you will have two filters next time
 
 # save spectrum fullspec_part1.pha
 # save spectrum fullspec_part2.pha
-# save spectrum fullspec_part3.pha
-# save spectrum fullspec_part4.pha
+# etc...
 ```
 
 ---
 
-<h3>Info: </h3>
-
-https://heasarc.gsfc.nasa.gov/lheasoft/macos.html
-https://heasarc.gsfc.nasa.gov/docs/rosat/ros_xselect_guide/#tth_chAp2
-
-<h1> XSPEC </h1>
+<h2> XSPEC </h2>
 
 Useful links:
 
@@ -155,13 +155,11 @@ Useful links:
 * https://www.rri.res.in/~bpaul/asw/html/spec_exe1.html
 * http://polywww.in2p3.fr/activites/physique/glast/workbook/pages/sciTools_latGrbAnalysis/example01_xspecHelp.html
 
-<h2> How to make .pha-files correctly?</h2>
+<h3> How to make .pha-files correctly?</h3>
 
-<u>Alternative 1</u>:
+<u>Alternative 1</u>, **In python**:
 
-**In python**:
-
-```
+```python
 a = np.array([spectral_data['CHANNEL'], FRS, FRS_err])
 mat = np.transpose(np.matrix(a))
 with open(path-to+filename.txt,'wb') as f:
@@ -169,15 +167,16 @@ for line in mat:
     np.savetxt(f, line, fmt='%.0f')
 ```
 
-**Then in bash**:
+Then in bash:
 
 ```
 ascii2pha filename.txt
 ```
 
-Note: answer the questions and that Errors present? will always have [no] as default, while the others will be remembered until next time.
+Note: "Errors present?"" will always have [no] as default, while the others will be remembered until next time, as:
 
-![ascii2pha](ascii2pha.png)
+| ![ascii2pha](ascii2pha.png)|
+|-|
 
 Then run:
 
@@ -191,29 +190,27 @@ where filename.pha is the entered output filename from ascii2pha. The group-comm
 
 <u>Alternative 2</u>:
 
-Do everythin in **python** using FITS-format there... Should be possible... :)
-
-Simply call:
+Do everything in **python** using FITS-format there. Simply call:
 
 ```
 frs2pha(spectral_data,FRS,FRS_err,grouping,save_path)
 ```
 
-<h2> Model fitting and plotting of spectra</h2>
+<h3> Model fitting and plotting of spectra</h3>
 
-Start software, by simply runnning (if it doesn't work; try to source package in the same way as the first lines prior to the XSELECT-command above):
+Start software, by running:
 
 ```
 XSPEC
 ```
 
-Open a figure
+If it doesn't work, use the EXPORT command as above under XSELECT. Then open a figure:
 
 ```
 cpd /xw
 ```
 
-Import the energy spectra
+Import the energy spectra:
 
 ```
 data filename.pha
@@ -227,25 +224,25 @@ resp nixtiref20170601v002.rmf
 arf nixtiaveonaxis20170601v004.arf
 ```
 
-or, in case that resp och arf has been combined into .rsp-file
+or, in case that resp och arf has been combined into .rsp-file:
 
 ```
 response _.rsp
 ```
 
-Then to ignore certain channels
+Then to ignore certain channels:
 
 ```
 ig 0-50, 1000-**
 ```
 
-To plot the data
+To plot the data:
 
 ```
 plot ldata
 ```
 
-To fit a model to the data
+To fit a model to the data:
 
 ```
 model powerl
@@ -255,7 +252,7 @@ model powerl
 2:powerlaw:norm>1
 ```
 
-The main command to plot is then
+The main command to plot is then:
 
 ```
 plot eeuf
@@ -273,7 +270,7 @@ If want to notice some channels again
 not 100-150
 ```
 
-If we want to import another file, then we can do
+If we want to import another file, then we can do:
 
 ```
 data 2:2 test.pha
@@ -282,10 +279,10 @@ data 2:2 test.pha
 where 2:2 specifies the "channel" of the figure to use. We then need to use the response-files again, but now for this file, which we specify with a "2" for this "channel":
 
 ```
-resp 2 nixtiref20170601v002.rmf  # and similar for the .arf-file
+resp 2 nixtiref20170601v002.rmf  
 ```
 
-And a thrid example:
+and similar for the .arf-file. And then a third example:
 
 ```
 data 3:3 testg.pha
@@ -295,7 +292,7 @@ load response files as above...
 ig 3: 1-3, 20-**
 ```
 
-To show all data and then all model-parameters:
+To show all data and all model-parameters:
 
 ```
 show data
@@ -308,10 +305,9 @@ To change a param value:
 ```
 new 7 1
 ```
+will change param7 to value 1.
 
-Change param7 to value 1
-
-To set plot:
+To modify plot you can do:
 
 ```
 setplot rebin 100 10
@@ -319,32 +315,29 @@ setplot rebin 100 10
 setplot energy
 ```
 
----
-
 For simple modeling of X-ray binaries:
 
 ```
 model wabs*(diskbb+nthcomp)
 ```
 
-diskbb är en utsträckt svartkropp som passa ackretionsskivor. Den har bara två parametrar (innertemperatur - ca 0.5 keV - och normering).
+1. diskbb is an extended black body to suit accretion discs. It only has two parameters (the inner temperature, approx 0.5 keV) and the normalization.
+2. For nthcomp you need to specify more params:
 
-För nthcomp kommer du behöva ange flera parametrar:
+* Gamma (the slope, same as for a power-law)
+* kT_e (electron temperature. Can be "freezed" to 100 keV.)
+* kT_bb (temperature of incoming photons. Can be linked to Tin in diskbb.)
+* inp_type: let it be 0
+* Redshift: let it be 0
+* norm: normalization
 
-* Gamma (lutningen, samma som för en power-law)
-* kT_e (elektrontemperaturen. Kan frysas till 100 keV.)
-* kT_bb (temperauren på inkommande fotoner. Kan knytas till Tin i diskbb.)
-* inp_type: låt vara 0
-* Redshift: låt vara 0
-* norm: normering
+To link two parameters, run `show par` to see which parameter numbers the relevant parameters have. If we want connect e.g. param 6 to 2, then do `new 6=2`. To freeze a parameter, do `fre N` (with N being the parameter number); this value will then not change during the fit.
 
-För att knyta två parametrar, ta “show par” och se vilket nummer den parameter du vill knyta till har (t.ex. 2). Om du sedan vill knyta en annan parameter (säg 6) till den skriver du “new 6 = 2”.
+---
 
-Vill du frysa en parameter skriver du “fre N”, där N är numret på parametern du vill frysa.
+<h2> CALDB </h2>
 
-# CALDB, e.g. for making arf and rmf files
-
-https://heasarc.gsfc.nasa.gov/docs/nicer/analysis_threads/arf-rmf/
+CALDB, e.g. for making arf and rmf files: [NICER Responses (ARFs and RMFs)](https://heasarc.gsfc.nasa.gov/docs/nicer/analysis_threads/arf-rmf/).
 
 Start by sourcing CALDB:
 
@@ -353,9 +346,7 @@ export CALDB=/Applications/heasoft-6.29/caldb
 source $CALDB/software/tools/caldbinit.csh
 ```
 
-Make sure you have **data** for the correct mission and instrument; check at:
-
-> https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/install.html  
+Make sure you have **data** for the correct mission and instrument; check at: [How to Install a Calibration Database](https://heasarc.gsfc.nasa.gov/docs/heasarc/caldb/install.html).
 
 If does not work, just run:
 
@@ -365,7 +356,7 @@ export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 ```
 
-Run:
+Then you can do:
 
 ```
 nicerarf fullspec.pha 275.0915000 7.1853889 ni1200120103.mkf ni1200120103.mkf nixtia1200120103.arf outwtfile=nixtia1200120103_wt.lis
@@ -379,7 +370,7 @@ where
 * nixtia1200120103.arf is the output arf-file
 * outwtfile=nixtia1200120103_wt.lis is a file needed by the rmf-generation
 
-**NOTE:** according to https://heasarc.gsfc.nasa.gov/docs/nicer/analysis_threads/arf-rmf/ we should use the cleaned event file ni1200120103_0mpu7_cl.evt instead of the first ni1200120103.mkf. But according to https://www.youtube.com/watch?v=mRlH17R0bmY and https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerarf.html the .mkf-file should be put there twice?
+**NOTE:** according to [NICER Responses (ARFs and RMFs)](https://heasarc.gsfc.nasa.gov/docs/nicer/analysis_threads/arf-rmf/) we should use the cleaned event file ni1200120103_0mpu7_cl.evt instead of the first ni1200120103.mkf. However, according to https://www.youtube.com/watch?v=mRlH17R0bmY and https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerarf.html the .mkf-file should be put there twice..?
 
 Then, for rmf:
 
@@ -387,32 +378,33 @@ Then, for rmf:
 nicerrmf fullspec.pha ni1200120103.mkf nixtir1200120103.rmf detlist=@nixtia1200120103_wt.lis
 ```
 
-**DOES NOT WORK...**
+**(writing some parts of the docs in retrospect, so I don't remember if this worked...)**
 
-# If no cleaned data - extract cleaned data using **nicerl2**
+---
 
-* First: need to extract "Full Observation Dataset" as tar-file from HeaSarc, then:
+<h2> If no cleaned data - extract cleaned data using **nicerl2** </h2>
 
-https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerl2.html
+1. Extract "Full Observation Dataset" as tar-file from HeaSarc, then follow [nicerl2 docs](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerl2.html).
 
-* Need to "export" (source) CALDB-package (see above or here below):
+2. Need to export environments to use the CALDB-package:
 
-  ```bash
-  export HEADAS=/Applications/heasoft-6.29/x86_64-apple-darwin21.1.0  
+```bash
+export HEADAS=/Applications/heasoft-6.29/x86_64-apple-darwin21.1.0  
 
-  . $HEADAS/headas-init.sh
+. $HEADAS/headas-init.sh
 
-  export CALDB=/Applications/heasoft-6.29/caldb
-  export CALDBCONFIG=$CALDB/software/tools/caldb.config
-  export CALDBALIAS=$CALDB/software/tools/alias_config.fits
-  ```
-
-  and then:
-
+export CALDB=/Applications/heasoft-6.29/caldb
+export CALDBCONFIG=$CALDB/software/tools/caldb.config
+export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 ```
+
+and then run:
+
+```bash
 nicerl2 indir=OBSERVATION_ID clobber=YES
 # e.g. nicerl2 indir=4133010105 clobber=YES
 ```
 
+where:
 * indir = path to directory with all data! E.g. "Full Observation Dataset (1200120224)" (HeaSarc)
 * clobber = YES = needed to overwrite files
