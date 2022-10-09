@@ -182,17 +182,22 @@ class PowerSpectrum():
                         if hist[j-1] == 1 and hist[j] == 0:
                             bin_nr_after_which_no_gaps_exist = j
                     
-                    # Take into account all previous gaps so that indexation becomes right 
-                    # only relevant when we have more than 1 gap
-                    zeros_until_last_gap = np.count_nonzero(hist[:bin_nr_after_which_no_gaps_exist]==0)
-                    bin_nr_after_which_no_gaps_exist -= zeros_until_last_gap 
+                    try:
+                        # Take into account all previous gaps so that indexation becomes right 
+                        # only relevant when we have more than 1 gap
+                        zeros_until_last_gap = np.count_nonzero(hist[:bin_nr_after_which_no_gaps_exist]==0)
+                        bin_nr_after_which_no_gaps_exist -= zeros_until_last_gap 
+
+                        # Compute how many steps back we should take in the next segment
+                        bins_back += len(t_seg) - bin_nr_after_which_no_gaps_exist
+
+                        # Might need to update the total number of segments we have
+                        num_of_iterations = int(K + np.floor(bins_back/self.m))
                     
-                    # Compute how many steps back we should take in the next segment
-                    bins_back += len(t_seg) - bin_nr_after_which_no_gaps_exist
-                
-                    # Might need to update the total number of segments we have
-                    num_of_iterations = int(K + np.floor(bins_back/self.m))
-            
+                    except UnboundLocalError:
+                        # Then bin_nr_after_which_no_gaps_exist could not be assigned for some reason...
+                        pass
+
             i += 1 
 
         print('{} of {} segments were disregarded due to lower percent limit set to {:.2f}%:'.format(num_discarded_segments,num_of_iterations,percent_limit))

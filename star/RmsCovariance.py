@@ -369,11 +369,11 @@ def covariance(lc_interest_v,lc_ref,m,alt=1,freq_low=None,freq_high=None,noise='
                 fft_rate_meanX = ps_X.fft_rate
                 fft_rate_meanY = ps_Y.fft_rate
 
-                var_ex_X = [1/(m-1)*np.sum((rate_seg-R_seg)**2)-np.mean(err_seg**2) for rate_seg, R_seg, err_seg in zip(ps_X.rate_seg, ps_X.R_seg, ps_X.err_seg)]
-                var_ex_Y = [1/(m-1)*np.sum((rate_seg-R_seg)**2)-np.mean(err_seg**2) for rate_seg, R_seg, err_seg in zip(ps_Y.rate_seg, ps_Y.R_seg, ps_Y.err_seg)]
+                var_ex_X = [1/(m-1)*np.sum((rate_seg-R_seg)**2)-np.mean(err_seg**2) for rate_seg, R_seg, err_seg in zip(ps_X.rate_seg_v, ps_X.R_seg_v, ps_X.err_seg_v)]
+                var_ex_Y = [1/(m-1)*np.sum((rate_seg-R_seg)**2)-np.mean(err_seg**2) for rate_seg, R_seg, err_seg in zip(ps_Y.rate_seg_v, ps_Y.R_seg_v, ps_Y.err_seg_v)]
 
-                var_err_X = [np.mean(e**2) for e in ps_X.err_seg]
-                var_err_Y = [np.mean(e**2) for e in ps_Y.err_seg]
+                var_err_X = [np.mean(e**2) for e in ps_X.err_seg_v]
+                var_err_Y = [np.mean(e**2) for e in ps_Y.err_seg_v]
 
                 P_X_mean = np.mean(ps_X.fft_rate)
                 P_Y_mean = np.mean(ps_Y.fft_rate)
@@ -390,9 +390,9 @@ def covariance(lc_interest_v,lc_ref,m,alt=1,freq_low=None,freq_high=None,noise='
                     print('var_ex_X_lc = {}, var_ex_Y_lc (ref) = {}'.format(var_ex_X_lc,var_ex_Y_lc))
 
                 # Quantities neeeded:
-                cov = [1/(m-1)*np.sum((rate_seg_X-R_X_seg)*(rate_seg_Y-R_Y_seg)) for rate_seg_X, rate_seg_Y, R_X_seg, R_Y_seg in zip(ps_X.rate_seg, ps_Y.rate_seg, ps_X.R_seg, ps_Y.R_seg)]
+                cov = [1/(m-1)*np.sum((rate_seg_X-R_X_seg)*(rate_seg_Y-R_Y_seg)) for rate_seg_X, rate_seg_Y, R_X_seg, R_Y_seg in zip(ps_X.rate_seg_v, ps_Y.rate_seg_v, ps_X.R_seg_v, ps_Y.R_seg_v)]
                 if units != 'abs': 
-                    cov = [c/R for c,R in zip(cov,ps_X.R_seg)]
+                    cov = [c/R for c,R in zip(cov,ps_X.R_seg_v)]
 
                 # 1) Small difference between taking average over all covariances and using full excess variance to normalize
                 cov_mean = np.mean(cov,axis=0)

@@ -28,7 +28,7 @@ def standard_plot(h=4,w=10,fontsize=16):
     plt.rcParams.update(plt.rcParamsDefault)
     plt.rcParams.update({'font.size': fontsize})
     plt.rcParams['font.family'] = 'Times'
-    plt.rc('text', usetex=True) 
+    #plt.rc('text', usetex=True) 
     
     return plt.gca()
 
