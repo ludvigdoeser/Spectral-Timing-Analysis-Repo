@@ -15,7 +15,8 @@ What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites
 
 3. Then go to: XTI Cleaned Data (event_cl):
 
-![NICERarchive_XTIcleanedEVT](NICERarchive_XTIcleanedEVT.png)
+| ![NICERarchive_XTIcleanedEVT](NICERarchive_XTIcleanedEVT.png)|
+|-|
 
 4. Click on the *cl.evt.gz-file, which will direct you to: `https://heasarc.gsfc.nasa.gov/FTP/nicer/data/obs/2021_04/4133010109/xti/event_cl/ni4133010109_0mpu7_cl.evt.gz)`. Copy paste this link and run:
 
@@ -39,22 +40,17 @@ extract_fits('ni4133010273_0mpu7_cl.evt')
 
 <h2>Downloading HeaSoft</h2>
 
-Step1: https://heasarc.gsfc.nasa.gov/lheasoft/download.html
+1: [Download the HEASOFT Software](https://heasarc.gsfc.nasa.gov/lheasoft/download.html). At that page, follow steps 1-3: pick **SOURCE CODE DISTRIBUTION**, then pick "All" packages, and go to:
 
-Follow steps 1-3: pick **SOURCE CODE DISTRIBUTION**, then pick "All" packages, and then go to:
+2 (on Intel Mac): Make sure that you have installed  "XQuartz" samt "Homebrew"; if not, start with installing those. Then, [install HEASoft - Intel Mac](https://heasarc.gsfc.nasa.gov/lheasoft/macos.html) Follow the "Bourne shell variants (bash/sh/zsh)"-column.
 
-Step2 (on Mac): https://heasarc.gsfc.nasa.gov/lheasoft/macos.html
+**Some notes:**
+* Before running the EXPORT-commands, make sure the files/executables are at the correct paths. E.g. I had to change `export FC=/usr/local/bin/gfortran-11` to `export FC=/usr/local/gfortran/bin/gfortran`.
+* You can run `tail -f build.log` to see how the build is doing. Wait for it to finish before running the installation.
 
-Se till att "XQuartz" samt "Homebrew" är installerade! Följ sedan  "Bourne shell variants (bash/sh/zsh)"-kolumnen.
+<h2> XSELECT </h2>
 
-**Följ instruktionerna och läs noga. Några saker som jag fastnade lite på:**
-
-* Innan du kör alla EXPORT-kommandon, se till att alla filer finns på just de platser som angivits. Jag behövde ändra “export FC=/usr/local/bin/gfortran-11“ till “export FC=/usr/local/gfortran/bin/gfortran” etc.
-* Tro inte att installationen är klar bara för att ny bash-rad finns tillgänglig; kör tail -f build.log för att se i realtid hur det går att bygga paketet. Råkade starta installation troligen innan build var klar… Återstår att se om det fungerade ändå… Man kan ju tycka att den borde slutföra första build-kommandot innan den kör installering :)
-
-<h1> XSELECT </h1>
-
-<h1> In terminal to extract lightcurves: </h1>
+<h3> In terminal to extract lightcurves: </h3>
 
 **To initialize software:**
 
