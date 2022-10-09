@@ -26,7 +26,10 @@ pip install -e .
 Or if you don't intend to modify the source code, just run pip without the `-e` flag.
 
 In python, you should now be able to do import all modules by:
-```from star import *```
+
+```python
+from star import *
+```
 
 ## Documentation
 
