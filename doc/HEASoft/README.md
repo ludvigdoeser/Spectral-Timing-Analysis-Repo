@@ -40,7 +40,9 @@ gzip -dk filename.gz
 extract_fits('ni4133010273_0mpu7_cl.evt')
 ```
 
-<h2>Downloading HeaSoft</h2>
+---
+
+<h1>Downloading HeaSoft</h1>
 
 1: [Download the HEASOFT Software](https://heasarc.gsfc.nasa.gov/lheasoft/download.html). At that page, follow steps 1-3. Pick **SOURCE CODE DISTRIBUTION** and pick "All" packages.
 
