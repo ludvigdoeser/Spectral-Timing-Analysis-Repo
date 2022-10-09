@@ -4,7 +4,7 @@ Spectral Timing Analysis Software Package.
 ## Installation and setup
 [Install conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) if you don't have conda installed.
 
-Clone repository using the green Code-button and then install all dependencies using conda via:
+Clone repository and then install all dependencies using conda via:
 
 ```bash
 cd star
