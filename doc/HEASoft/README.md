@@ -6,7 +6,7 @@ What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites
 
 ---
 
-<h2> To download correct data: </h2>
+<h1> Download data: </h1>
 
 1. Go to [NICER Archive](https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [HEASARC Browse](https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl). Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
 
@@ -147,7 +147,7 @@ clear time all #clears the filter, otherwise you will have two filters next time
 
 ---
 
-<h2> XSPEC </h2>
+<h1> XSPEC </h1>
 
 Useful links:
 
@@ -335,7 +335,7 @@ To link two parameters, run `show par` to see which parameter numbers the releva
 
 ---
 
-<h2> CALDB </h2>
+<h1> CALDB </h1>
 
 CALDB, e.g. for making arf and rmf files: [NICER Responses (ARFs and RMFs)](https://heasarc.gsfc.nasa.gov/docs/nicer/analysis_threads/arf-rmf/).
 
@@ -382,7 +382,9 @@ nicerrmf fullspec.pha ni1200120103.mkf nixtir1200120103.rmf detlist=@nixtia12001
 
 ---
 
-<h2> If no cleaned data - extract cleaned data using **nicerl2** </h2>
+<h1> nicerl2 </h1>
+
+If no cleaned data - extract cleaned data using nicerl2:
 
 1. Extract "Full Observation Dataset" as tar-file from HeaSarc, then follow [nicerl2 docs](https://heasarc.gsfc.nasa.gov/lheasoft/ftools/headas/nicerl2.html).
 
