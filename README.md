@@ -45,8 +45,4 @@ If it complains about it not being readable, you might have to manually go to fi
 
 ## Installation of other softwares
 
-Notes on how to work with HeaSoft, XSPEC, XSELECT, nicerl2, setting up CALDB etc:
-
-```bash
-file:///*path-to-repo*/doc/HeaSoft/README.md
-```
+Go [here](https://github.com/ludvigdoeser/Spectral-Timing-Analysis/tree/main/doc/HEASoft) for notes on how to work with HeaSoft, XSPEC, XSELECT, nicerl2, setting up CALDB etc.
