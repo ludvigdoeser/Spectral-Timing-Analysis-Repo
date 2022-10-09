@@ -6,9 +6,10 @@ What's the purpose of NICER? Have a look at: [NICER mission guide](https://sites
 
 <h2> To download correct data: </h2>
 
-1. Go to [NICER Archive](https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [HEASARC Browse](https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl. Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
+1. Go to [NICER Archive](https://heasarc.gsfc.nasa.gov/docs/nicer/nicer_archive.html) and click on **[HEASARC Browse interface](https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dnicermastr&Action=More+Options)**. Alternatively, go directly to: [HEASARC Browse](https://heasarc.gsfc.nasa.gov/cgi-bin/W3Browse/w3browse.pl). Search for an object, e.g. GX339-4, and if successful, you'll get a data table:
 
-![NICERarchive](NICERarchive.png)
+| ![NICERarchive](NICERarchive.png)|
+|-|
 
 2. Click on D under services.
 
