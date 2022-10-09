@@ -8,6 +8,7 @@ dependencies:
   - ipython=7.17.0
   - jupyter_nbextensions_configurator
   - jupyter_server=1.11.0  
+  - latex=0.7.0
   - lightkurve=2.0.10
   - matplotlib=3.3.4
   - notebook=6.1.3

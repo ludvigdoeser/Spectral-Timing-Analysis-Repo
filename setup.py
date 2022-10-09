@@ -7,5 +7,5 @@ setup(name='star',
       author='Ludvig Doeser',
       author_email='ludvig.doeser@fysik.su.se, ludde-doeser@hotmail.com',
       license='MIT',
-      packages=['src'],
+      packages=['star'],
       zip_safe=False)
