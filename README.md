@@ -17,13 +17,16 @@ Activate the environment by invoking:
 conda activate star
 ```
 
-Next, to initialize the correct paths for the scripts in this project run the setup tools using
+Next, to initialize the correct paths for the scripts in this project run the setup tools using:
 
 ```bash
 pip install -e .
 ```
 
 Or if you don't intend to modify the source code, just run pip without the `-e` flag.
+
+In python, you should now be able to do import all modules by:
+```from star import *```
 
 ## Documentation
 
