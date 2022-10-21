@@ -23,7 +23,7 @@ Next, to initialize the correct paths for the scripts in this project run the se
 pip install -e .
 ```
 
-The -e flag here enables you to alter the package in the src/ folder and the star-package will be updated automatically. **NOTE**, however, that if you're in a jupyter notebook and you do modify the source code, then you will have to restart the kernel for the change to take effect.
+The `-e` flag here enables you to alter the package in the src/ folder and the star-package will be updated automatically. **NOTE**, however, that if you're in a jupyter notebook and you do modify the source code, then you will have to restart the kernel for the change to take effect.
 
 Or if you don't intend to modify the source code, just run pip without the `-e` flag.
 
