@@ -1,10 +1,6 @@
 # Spectral Timing Analysis Repo (STAR)
 Spectral Timing Analysis Software Package.
 
-Spectral and timing properties of black hole X-ray binaries (BHXRB) evolve significantly  in response to changes in mass accretion rate and the configuration of the accretion flow. Tracking their evolution has therefore played a major role in understanding these systems' geometry and behaviour.
-
-For the basics, check out e.g.: [Light Curves and What They Can Tell Us]{https://imagine.gsfc.nasa.gov/science/toolbox/timing1.html} (NASA Goddard Space Flight Center, August 2013)
-
 ## Installation and setup
 [Install conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) if you don't have conda installed.
 
